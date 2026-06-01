@@ -2,7 +2,9 @@ import path from "path";
 import fs from "fs-extra";
 
 import { PKG_ROOT } from "~/consts.js";
+import { type AvailableDependencies } from "~/installers/dependencyVersionMap.js";
 import { type Installer } from "~/installers/index.js";
+import { addPackageDependency } from "~/utils/addPackageDependency.js";
 import { logger } from "~/utils/logger.js";
 
 export const adminDashboardInstaller: Installer = ({ projectDir, appRouter, packages }) => {
@@ -35,13 +37,49 @@ export const adminDashboardInstaller: Installer = ({ projectDir, appRouter, pack
     fs.copySync(adminComponentsDir, destAdminComponentsDir);
   }
 
+  // Copy middleware for admin route protection
+  const middlewareSrc = path.join(extrasDir, "src/middleware.ts");
+  const middlewareDest = path.join(projectDir, "src/middleware.ts");
+  if (fs.existsSync(middlewareSrc)) {
+    fs.copySync(middlewareSrc, middlewareDest);
+  }
+
+  // Ensure all admin dependencies are installed
+  const adminDeps: AvailableDependencies[] = [
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-avatar",
+    "@radix-ui/react-dropdown-menu",
+    "@radix-ui/react-select",
+    "@radix-ui/react-separator",
+    "@radix-ui/react-slot",
+  ];
+
+  addPackageDependency({
+    projectDir,
+    dependencies: adminDeps,
+    devMode: false,
+  });
+
   // If shadcn/ui is not selected, copy the minimal UI components
   // that the admin dashboard needs to function
   if (!packages?.shadcn.inUse) {
     const uiComponentsDir = path.join(extrasDir, "src/components/ui");
     const destUiDir = path.join(projectDir, "src/components/ui");
 
-    const requiredComponents = ["badge.tsx", "button.tsx", "card.tsx", "input.tsx", "label.tsx", "skeleton.tsx"];
+    const requiredComponents = [
+      "badge.tsx",
+      "button.tsx",
+      "card.tsx",
+      "input.tsx",
+      "label.tsx",
+      "skeleton.tsx",
+      "table.tsx",
+      "dialog.tsx",
+      "avatar.tsx",
+      "dropdown-menu.tsx",
+      "select.tsx",
+      "separator.tsx",
+    ];
 
     for (const component of requiredComponents) {
       const src = path.join(uiComponentsDir, component);

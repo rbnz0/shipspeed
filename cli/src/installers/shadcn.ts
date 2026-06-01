@@ -13,6 +13,12 @@ export const shadcnInstaller: Installer = ({ projectDir, appRouter }) => {
     "class-variance-authority",
     "lucide-react",
     "next-themes",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-avatar",
+    "@radix-ui/react-dropdown-menu",
+    "@radix-ui/react-select",
+    "@radix-ui/react-separator",
+    "@radix-ui/react-slot",
   ];
 
   addPackageDependency({

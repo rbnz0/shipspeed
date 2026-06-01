@@ -51,6 +51,12 @@ export const dependencyVersionMap = {
   "class-variance-authority": "^0.7.1",
   "lucide-react": "^0.510.0",
   "next-themes": "^0.4.6",
+  "@radix-ui/react-dialog": "^1.1.6",
+  "@radix-ui/react-avatar": "^1.1.3",
+  "@radix-ui/react-dropdown-menu": "^2.1.6",
+  "@radix-ui/react-select": "^2.1.6",
+  "@radix-ui/react-separator": "^1.1.2",
+  "@radix-ui/react-slot": "^1.1.2",
 
   // biome
   "@biomejs/biome": "^2.2.5",
