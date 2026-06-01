@@ -12,7 +12,7 @@ export default function Home() {
         <div className={styles.cardRow}>
           <Link
             className={styles.card}
-            href="https://create.t3.gg/en/usage/first-steps"
+            href="https://github.com/rbnog/shipspeed#first-steps"
             target="_blank"
           >
             <h3 className={styles.cardTitle}>First Steps →</h3>
@@ -23,7 +23,7 @@ export default function Home() {
           </Link>
           <Link
             className={styles.card}
-            href="https://create.t3.gg/en/introduction"
+            href="https://github.com/rbnog/shipspeed"
             target="_blank"
           >
             <h3 className={styles.cardTitle}>Documentation →</h3>

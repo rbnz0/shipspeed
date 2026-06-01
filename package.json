@@ -1,25 +1,24 @@
 {
-  "name": "@ct3a/root",
+  "name": "@shipspeed/root",
   "version": "0.0.0",
-  "description": "Quickest way to start a new web app with full stack typesafety",
-  "author": "Shoubhit Dash <shoubhit2005@gmail.com> (https://nexxel.dev)",
-  "maintainers": [
-    "Julius Marminge <julius0216@outlook.com> (https://jumr.dev)"
-  ],
+  "description": "ShipSpeed - The fastest way to start a production-ready Next.js app with Better Auth, shadcn/ui, payments, and more.",
+  "author": "ShipSpeed Team",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/t3-oss/create-t3-app.git"
+    "url": "https://github.com/rbnog/shipspeed.git"
   },
   "keywords": [
-    "create-t3-app",
-    "init.tips",
+    "create-shipspeed",
+    "shipspeed",
     "next.js",
-    "t3-stack",
+    "better-auth",
+    "shadcn",
     "tailwind",
     "tRPC",
-    "typescript"
+    "typescript",
+    "boilerplate"
   ],
   "engines": {
     "node": ">=20.0.0"

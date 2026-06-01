@@ -2,7 +2,7 @@ import * as p from "@clack/prompts";
 import chalk from "chalk";
 import { Command } from "commander";
 
-import { CREATE_T3_APP, DEFAULT_APP_NAME } from "~/consts.js";
+import { CREATE_SHIPSPEED, DEFAULT_APP_NAME } from "~/consts.js";
 import {
   databaseProviders,
   type AvailablePackages,
@@ -54,7 +54,7 @@ interface CliResults {
 
 const defaultOptions: CliResults = {
   appName: DEFAULT_APP_NAME,
-  packages: ["nextAuth", "prisma", "tailwind", "trpc", "eslint"],
+  packages: ["betterAuth", "prisma", "tailwind", "trpc", "eslint"],
   flags: {
     noGit: false,
     noInstall: false,
@@ -79,8 +79,8 @@ export const runCli = async (): Promise<CliResults> => {
   const cliResults = defaultOptions;
 
   const program = new Command()
-    .name(CREATE_T3_APP)
-    .description("A CLI for creating web applications with the t3 stack")
+    .name(CREATE_SHIPSPEED)
+    .description("A CLI for creating production-ready Next.js apps with Better Auth, shadcn/ui, and more.")
     .argument(
       "[dir]",
       "The name of the application, as well as the name of the directory to create"
@@ -97,7 +97,7 @@ export const runCli = async (): Promise<CliResults> => {
     )
     .option(
       "-y, --default",
-      "Bypass the CLI and use all default options to bootstrap a new t3-app",
+      "Bypass the CLI and use all default options to bootstrap a new ShipSpeed app",
       false
     )
     /** START CI-FLAGS */
@@ -174,22 +174,16 @@ export const runCli = async (): Promise<CliResults> => {
     .version(getVersion(), "-v, --version", "Display the version number")
     .addHelpText(
       "afterAll",
-      `\n The t3 stack was inspired by ${chalk
-        .hex("#E8DCFF")
-        .bold(
-          "@t3dotgg"
-        )} and has been used to build awesome fullstack applications like ${chalk
-        .hex("#E24A8D")
-        .underline("https://ping.gg")} \n`
+      `\n ShipSpeed is built on top of the T3 Stack and adds Better Auth, shadcn/ui, payments, and more.\n`
     )
     .parse(process.argv);
 
   // FIXME: TEMPORARY WARNING WHEN USING YARN 3. SEE ISSUE #57
   if (process.env.npm_config_user_agent?.startsWith("yarn/3")) {
     logger.warn(`  WARNING: It looks like you are using Yarn 3. This is currently not supported,
-  and likely to result in a crash. Please run create-t3-app with another
+  and likely to result in a crash. Please run create-shipspeed with another
   package manager such as pnpm, npm, or Yarn Classic.
-  See: https://github.com/t3-oss/create-t3-app/issues/57`);
+  See: https://github.com/rbnog/shipspeed/issues`);
   }
 
   // Needs to be separated outside the if statement to correctly infer the type as string | undefined
@@ -251,7 +245,7 @@ export const runCli = async (): Promise<CliResults> => {
     if (process.env.TERM_PROGRAM?.toLowerCase().includes("mintty")) {
       logger.warn(`  WARNING: It looks like you are using MinTTY, which is non-interactive. This is most likely because you are
   using Git Bash. If that's that case, please use Git Bash from another terminal, such as Windows Terminal. Alternatively, you
-  can provide the arguments from the CLI directly: https://create.t3.gg/en/installation#experimental-usage to skip the prompts.`);
+  can provide the arguments from the CLI directly: https://github.com/rbnog/shipspeed#experimental-usage to skip the prompts.`);
 
       throw new IsTTYError("Non-interactive environment");
     }
@@ -304,7 +298,7 @@ export const runCli = async (): Promise<CliResults> => {
               // Maybe later
               // { value: "clerk", label: "Clerk" },
             ],
-            initialValue: "none",
+            initialValue: "better-auth",
           });
         },
         database: () => {
@@ -407,11 +401,11 @@ export const runCli = async (): Promise<CliResults> => {
       },
     };
   } catch (err) {
-    // If the user is not calling create-t3-app from an interactive terminal, inquirer will throw an IsTTYError
+    // If the user is not calling create-shipspeed from an interactive terminal, inquirer will throw an IsTTYError
     // If this happens, we catch the error, tell the user what has happened, and then continue to run the program with a default t3 app
     if (err instanceof IsTTYError) {
       logger.warn(`
-  ${CREATE_T3_APP} needs an interactive terminal to provide options`);
+  ${CREATE_SHIPSPEED} needs an interactive terminal to provide options`);
 
       const shouldContinue = await p.confirm({
         message: `Continue scaffolding a default T3 app?`,
@@ -423,7 +417,7 @@ export const runCli = async (): Promise<CliResults> => {
         process.exit(0);
       }
 
-      logger.info(`Bootstrapping a default T3 app in ./${cliResults.appName}`);
+      logger.info(`Bootstrapping a default ShipSpeed app in ./${cliResults.appName}`);
     } else {
       throw err;
     }

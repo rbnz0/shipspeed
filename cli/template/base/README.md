@@ -1,6 +1,6 @@
 # Create T3 App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is a [ShipSpeed](https://github.com/rbnog/shipspeed) project bootstrapped with `create-shipspeed`.
 
 ## What's next? How do I make an app with this?
 
@@ -17,13 +17,13 @@ If you are not familiar with the different technologies used in this project, pl
 
 ## Learn More
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+To learn more about the [ShipSpeed](https://github.com/rbnog/shipspeed), take a look at the following resources:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- [Documentation](https://github.com/rbnog/shipspeed)
+- [Learn the ShipSpeed](https://github.com/rbnog/shipspeeden/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+You can check out the [create-shipspeed GitHub repository](https://github.com/t3-oss/create-shipspeed) — your feedback and contributions are welcome!
 
 ## How do I deploy this?
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+Follow our deployment guides for [Vercel](https://github.com/rbnog/shipspeeden/deployment/vercel), [Netlify](https://github.com/rbnog/shipspeeden/deployment/netlify) and [Docker](https://github.com/rbnog/shipspeeden/deployment/docker) for more information.
