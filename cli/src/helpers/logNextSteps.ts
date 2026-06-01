@@ -47,9 +47,21 @@ export const logNextSteps = async ({
     }
   }
 
-  if (packages?.nextAuth.inUse) {
+  if (packages?.betterAuth.inUse) {
+    logger.info(
+      `  Run 'npx @better-auth/cli@latest migrate' to generate the auth schema (including plugins).`
+    );
+  }
+
+  if (packages?.nextAuth.inUse || packages?.betterAuth.inUse) {
     logger.info(
       `  Fill in your .env with necessary values. See https://github.com/rbnog/shipspeed#first-steps for more info.`
+    );
+  }
+
+  if (packages?.resend.inUse || packages?.polar.inUse) {
+    logger.info(
+      `  Fill in your .env with Resend/Polar API keys and secrets.`
     );
   }
 
