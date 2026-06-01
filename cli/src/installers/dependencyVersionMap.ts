@@ -38,6 +38,13 @@ export const dependencyVersionMap = {
   superjson: "^2.2.1",
   "server-only": "^0.0.1",
 
+  // shadcn/ui
+  "tailwind-merge": "^3.2.0",
+  clsx: "^2.1.1",
+  "class-variance-authority": "^0.7.1",
+  "lucide-react": "^0.510.0",
+  "next-themes": "^0.4.6",
+
   // biome
   "@biomejs/biome": "^2.2.5",
 

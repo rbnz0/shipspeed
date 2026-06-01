@@ -1,6 +1,7 @@
 import { envVariablesInstaller } from "~/installers/envVars.js";
 import { nextAuthInstaller } from "~/installers/nextAuth.js";
 import { prismaInstaller } from "~/installers/prisma.js";
+import { shadcnInstaller } from "~/installers/shadcn.js";
 import { tailwindInstaller } from "~/installers/tailwind.js";
 import { trpcInstaller } from "~/installers/trpc.js";
 import { type PackageManager } from "~/utils/getUserPkgManager.js";
@@ -18,6 +19,7 @@ export const availablePackages = [
   "prisma",
   "drizzle",
   "tailwind",
+  "shadcn",
   "trpc",
   "envVariables",
   "eslint",
@@ -76,8 +78,12 @@ export const buildPkgInstallerMap = (
     installer: drizzleInstaller,
   },
   tailwind: {
-    inUse: packages.includes("tailwind"),
+    inUse: packages.includes("tailwind") || packages.includes("shadcn"),
     installer: tailwindInstaller,
+  },
+  shadcn: {
+    inUse: packages.includes("shadcn"),
+    installer: shadcnInstaller,
   },
   trpc: {
     inUse: packages.includes("trpc"),

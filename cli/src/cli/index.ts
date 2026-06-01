@@ -36,10 +36,12 @@ interface CliFlags {
   /** @internal Used in CI. */
   betterAuth: boolean;
   /** @internal Used in CI. */
-  appRouter: boolean;
+  shadcn: boolean;
   /** @internal Used in CI. */
-  dbProvider: DatabaseProvider;
+  appRouter: boolean;
   /** @internal Used in CI */
+  dbProvider: DatabaseProvider;
+  /** @internal Used in CI. */
   eslint: boolean;
   /** @internal Used in CI */
   biome: boolean;
@@ -54,7 +56,7 @@ interface CliResults {
 
 const defaultOptions: CliResults = {
   appName: DEFAULT_APP_NAME,
-  packages: ["betterAuth", "prisma", "tailwind", "trpc", "eslint"],
+  packages: ["betterAuth", "prisma", "tailwind", "shadcn", "trpc", "eslint"],
   flags: {
     noGit: false,
     noInstall: false,
@@ -66,6 +68,7 @@ const defaultOptions: CliResults = {
     drizzle: false,
     nextAuth: false,
     betterAuth: false,
+    shadcn: false,
     importAlias: "~/",
     appRouter: false,
     dbProvider: "sqlite",
@@ -122,6 +125,12 @@ export const runCli = async (): Promise<CliResults> => {
     .option(
       "--betterAuth [boolean]",
       "Experimental: Boolean value if we should install BetterAuth. Must be used in conjunction with `--CI`.",
+      (value) => !!value && value !== "false"
+    )
+    /** @experimental Used for CI E2E tests. Used in conjunction with `--CI` to skip prompting. */
+    .option(
+      "--shadcn [boolean]",
+      "Experimental: Boolean value if we should install shadcn/ui. Must be used in conjunction with `--CI`.",
       (value) => !!value && value !== "false"
     )
     /** @experimental - Used for CI E2E tests. Used in conjunction with `--CI` to skip prompting. */
@@ -203,6 +212,7 @@ export const runCli = async (): Promise<CliResults> => {
     if (cliResults.flags.drizzle) cliResults.packages.push("drizzle");
     if (cliResults.flags.nextAuth) cliResults.packages.push("nextAuth");
     if (cliResults.flags.betterAuth) cliResults.packages.push("betterAuth");
+    if (cliResults.flags.shadcn) cliResults.packages.push("shadcn");
     if (cliResults.flags.eslint) cliResults.packages.push("eslint");
     if (cliResults.flags.biome) cliResults.packages.push("biome");
     if (cliResults.flags.prisma && cliResults.flags.drizzle) {
@@ -286,6 +296,12 @@ export const runCli = async (): Promise<CliResults> => {
         trpc: () => {
           return p.confirm({
             message: "Would you like to use tRPC?",
+          });
+        },
+        shadcn: () => {
+          return p.confirm({
+            message: "Would you like to use shadcn/ui?",
+            initialValue: true,
           });
         },
         authentication: () => {
@@ -378,7 +394,8 @@ export const runCli = async (): Promise<CliResults> => {
     );
 
     const packages: AvailablePackages[] = [];
-    if (project.styling) packages.push("tailwind");
+    if (project.styling || project.shadcn) packages.push("tailwind");
+    if (project.shadcn) packages.push("shadcn");
     if (project.trpc) packages.push("trpc");
     if (project.authentication === "next-auth") packages.push("nextAuth");
     if (project.authentication === "better-auth") packages.push("betterAuth");

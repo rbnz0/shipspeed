@@ -1,0 +1,60 @@
+import path from "path";
+import fs from "fs-extra";
+
+import { PKG_ROOT } from "~/consts.js";
+import { type AvailableDependencies } from "~/installers/dependencyVersionMap.js";
+import { type Installer } from "~/installers/index.js";
+import { addPackageDependency } from "~/utils/addPackageDependency.js";
+
+export const shadcnInstaller: Installer = ({ projectDir }) => {
+  const deps: AvailableDependencies[] = [
+    "tailwind-merge",
+    "clsx",
+    "class-variance-authority",
+    "lucide-react",
+    "next-themes",
+  ];
+
+  addPackageDependency({
+    projectDir,
+    dependencies: deps,
+    devMode: false,
+  });
+
+  const extrasDir = path.join(PKG_ROOT, "template/extras");
+
+  // components.json config
+  const componentsJsonSrc = path.join(extrasDir, "config/components.json");
+  const componentsJsonDest = path.join(projectDir, "components.json");
+
+  // lib/utils.ts (cn helper)
+  const utilsSrc = path.join(extrasDir, "src/lib/utils.ts");
+  const utilsDest = path.join(projectDir, "src/lib/utils.ts");
+
+  // theme provider
+  const themeProviderSrc = path.join(
+    extrasDir,
+    "src/components/theme-provider.tsx"
+  );
+  const themeProviderDest = path.join(
+    projectDir,
+    "src/components/theme-provider.tsx"
+  );
+
+  // globals.css with CSS variables
+  const cssSrc = path.join(extrasDir, "src/styles/globals-shadcn.css");
+  const cssDest = path.join(projectDir, "src/styles/globals.css");
+
+  fs.copySync(componentsJsonSrc, componentsJsonDest);
+  fs.copySync(utilsSrc, utilsDest);
+  fs.copySync(themeProviderSrc, themeProviderDest);
+  fs.copySync(cssSrc, cssDest);
+
+  // Copy basic UI components
+  const uiComponentsDir = path.join(extrasDir, "src/components/ui");
+  const destUiDir = path.join(projectDir, "src/components/ui");
+
+  if (fs.existsSync(uiComponentsDir)) {
+    fs.copySync(uiComponentsDir, destUiDir);
+  }
+};
