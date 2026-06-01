@@ -365,7 +365,7 @@ export const runCli = async (): Promise<CliResults> => {
               { value: "prisma", label: "Prisma" },
               { value: "drizzle", label: "Drizzle" },
             ],
-            initialValue: "none",
+            initialValue: "prisma",
           });
         },
         appRouter: () => {
