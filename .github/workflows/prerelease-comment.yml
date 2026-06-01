@@ -27,7 +27,7 @@ jobs:
 
             for (const artifact of allArtifacts.data.artifacts) {
               // Extract the PR number and package version from the artifact name
-              const match = /^npm-package-create-t3-app@(.*?)-pr-(\d+)/.exec(artifact.name);
+              const match = /^npm-package-create-shipspeed@(.*?)-pr-(\d+)/.exec(artifact.name);
               
               if (match) {
                 require("fs").appendFileSync(
@@ -45,10 +45,10 @@ jobs:
         with:
           number: ${{ env.WORKFLOW_RUN_PR }}
           message: |
-            A new create-t3-app prerelease is available for testing. You can install this latest build in your project with:
+            A new create-shipspeed prerelease is available for testing. You can install this latest build in your project with:
 
             ```sh
-            pnpm create t3-app@${{ env.BETA_PACKAGE_VERSION }}
+            pnpm create shipspeed@${{ env.BETA_PACKAGE_VERSION }}
             ```
 
       - name: "Remove the autorelease label once published"
