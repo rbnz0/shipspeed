@@ -84,7 +84,10 @@ export const buildPkgInstallerMap = (
     installer: drizzleInstaller,
   },
   tailwind: {
-    inUse: packages.includes("tailwind") || packages.includes("shadcn"),
+    inUse:
+      packages.includes("tailwind") ||
+      packages.includes("shadcn") ||
+      packages.includes("adminDashboard"),
     installer: tailwindInstaller,
   },
   shadcn: {

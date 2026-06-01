@@ -27,4 +27,6 @@ export const setImportAlias = (projectDir: string, importAlias: string) => {
 
   // update import alias in any files if not using the default
   replaceTextInFiles(projectDir, `~/`, normalizedImportAlias);
+  // shadcn/ui components and some templates use `@/` alias by convention
+  replaceTextInFiles(projectDir, `@/`, normalizedImportAlias);
 };

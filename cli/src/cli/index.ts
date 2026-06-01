@@ -62,7 +62,17 @@ interface CliResults {
 
 const defaultOptions: CliResults = {
   appName: DEFAULT_APP_NAME,
-  packages: ["betterAuth", "prisma", "tailwind", "shadcn", "trpc", "eslint"],
+  packages: [
+    "betterAuth",
+    "prisma",
+    "tailwind",
+    "shadcn",
+    "trpc",
+    "resend",
+    "polar",
+    "adminDashboard",
+    "eslint",
+  ],
   flags: {
     noGit: false,
     noInstall: false,
@@ -79,7 +89,7 @@ const defaultOptions: CliResults = {
     polar: false,
     adminDashboard: false,
     importAlias: "~/",
-    appRouter: false,
+    appRouter: true,
     dbProvider: "sqlite",
     eslint: false,
     biome: false,
@@ -443,8 +453,8 @@ export const runCli = async (): Promise<CliResults> => {
     );
 
     const packages: AvailablePackages[] = [];
-    if (project.styling || project.shadcn) packages.push("tailwind");
-    if (project.shadcn) packages.push("shadcn");
+    if (project.styling || project.shadcn || project.adminDashboard) packages.push("tailwind");
+    if (project.shadcn || project.adminDashboard) packages.push("shadcn");
     if (project.trpc) packages.push("trpc");
     if (project.authentication === "next-auth") packages.push("nextAuth");
     if (project.authentication === "better-auth") packages.push("betterAuth");

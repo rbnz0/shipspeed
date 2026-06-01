@@ -167,6 +167,13 @@ POLAR_WEBHOOK_SECRET=""
 POLAR_ENV="sandbox"
 `;
 
+  // Always include APP_URL since it's commonly needed for callbacks and absolute URLs
+  content += `
+# Application URL
+# Used for generating absolute URLs in emails, webhooks, and OAuth callbacks
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
+`;
+
   if (!usingNextAuth && !usingBetterAuth && !usingPrisma && !usingDrizzle && !usingResend && !usingPolar)
     content += `
 # Example:
