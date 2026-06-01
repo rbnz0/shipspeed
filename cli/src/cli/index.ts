@@ -42,6 +42,8 @@ interface CliFlags {
   /** @internal Used in CI. */
   polar: boolean;
   /** @internal Used in CI. */
+  adminDashboard: boolean;
+  /** @internal Used in CI. */
   appRouter: boolean;
   /** @internal Used in CI */
   dbProvider: DatabaseProvider;
@@ -75,6 +77,7 @@ const defaultOptions: CliResults = {
     shadcn: false,
     resend: false,
     polar: false,
+    adminDashboard: false,
     importAlias: "~/",
     appRouter: false,
     dbProvider: "sqlite",
@@ -197,6 +200,12 @@ export const runCli = async (): Promise<CliResults> => {
       "Experimental: Boolean value if we should install Polar. Must be used in conjunction with `--CI`.",
       (value) => !!value && value !== "false"
     )
+    /** @experimental Used for CI E2E tests. Used in conjunction with `--CI` to skip prompting. */
+    .option(
+      "--adminDashboard [boolean]",
+      "Experimental: Boolean value if we should include an admin dashboard. Must be used in conjunction with `--CI`.",
+      (value) => !!value && value !== "false"
+    )
     /** END CI-FLAGS */
     .version(getVersion(), "-v, --version", "Display the version number")
     .addHelpText(
@@ -233,6 +242,7 @@ export const runCli = async (): Promise<CliResults> => {
     if (cliResults.flags.shadcn) cliResults.packages.push("shadcn");
     if (cliResults.flags.resend) cliResults.packages.push("resend");
     if (cliResults.flags.polar) cliResults.packages.push("polar");
+    if (cliResults.flags.adminDashboard) cliResults.packages.push("adminDashboard");
     if (cliResults.flags.eslint) cliResults.packages.push("eslint");
     if (cliResults.flags.biome) cliResults.packages.push("biome");
     if (cliResults.flags.prisma && cliResults.flags.drizzle) {
@@ -379,6 +389,13 @@ export const runCli = async (): Promise<CliResults> => {
             initialValue: true,
           });
         },
+        adminDashboard: ({ results }) => {
+          if (results.authentication !== "better-auth") return;
+          return p.confirm({
+            message: "Would you like to include an admin dashboard?",
+            initialValue: true,
+          });
+        },
         linter: () => {
           return p.select({
             message:
@@ -435,6 +452,7 @@ export const runCli = async (): Promise<CliResults> => {
     if (project.database === "drizzle") packages.push("drizzle");
     if (project.resend) packages.push("resend");
     if (project.polar) packages.push("polar");
+    if (project.adminDashboard) packages.push("adminDashboard");
     if (project.linter === "eslint") packages.push("eslint");
     if (project.linter === "biome") packages.push("biome");
 

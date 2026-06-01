@@ -1,3 +1,4 @@
+import { adminDashboardInstaller } from "~/installers/adminDashboard.js";
 import { envVariablesInstaller } from "~/installers/envVars.js";
 import { nextAuthInstaller } from "~/installers/nextAuth.js";
 import { polarInstaller } from "~/installers/polar.js";
@@ -25,6 +26,7 @@ export const availablePackages = [
   "trpc",
   "resend",
   "polar",
+  "adminDashboard",
   "envVariables",
   "eslint",
   "biome",
@@ -100,6 +102,10 @@ export const buildPkgInstallerMap = (
   polar: {
     inUse: packages.includes("polar"),
     installer: polarInstaller,
+  },
+  adminDashboard: {
+    inUse: packages.includes("adminDashboard"),
+    installer: adminDashboardInstaller,
   },
   dbContainer: {
     inUse: ["mysql", "postgres"].includes(databaseProvider),
