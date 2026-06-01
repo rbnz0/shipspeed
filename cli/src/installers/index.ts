@@ -1,6 +1,8 @@
 import { envVariablesInstaller } from "~/installers/envVars.js";
 import { nextAuthInstaller } from "~/installers/nextAuth.js";
+import { polarInstaller } from "~/installers/polar.js";
 import { prismaInstaller } from "~/installers/prisma.js";
+import { resendInstaller } from "~/installers/resend.js";
 import { shadcnInstaller } from "~/installers/shadcn.js";
 import { tailwindInstaller } from "~/installers/tailwind.js";
 import { trpcInstaller } from "~/installers/trpc.js";
@@ -21,6 +23,8 @@ export const availablePackages = [
   "tailwind",
   "shadcn",
   "trpc",
+  "resend",
+  "polar",
   "envVariables",
   "eslint",
   "biome",
@@ -88,6 +92,14 @@ export const buildPkgInstallerMap = (
   trpc: {
     inUse: packages.includes("trpc"),
     installer: trpcInstaller,
+  },
+  resend: {
+    inUse: packages.includes("resend"),
+    installer: resendInstaller,
+  },
+  polar: {
+    inUse: packages.includes("polar"),
+    installer: polarInstaller,
   },
   dbContainer: {
     inUse: ["mysql", "postgres"].includes(databaseProvider),

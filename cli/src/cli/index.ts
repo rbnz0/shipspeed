@@ -38,6 +38,10 @@ interface CliFlags {
   /** @internal Used in CI. */
   shadcn: boolean;
   /** @internal Used in CI. */
+  resend: boolean;
+  /** @internal Used in CI. */
+  polar: boolean;
+  /** @internal Used in CI. */
   appRouter: boolean;
   /** @internal Used in CI */
   dbProvider: DatabaseProvider;
@@ -69,6 +73,8 @@ const defaultOptions: CliResults = {
     nextAuth: false,
     betterAuth: false,
     shadcn: false,
+    resend: false,
+    polar: false,
     importAlias: "~/",
     appRouter: false,
     dbProvider: "sqlite",
@@ -179,6 +185,18 @@ export const runCli = async (): Promise<CliResults> => {
       "Experimental: Boolean value if we should install biome. Must be used in conjunction with `--CI`.",
       (value) => !!value && value !== "false"
     )
+    /** @experimental Used for CI E2E tests. Used in conjunction with `--CI` to skip prompting. */
+    .option(
+      "--resend [boolean]",
+      "Experimental: Boolean value if we should install Resend. Must be used in conjunction with `--CI`.",
+      (value) => !!value && value !== "false"
+    )
+    /** @experimental Used for CI E2E tests. Used in conjunction with `--CI` to skip prompting. */
+    .option(
+      "--polar [boolean]",
+      "Experimental: Boolean value if we should install Polar. Must be used in conjunction with `--CI`.",
+      (value) => !!value && value !== "false"
+    )
     /** END CI-FLAGS */
     .version(getVersion(), "-v, --version", "Display the version number")
     .addHelpText(
@@ -213,6 +231,8 @@ export const runCli = async (): Promise<CliResults> => {
     if (cliResults.flags.nextAuth) cliResults.packages.push("nextAuth");
     if (cliResults.flags.betterAuth) cliResults.packages.push("betterAuth");
     if (cliResults.flags.shadcn) cliResults.packages.push("shadcn");
+    if (cliResults.flags.resend) cliResults.packages.push("resend");
+    if (cliResults.flags.polar) cliResults.packages.push("polar");
     if (cliResults.flags.eslint) cliResults.packages.push("eslint");
     if (cliResults.flags.biome) cliResults.packages.push("biome");
     if (cliResults.flags.prisma && cliResults.flags.drizzle) {
@@ -347,6 +367,18 @@ export const runCli = async (): Promise<CliResults> => {
             initialValue: "sqlite",
           });
         },
+        resend: () => {
+          return p.confirm({
+            message: "Would you like to use Resend for transactional emails?",
+            initialValue: true,
+          });
+        },
+        polar: () => {
+          return p.confirm({
+            message: "Would you like to use Polar for payments and subscriptions?",
+            initialValue: true,
+          });
+        },
         linter: () => {
           return p.select({
             message:
@@ -401,6 +433,8 @@ export const runCli = async (): Promise<CliResults> => {
     if (project.authentication === "better-auth") packages.push("betterAuth");
     if (project.database === "prisma") packages.push("prisma");
     if (project.database === "drizzle") packages.push("drizzle");
+    if (project.resend) packages.push("resend");
+    if (project.polar) packages.push("polar");
     if (project.linter === "eslint") packages.push("eslint");
     if (project.linter === "biome") packages.push("biome");
 

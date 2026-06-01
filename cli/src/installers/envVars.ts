@@ -15,6 +15,8 @@ export const envVariablesInstaller: Installer = ({
   const usingBetterAuth = packages?.betterAuth.inUse;
   const usingPrisma = packages?.prisma.inUse;
   const usingDrizzle = packages?.drizzle.inUse;
+  const usingResend = packages?.resend.inUse;
+  const usingPolar = packages?.polar.inUse;
 
   const usingDb = usingPrisma === true || usingDrizzle === true;
   const usingPlanetScale = databaseProvider === "planetscale";
@@ -24,6 +26,8 @@ export const envVariablesInstaller: Installer = ({
     !!usingBetterAuth,
     !!usingPrisma,
     !!usingDrizzle,
+    !!usingResend,
+    !!usingPolar,
     databaseProvider,
     scopedAppName
   );
@@ -82,6 +86,8 @@ const getEnvContent = (
   usingBetterAuth: boolean,
   usingPrisma: boolean,
   usingDrizzle: boolean,
+  usingResend: boolean,
+  usingPolar: boolean,
   databaseProvider: DatabaseProvider,
   scopedAppName: string
 ) => {
@@ -144,7 +150,24 @@ DATABASE_URL='mysql://YOUR_MYSQL_URL_HERE?sslaccept=strict'`;
     content += "\n";
   }
 
-  if (!usingNextAuth && !usingBetterAuth && !usingPrisma && !usingDrizzle)
+  if (usingResend)
+    content += `
+# Resend
+# Get your API key at https://resend.com/api-keys
+RESEND_API_KEY=""
+RESEND_FROM_EMAIL="onboarding@resend.dev"
+`;
+
+  if (usingPolar)
+    content += `
+# Polar
+# Get your access token at https://polar.sh/settings
+POLAR_ACCESS_TOKEN=""
+POLAR_WEBHOOK_SECRET=""
+POLAR_ENV="sandbox"
+`;
+
+  if (!usingNextAuth && !usingBetterAuth && !usingPrisma && !usingDrizzle && !usingResend && !usingPolar)
     content += `
 # Example:
 # SERVERVAR="foo"

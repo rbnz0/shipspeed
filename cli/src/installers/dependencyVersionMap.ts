@@ -38,6 +38,13 @@ export const dependencyVersionMap = {
   superjson: "^2.2.1",
   "server-only": "^0.0.1",
 
+  // Resend
+  resend: "^4.5.0",
+
+  // Polar
+  "@polar-sh/sdk": "^0.32.0",
+  "@polar-sh/nextjs": "^0.5.0",
+
   // shadcn/ui
   "tailwind-merge": "^3.2.0",
   clsx: "^2.1.1",
