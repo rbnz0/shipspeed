@@ -3,72 +3,46 @@ title: FAQ
 description: Найпоширеніші запитання про ShipSpeed
 layout: ../../layouts/docs.astro
 lang: uk
+isMdx: true
 ---
 
-import Callout from "../../components/docs/callout.tsx";
-
-Це деякі часті запитання про `create-shipspeed`.
+Це деякі часті запитання про ShipSpeed.
 
 ## Що далі? Як я можу створити додаток?
 
 Ми намагаємося зробити цей проект якомога простішим, тому ви можете почати з того, що ми налаштували для вас, а потім додавати додаткові вам речі, коли вони стануть вам необхідними.
 
-Якщо ви не знайомі з різними технологіями, що використовуються в цьому проєкті, зверніться до відповідної документації. Якщо щось усе ще не зрозуміло, приєднуйтесь до нашого [Discord](https://github.com/rbnog/shipspeed/discussions) і попросіть допомоги.
+Якщо ви не знайомі з різними технологіями, що використовуються в цьому проєкті, зверніться до відповідної документації. Якщо щось усе ще не зрозуміло, приєднуйтесь до наших [Discussions](https://github.com/rbnog/shipspeed/discussions) і попросіть допомоги.
 
 - [Next.js](https://nextjs.org/)
-- [NextAuth.js](https://next-auth.js.org)
+- [Better Auth](https://www.better-auth.com)
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
+- [Drizzle](https://orm.drizzle.team/docs/overview)
 
 ## Як мені тримати свій додаток оновленим?
 
-Додаток ShipSpeed – це інструмент для будування, а не фреймворк. Це означає, що як тільки ви ініціалізуєте програму, вона стане вашою. Немає жодного інструменту CLI після інсталяції, який би допомагав вам залишатися в курсі подій. Якщо ви хочете відстежувати будь-які вдосконалення, які ми вносимо в шаблон, ви можете [увімкнути сповіщення про випуски](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) у нашому репозиторії. Зважаючи це, насправді не обов'язково вносити кожну зміну, яку ми вносимо в шаблон у вашій програмі.
+ShipSpeed – це інструмент для створення скелету додатку, а не фреймворк. Це означає, що як тільки ви ініціалізуєте програму, вона стане вашою. Немає жодного інструменту CLI після інсталяції, який би допомагав вам залишатися в курсі подій. Якщо ви хочете відстежувати будь-які вдосконалення, які ми вносимо в шаблон, ви можете [увімкнути сповіщення про випуски](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) у нашому репозиторії.
 
 ## Які навчальні ресурси зараз доступні?
 
-Не дивлячись на те, що перераховані нижче ресурси є одними з найкращих для ShipSpeed Stack, спільнота (і [Theo](https://youtu.be/rzwaaWH0ksk?t=1436)) рекомендує просто почати використовувати стек і вчитися в процесі розробки з його допомогою.
+Спільнота рекомендує просто почати використовувати стек і вчитися в процесі розробки з його допомогою.
 
 Якщо ви розглядаєте ShipSpeed, швидше за все, ви вже використовували деякі частини стека. То чому б не зануритися в проєкт з головою і не вивчити решту технологій у процесі розробки?
 
-Ми розуміємо, що цей шлях не підходить для кожного. Тому, якщо ви відчуваєте, що ви спробували рекомендований шлях і цього недостатньо, і вам все ще потрібні ресурси, або ви просто не впевнені у своїх силах та/або почуваєтесь перевантаженим цим стеком, ознайомтеся з цими приголомшливими навчальними матеріалами щодо ShipSpeed:
-
-### Статті
-
-Деякі з них можуть бути застарілими.
-
-- [A first look at ShipSpeed](https://dev.to/ajcwebdev/a-first-look-at-create-shipspeed-1i8f)
-- [Migrating your ShipSpeed into a Turborepo](https://www.jumr.dev/blog/t3-turbo)
-- [Integrating Stripe into your ShipSpeed](https://blog.nickramkissoon.com/posts/integrate-stripe-t3)
-
-### Відео
-
-- [ShipSpeed Stack Tutorial - FROM 0 TO PROD FOR $0 (Next.js, tRPC, TypeScript, Tailwind, Prisma & More)](https://www.youtube.com/watch?v=YkOSUVzOAA4) **(рекомендовано)**
-- [Jack Herrington - Build a Note Taking app with the ShipSpeed Stack](https://www.youtube.com/watch?v=J1gzN1SAhyM)
-- [Build a Twitter Clone with the ShipSpeed Stack - tRPC, Next.js, Prisma, Tailwind & Zod](https://www.youtube.com/watch?v=nzJsYJPCc80)
-- [Build a Blog With the ShipSpeed Stack - tRPC, TypeScript, Next.js, Prisma & Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
-- [Build a Live Chat Application with the ShipSpeed Stack - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
-- [The ShipSpeed Stack - How We Built It](https://www.youtube.com/watch?v=H-FXwnEjSsI)
-- [An overview of the ShipSpeed (Next, Typescript, Tailwind, tRPC, Next-Auth)](https://www.youtube.com/watch?v=VJH8dsPtbeU)
-
 ## Чому в проєкті є файли `.js`?
 
-Згідно з [ShipSpeed-Аксіомою #3](/uk/introduction#%D1%82%D0%B8%D0%BF%D0%BE%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D0%BA%D0%B0-%D0%BD%D0%B5-%D1%94-%D0%BE%D0%BF%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%8E), ми вважаємо типобезпеку об'єктом першого класу. На жаль, не всі фреймворки та плагіни підтримують TypeScript, тому деякі файли конфігурації мають бути файлами `.js`.
+Згідно з нашим [принципом typesafety](/uk/introduction#typesafety-isnt-optional), ми вважаємо типобезпеку об'єктом першого класу. На жаль, не всі фреймворки та плагіни підтримують TypeScript, тому деякі файли конфігурації мають бути файлами `.js`.
 
-Ми намагаємося підкреслити, що ці файли є файлами JavaScript не без причини, явно оголошуючи тип кожного файлу (`cjs` або `mjs`), залежно від того, що підтримується бібліотекою, якою він використовується. Крім того, всі файли `js` у цьому проєкті все ще перевіряються на типи за допомогою коментаря `@ts-check` вгорі.
+Ми намагаємося підкреслити, що ці файли є файлами JavaScript не без причини, явно оголошуючи тип кожного файлу (`cjs` або `mjs`), залежно від того, що підтримується бібліотекою, якою він використовується. Крім того, всі файли `js` у цьому проєкті все ще перевіряються на типи за допомогою checkJs в компіляторі (tsconfig).
 
 ## У мене не виходить додати i18n до мого додатка. Чи є якісь рекомендації?
 
-Ми вирішили не включати i18n за замовчуванням у `create-shipspeed`, тому що це дуже суб'єктивна тема, і є багато способів її реалізації.
+Ми вирішили не включати i18n за замовчуванням у ShipSpeed, тому що це дуже суб'єктивна тема, і є багато способів її реалізації.
 
-У той же час, якщо ви зіткнулися з проблемами під час реалізації та хочете побачити проєкт-зразок, у нас є [посилання на репозиторій](https://github.com/juliusmarminge/t3-i18n), яке показує, як ви можете додати i18n в ShipSpeed за допомогою [next-i18next](https://github.com/i18next/next-i18next).
+## Мені варто використовувати `/app` чи `/pages`?
 
-## Чому ми використовуємо `/pages` а не `/app` з Next.js 13?
+У вас є можливість вибрати структуру каталогів `/app` під час створення додатка за допомогою ShipSpeed. На момент написання цієї статті ця функція, як правило, вважається достатньо зрілою для використання в продакшені.
 
-Згідно з [ShipSpeed-Аксіомою #2](/uk/introduction#%D0%BE%D0%BD%D0%BE%D0%B2%D0%BB%D1%8E%D0%B9%D1%82%D0%B5%D1%81%D1%8C-%D0%B7-%D0%B2%D1%96%D0%B4%D0%BF%D0%BE%D0%B2%D1%96%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D1%96%D1%81%D1%82%D1%8E), ми любимо новинки, але цінуємо стабільність, вам буде складно перенести весь маршрутизатор, [не найкраще місце для експериментів](https://youtu.be/mnwUbtieOuI?t=1662). Хоча `/app` [являє собою погляд у майбутнє](https://youtu.be/rnsC-12PVlM?t=818), він ще не готовий до використання в продакшені; API перебуває в бета-версії, і очікується, що він матиме зворотно несумісні зміни.
-
-<Callout type="info">
-  Список підтримуваних, запланованих і тих, що перебувають у розробці, функцій у
-  каталозі `/app` можна знайти в [бета-документації
-  Next.js](https://beta.nextjs.org/docs/app-directory-roadmap#supported-and-planned-features).
-</Callout>
+Тим не менш, якщо ви сильно надаєте перевагу використанню старішої парадигми `/pages`, це все ще опція. Перенесення вашого існуючого маршрутизатора може бути величезним зусиллям, тому не відчувайте непотрібного тиску.

@@ -30,12 +30,12 @@ jobs:
         id: generate
         run: node .github/scripts/generate-matrix.js >> $GITHUB_OUTPUT
 
-  build-t3-app:
+  build-shipspeed-app:
     needs: generate-matrix
     runs-on: ubuntu-latest
     # if: |
     #   contains(github.event.pull_request.labels.*.name, '📌 area: cli') ||
-    #   contains(github.event.pull_request.labels.*.name, '📌 area: t3-app')
+    #   contains(github.event.pull_request.labels.*.name, '📌 area: shipspeed-app')
     strategy:
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
 
@@ -53,7 +53,7 @@ jobs:
       # through. this way it ensures that it is the app's configs that are being used
       # FIXME: this is a bit hacky, would rather have --packages=trpc,tailwind,... but not sure how to setup the matrix for that
       - run: cd cli && pnpm start ../../ci-${{ matrix.trpc }}-${{ matrix.tailwind }}-${{ matrix.nextAuth }}-${{ matrix.betterAuth }}-${{ matrix.prisma }}-${{ matrix.drizzle}}-${{ matrix.appRouter }}-${{ matrix.dbType }} --noGit --CI --trpc=${{ matrix.trpc }} --tailwind=${{ matrix.tailwind }} --nextAuth=${{ matrix.nextAuth }} --betterAuth=${{ matrix.betterAuth }} --prisma=${{ matrix.prisma }} --drizzle=${{ matrix.drizzle }} --appRouter=${{ matrix.appRouter }} --dbProvider=${{ matrix.dbType }}
-        # can't use default mysql string cause t3-env blocks that
+        # can't use default mysql string cause env validation blocks that
 
       - run: cd ../ci-${{ matrix.trpc }}-${{ matrix.tailwind }}-${{ matrix.nextAuth }}-${{ matrix.betterAuth }}-${{ matrix.prisma }}-${{ matrix.drizzle}}-${{ matrix.appRouter }}-${{ matrix.dbType }} && pnpm build
         env:
@@ -111,7 +111,7 @@ jobs:
           AUTH_DISCORD_SECRET: baz
           SKIP_ENV_VALIDATION: true
 
-  build-t3-app-with-bun:
+  build-shipspeed-app-with-bun:
     runs-on: ubuntu-latest
 
     name: "Build ShipSpeed App with Bun"
@@ -149,7 +149,7 @@ jobs:
           AUTH_SECRET: foo
           AUTH_DISCORD_ID: bar
           AUTH_DISCORD_SECRET: baz
-          DATABASE_URL: mysql://root:root@localhost:3306/test # can't use url from example env cause we block that in t3-env
+          DATABASE_URL: mysql://root:root@localhost:3306/test # can't use url from example env cause env validation blocks that
 
   build-shipspeed-full:
     runs-on: ubuntu-latest

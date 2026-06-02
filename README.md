@@ -31,7 +31,7 @@
 
 ## What is ShipSpeed?
 
-ShipSpeed is an interactive CLI that scaffolds a modern, production-ready Next.js application with everything you need to ship fast. It takes the best parts of the T3 Stack and layers on the features every SaaS needs out of the box.
+ShipSpeed is an interactive CLI that scaffolds a modern, production-ready Next.js application with everything you need to ship fast. It layers production-ready features — auth, payments, emails, admin — on top of a solid Next.js foundation.
 
 Stop configuring auth, payments, emails, and UI libraries separately. ShipSpeed wires them all together for you.
 

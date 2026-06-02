@@ -11,10 +11,10 @@ Tu znajdziesz najczęściej zadawane pytania dotyczące ShipSpeed.
 
 Staramy się, aby projekt ten był jak najprostszy - możesz zacząć już korzystać z zawartego w nim szablonu a następnie stopniowo dodawać potrzebne Ci rzeczy.
 
-Jeżeli nie znasz poszczególnych technologi użytych w projekcie, skorzystaj z odnośników do odpowiednich stron z dokumentacjami. Jeżeli dalej nie jesteś co do nich pewien, możesz dołączyć do naszego [serwera Discord](https://github.com/rbnog/shipspeed/discussions) i poprosić o pomoc.
+Jeżeli nie znasz poszczególnych technologi użytych w projekcie, skorzystaj z odnośników do odpowiednich stron z dokumentacjami. Jeżeli dalej nie jesteś co do nich pewien, możesz dołączyć do naszych [Discussions](https://github.com/rbnog/shipspeed/discussions) i poprosić o pomoc.
 
 - [Next.js](https://nextjs.org/)
-- [NextAuth.js](https://next-auth.js.org)
+- [Better Auth](https://www.better-auth.com)
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
@@ -22,47 +22,26 @@ Jeżeli nie znasz poszczególnych technologi użytych w projekcie, skorzystaj z 
 
 ## Jak sprawić, by aplikacja była ciągle aktualna?
 
-ShipSpeed to narzędzie do tworzenia szablonu, a nie framework. Oznacza to, że po inicjalizacji aplikacji jest ona już twoja. Nie istnieje żadne narzędzie CLI do wykorzystania po instalacji aplikacji, które utrzymałoby twoją aplikację aktualną. Jeżeli chcesz być na bieżąco z wprowadzanymi przez nas zmianami do szablonu, możesz [włączyć powiadomienia nowych wersji](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) dla naszego repozytorium. Pamiętaj jednak, że wprowadzanie każdej zmiany z naszego szablonu nie jest wcale wymagane.
+ShipSpeed to narzędzie do tworzenia szablonu, a nie framework. Oznacza to, że po inicjalizacji aplikacji jest ona już twoja. Nie istnieje żadne narzędzie CLI do wykorzystania po instalacji aplikacji, które utrzymałoby twoją aplikację aktualną. Jeżeli chcesz być na bieżąco z wprowadzanymi przez nas zmianami do szablonu, możesz [włączyć powiadomienia nowych wersji](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) dla naszego repozytorium.
 
 ## Jakie zasoby do nauki są dostępne?
 
-Poniższe elementy to jedne z najlepszych zasobów dla stack ShipSpeed, jednak społeczność oraz [Theo](https://youtu.be/rzwaaWH0ksk?t=1436) polecają Ci zacząć po prostu z niego korzystać. W ten sposób podczas pisania aplikacji zdobędziesz potrzebną wiedzę.
+Społeczność poleca Ci zacząć po prostu z niego korzystać. W ten sposób podczas pisania aplikacji zdobędziesz potrzebną wiedzę.
 
 Jeżeli zastanawiasz się nad korzystaniem z ShipSpeed, mogłeś już używać poszczególnych jego składowych w przeszłości. W takim przypadku spróbuj wskoczyć na głęboką wodę i nauczyć się innych jego części po drodze!
 
-Zdajemy sobie sprawę z tego, iż opisany wyżej sposób nie jest dla każdego najlepszy. Jeżeli więc w dalszym ciągu czujesz potrzebę skorzystania z innych źródeł (lub jeżeli nie jesteś wystarczająco pewny siebie / czujesz się przytłoczony stackiem), sprawdź te poradniki dotyczące ShipSpeed (pamiętaj, że są one w języku angielskim):
-
-### Artykuły
-
-- [Zbuduj aplikację full stack z ShipSpeed](https://www.nexxel.dev/blog/ShipSpeed-guestbook)
-- [Pierwsze spojrzenie na ShipSpeed](https://dev.to/ajcwebdev/a-first-look-at-create-shipspeed-1i8f)
-- [Migrowanie aplikacji ShipSpeed do Turborepo](https://www.jumr.dev/blog/t3-turbo)
-- [Integrowanie Stripe'a z aplikacją ShipSpeed](https://blog.nickramkissoon.com/posts/integrate-stripe-t3)
-
-### Filmy
-
-- [ShipSpeed Stack Tutorial - FROM 0 TO PROD FOR $0 (Next.js, tRPC, TypeScript, Tailwind, Prisma & More)](https://www.youtube.com/watch?v=YkOSUVzOAA4) **(recommended)**
-- [Jack Herrington - Zbuduj aplikację do sporządzania notatek z ShipSpeed Stackiem](https://www.youtube.com/watch?v=J1gzN1SAhyM)
-- [Zbuduj klon Twittera z ShipSpeed Stackiem - tRPC, Next.js, Prisma, Tailwind oraz Zod](https://www.youtube.com/watch?v=nzJsYJPCc80)
-- [Zbuduj blog z ShipSpeed Stackiem - tRPC, TypeScript, Next.js, Prisma i Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
-- [Zbuduj live chat z ShipSpeed Stackiem - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
-- [ShipSpeed Stack - Jak go zbudowaliśmy](https://www.youtube.com/watch?v=H-FXwnEjSsI)
-- [Przegląd ShipSpeed (Next, Typescript, Tailwind, tRPC, Next-Auth)](https://www.youtube.com/watch?v=VJH8dsPtbeU)
-
 ## Dlaczego w projekcie są pliki `.js`?
 
-Tak jak opisano w [aksjomacie #3](/pl/introduction#typesafety-nie-jest-opcjonalne), traktujemy typesafety za pierwszorzędną rzecz. Niestety nie wszystkie frameworki i pluginy posiadają wsparcie do TypeScripta, dlatego też niektóre pliki konfiguracyjne muszą mieć powyższe rozszerzenie.
+Tak jak opisano w naszym [principie typesafety](/pl/introduction#typesafety-isnt-optional), traktujemy typesafety za pierwszorzędną rzecz. Niestety nie wszystkie frameworki i pluginy posiadają wsparcie do TypeScripta, dlatego też niektóre pliki konfiguracyjne muszą mieć powyższe rozszerzenie.
 
 Staramy się podkreślić, iż pliki te korzystają z TypeScripta nie bez powodu. Wyraźnie określamy rozszerzenia plików jako `cjs` lub `mjs`, zależnie od wsparcia przez daną bibliotekę. Dodatkowo, wszystkie pliki `.js` w naszym projekcie są w dalszym ciągu sprawdzane pod kątem poprawności typów - korzystamy do tego opcji `checkJs` w kompilatorze (tsconfig).
 
 ## Mam problem z dodaniem i18n do aplikacji. Czy istnieje jakiś projekt, do którego mógłbym się odnieść przy jej budowaniu?
 
-Zdecydowaliśmy się nie umieszczać i18n w `create-shipspeed`, ponieważ jest to bardzo kontrowersyjny temat i istnieje wiele sposobów, aby element ten zaimplementować.
+Zdecydowaliśmy się nie umieszczać i18n w ShipSpeed, ponieważ jest to bardzo kontrowersyjny temat i istnieje wiele sposobów, aby element ten zaimplementować.
 
-Jeżeli jednak nie wiesz jak wygląda poprawna interpretacja internacjonalizacji i chciałbyś zobaczyć przykładowy projekt, sprawdź [to repozytorium](https://github.com/juliusmarminge/t3-i18n) - ukazuje ono jak możesz dodać i18n do aplikacji ShipSpeed korzystając przy tym z [next-i18next](https://github.com/i18next/next-i18next).
+## Czy powinienem używać `/app` czy `/pages`?
 
-## Dlaczego korzystamy z folderu `/pages` a nie `/app` z Next.js 13?
+Masz możliwość wyboru struktury katalogów `/app` podczas tworzenia aplikacji za pomocą ShipSpeed. W momencie pisania tego tekstu funkcja ta jest powszechnie uznawana za wystarczająco dojrzałą, aby można jej było używać w produkcji.
 
-Tak jak opisano w [aksjomacie #2](/pl/introduction#bleed-responsibly-korzystaj-rozważnie-z-nowych-technologii), kochamy technologie "bleeding edge", jednak ważna jest dla nas stabilność. Ciężko jest zmienić cały `router` w aplikacji ([not a great place to bleed](https://youtu.be/mnwUbtieOuI?t=1662)). Folder `/app` to [wgląd na przyszłość](https://youtu.be/rnsC-12PVlM?t=818), jednak nie jest on gotowy na wersję produkcyjną. API jest w becie i oczekiwać można zmian wpływających na działanie całej aplikacji (niekoniecznie pozytywnie!).
-
-Żeby poznać listę wspieranych, zaplanowanych i tych, nad którymi prace trwają funkcji, odwiedź [dokumentację Next.js beta](https://beta.nextjs.org/docs/app-directory-roadmap#supported-and-planned-features).
+Niemniej jednak, jeśli zdecydowanie wolisz używać starszego paradygmatu `/pages`, nadal jest to opcja. Przeniesienie istniejącego routera może być ogromnym wysiłkiem, więc nie czuj niepotrzebnej presji, aby to robić.

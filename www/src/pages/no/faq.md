@@ -5,57 +5,43 @@ layout: ../../layouts/docs.astro
 lang: no
 ---
 
-Her er noen ofte stilte spørsmål om "create-shipspeed".
+Her er noen ofte stilte spørsmål om ShipSpeed.
 
 ## Hva nå? Hvordan lager jeg en app med dette?
 
 Vi prøver å holde dette prosjektet så enkelt som mulig, slik at du kan starte med bare det grunnleggende rammeverket vi har laget for deg. Du kan legge til flere ting senere etter hvert som de blir nødvendige.
 
-Hvis du ikke er kjent med de forskjellige teknologiene som brukes i dette prosjektet, vennligst se den relevante dokumentasjonen. Hvis du har flere spørsmål kan du bli med i vår [Discord](https://github.com/rbnog/shipspeed/discussions) og be om hjelp.
+Hvis du ikke er kjent med de forskjellige teknologiene som brukes i dette prosjektet, vennligst se den relevante dokumentasjonen. Hvis du har flere spørsmål kan du bli med i våre [Discussions](https://github.com/rbnog/shipspeed/discussions) og be om hjelp.
 
 - [Next.js](https://nextjs.org/)
-- [NextAuth.js](https://next-auth.js.org)
+- [Better Auth](https://www.better-auth.com)
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
+- [Drizzle](https://orm.drizzle.team/docs/overview)
+
+## Hvordan holder jeg appen min oppdatert?
+
+ShipSpeed er et scaffolding-verktøy, ikke et rammeverk. Dette betyr at når du initialiserer en app, er den din. Det finnes ikke noe postinstall CLI-verktøy for å hjelpe deg med å holde deg oppdatert. Hvis du vil holde deg oppdatert med forbedringene vi gjør til malen, kan du [aktivere varsler for utgivelser](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) i vårt repository.
 
 ## Hvilke læringsressurser er tilgjengelige for øyeblikket?
 
-Selv om ressursene som er oppført nedenfor, er noen av de beste som finnes for ShipSpeed-stakken, anbefaler vårt samfunn (og [Theo](https://youtu.be/rzwaaWH0ksk?t=1436)) at du bare begynner å bruke stakken og bygger med den mens du lærer.
+Vårt samfunn anbefaler at du bare begynner å bruke stakken og bygger med den mens du lærer.
 
-Hvis du vurderer "create-shipspeed", er sjansen stor for at du allerede har brukt noen av delene av stakken. Så hvorfor ikke bare hoppe inn i det og lære de andre delene mens du bygger noe?
-
-Nå har vi forståelse for at denne metoden ikke fungerer for alle. Så hvis du føler at du har prøvd anbefalingen og fortsatt vil ha noen ressurser, eller du bare ikke er sikker på hvordan å gjøre det selv og/eller føler deg overveldet av stakken, så sjekk ut disse fantastiske veiledningene på `create-shipspeed `:
-
-### Artikler
-
-- [Bygg en full stakk-app med create-shipspeed](https://www.nexxel.dev/blog/ShipSpeed-guestbook)
-- [En første titt på create-shipspeed](https://dev.to/ajcwebdev/a-first-look-at-create-shipspeed-1i8f)
-- [Migrering av ShipSpeedlikasjonen din til et Turborepo](https://www.jumr.dev/blog/t3-turbo)
-- [Integrering av Stripe i ShipSpeedlikasjonen din](https://blog.nickramkissoon.com/posts/integrate-stripe-t3)
-
-### Videoer
-
-- [Bygg en Twitter-klone med ShipSpeed-stakken - tRPC, Next.js, Prisma, Tailwind & Zod](https://www.youtube.com/watch?v=nzJsYJPCc80)
-  – [Bygg en Blogg Med ShipSpeed-stakken – tRPC, TypeScript, Next.js, Prisma og Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
-- [Bygg en Live Chat-applikasjon med ShipSpeed Stack - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
-- [ShipSpeed-stakken - Hvordan Vi Bygget Den](https://www.youtube.com/watch?v=H-FXwnEjSsI)
-- [En oversikt over create-shipspeed (Next, Typescript, Tailwind, tRPC, Next-Auth)](https://www.youtube.com/watch?v=VJH8dsPtbeU)
+Hvis du vurderer ShipSpeed, er sjansen stor for at du allerede har brukt noen av delene av stakken. Så hvorfor ikke bare hoppe inn i det og lære de andre delene mens du bygger noe?
 
 ## Hvorfor er det `.js`-filer i prosjektet?
 
-I henhold til [3. ShipSpeed-Prinsipp](/no/introduction#typesafety-isnt-optional), anser vi _typesafety_ som en førsteklasses borger. Dessverre støtter ikke alle rammeverk og plugins TypeScript, noe som betyr at noen av konfigurasjonsfilene nødvendigvis må være `.js`-filer.
+I henhold til vårt [typesafety-prinsipp](/no/introduction#typesafety-isnt-optional), anser vi _typesafety_ som en førsteklasses borger. Dessverre støtter ikke alle rammeverk og plugins TypeScript, noe som betyr at noen av konfigurasjonsfilene nødvendigvis må være `.js`-filer.
 
-Vi forsøker å understreke at disse filene er JavaScript for en grunn, ved å eksplisitt deklarere hver filtype (`cjs` eller `mjs`) avhengig av hva som støttes av biblioteket den brukes av. Dessuten er alle `js`-filene i dette prosjektet fortsatt typesjekket ved bruk av checkJs alternativet i kompilatoren (tsconfig).
+Vi forsøker å understreke at disse filene er JavaScript for en grunn, ved å eksplisitt deklarere hver filtype (`cjs` eller `mjs`) avhengig av hva som støttes av biblioteket den brukes av. Dessuten er alle `js`-filene i dette prosjektet fortsatt typesjekket ved bruk av checkJs-alternativet i kompilatoren (tsconfig).
 
 ## Jeg sliter med å legge til i18n i applikasjonen min. Er det noen referanse jeg kan bruke?
 
-Vi har bestemt oss for å ikke inkludere i18n som standard i `create-shipspeed` fordi det er et emne omgitt av mange meninger og det er mange måter å implementere det på.
+Vi har bestemt oss for å ikke inkludere i18n som standard i ShipSpeed fordi det er et emne omgitt av mange meninger og det er mange måter å implementere det på.
 
-Men hvis du sliter med å implementere det og ønsker å se et referanseprosjekt, så har vi et [referanserepo](https://github.com/juliusmarminge/t3-i18n) som viser hvordan du kan legge til i18n i en ShipSpeed ved å bruke [next-i18next](https://github.com/i18next/next-i18next).
+## Bør jeg bruke `/app` eller `/pages`?
 
-## Hvorfor bruker vi `/pages` og ikke `/app` fra Next.js 13?
+Du har muligheten til å velge `/app`-katalogstrukturen når du oppretter en app med ShipSpeed. På skrivende tidspunkt regnes denne funksjonen generelt som moden nok til å brukes i produksjon.
 
-I henhold til [2. ShipSpeed-Prinsipp](/no/introduction#bleed-responsibly), elsker vi ny teknologi, men verdsetter stabilitet. Det er vanskelig flytte hele ruteren og det er ikke en god idé å ta disse risikoene der, [se: Moderne og Ansvarsbevisst](https://youtu.be/mnwUbtieOuI?t=1662). Mens `/app` er [et glimt inn i fremtiden](https://youtu.be/rnsC-12PVlM?t=818), er det ikke klart for produksjon; API-et er i beta og forventes å ha _breaking changes_.
-
-For en liste over støttede, planlagte og funksjoner under arbeid i `/app`-katalogen, gå til [beta Next.js docs](https://beta.nextjs.org/docs/app-directory-roadmap#supported-and-planned-features).
+Likevel, hvis du sterkt foretrekker å bruke det eldre `/pages`-paradigmet, er det fortsatt et alternativ. Å overføre den eksisterende ruteren kan være en stor innsats, så ikke føl et unødvendig press for å gjøre det.
