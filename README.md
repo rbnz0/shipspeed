@@ -220,6 +220,10 @@ We welcome contributions! Please read our [Contributing Guide](./CONTRIBUTING.md
 - [GitHub Issues](https://github.com/rbnog/shipspeed/issues) — Bug reports and feature requests
 - [GitHub Discussions](https://github.com/rbnog/shipspeed/discussions) — Questions and ideas
 
+## Acknowledgments
+
+ShipSpeed is based on [create-t3-app](https://github.com/t3-oss/create-t3-app) by the [T3 Stack](https://github.com/t3-oss) team. We're grateful for their work in establishing the foundation that ShipSpeed builds upon.
+
 ## License
 
 MIT © [ShipSpeed](https://github.com/rbnog/shipspeed)
