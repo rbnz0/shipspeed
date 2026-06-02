@@ -1,0 +1,69 @@
+---
+title: Admin Dashboard
+description: Built-in admin dashboard for managing users, sessions, organizations, and security.
+layout: ../../layouts/docs.astro
+lang: en
+isMdx: true
+---
+
+import Callout from "../../components/docs/callout.jsx";
+
+ShipSpeed includes a full-featured admin dashboard at `/admin`. It is only accessible to users with the `admin` role and is protected by middleware.
+
+## Access
+
+1. Create an admin user or promote an existing user to admin via the CLI or database.
+2. Log in and navigate to `/admin`.
+
+## Features
+
+### Dashboard
+Overview cards showing:
+- Total users, admins, banned users, unverified users
+- Recent signups
+- System status (rate limiting, middleware protection)
+
+### Users
+Full user management:
+- Search by name/email
+- Filter by role and status
+- Pagination (25 per page)
+- Create, ban, unban, delete users
+- Change roles
+- Set passwords
+- Impersonate users
+- View user details in a side panel with:
+  - Overview tab (role, status, email verification, created date)
+  - Sessions tab (active sessions with revoke action)
+
+### Sessions
+Search for a user and view their active sessions:
+- Revoke individual sessions
+- Revoke all sessions at once
+
+### Organizations
+Manage Better Auth organizations:
+- List all organizations
+- Create and delete organizations
+- View members and pending invitations in a side panel
+
+### Security
+Security overview:
+- Total users, banned accounts, unverified emails, active users
+- Recommendations (email verification status, banned accounts, admin access limits)
+- Recent signups feed
+
+## Middleware Protection
+
+The admin routes are protected by `src/middleware.ts`:
+- Rate limiting (100 req/min) on auth and API routes
+- Session validation + role check for `/admin/*`
+- Security headers (CSP, HSTS, X-Frame-Options, etc.)
+
+## Customization
+
+All admin components are in `src/components/admin/` and pages are in `src/app/admin/`. You can extend them freely.
+
+<Callout type="info">
+The admin dashboard requires the App Router and is automatically included when you select Better Auth + Admin Dashboard during scaffolding.
+</Callout>

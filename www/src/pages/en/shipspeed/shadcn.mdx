@@ -1,0 +1,67 @@
+---
+title: shadcn/ui
+description: Styling and components with shadcn/ui in ShipSpeed.
+layout: ../../layouts/docs.astro
+lang: en
+isMdx: true
+---
+
+import Callout from "../../components/docs/callout.jsx";
+
+ShipSpeed includes [shadcn/ui](https://ui.shadcn.com) pre-configured with Tailwind CSS v4, CSS variables, and a ThemeProvider for dark/light mode support.
+
+## What's Included
+
+The CLI copies the following shadcn components into your project:
+
+- `Button`, `Card`, `Input`, `Label`
+- `Badge`, `Skeleton`, `Table`
+- `Dialog`, `Avatar`, `DropdownMenu`
+- `Select`, `Separator`, `Sheet`
+- `Tabs`, `Sonner` (toast notifications)
+
+## Theme Provider
+
+The `ThemeProvider` is automatically injected into your `src/app/layout.tsx`:
+
+```tsx
+import { ThemeProvider } from "@/components/theme-provider";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+## Adding Components
+
+You can add more shadcn/ui components anytime:
+
+```bash
+npx shadcn add calendar
+npx shadcn add popover
+```
+
+## Customization
+
+All components use CSS variables defined in `src/styles/globals.css`. Edit the `:root` and `.dark` selectors to change colors:
+
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+}
+```
+
+<Callout type="info">
+ShipSpeed uses Tailwind CSS v4. The `components.json` config uses `config: null` instead of a `tailwind.config.ts` file.
+</Callout>

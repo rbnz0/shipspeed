@@ -1,15 +1,15 @@
 export const SITE = {
-  title: "Create T3 App",
-  description: "The best way to start a full-stack, typesafe Next.js app.",
+  title: "ShipSpeed",
+  description: "The fastest way to start a production-ready Next.js app with Better Auth, shadcn/ui, payments, and more.",
   defaultLanguage: "en_US",
 };
 
 export const OPEN_GRAPH = {
   image: {
     src: "images/og-image.png",
-    alt: "Create T3 App: The best way to start a full-stack, typesafe Next.js app.",
+    alt: "ShipSpeed: The fastest way to start a production-ready Next.js app.",
   },
-  twitter: "t3dotgg",
+  twitter: "rbnog",
 };
 
 // This is the type of the frontmatter you put in the docs markdown files.
@@ -41,18 +41,18 @@ export const KNOWN_LANGUAGES = {
 } as const;
 export type KnownLanguageCode = keyof typeof KNOWN_LANGUAGES;
 
-export const GITHUB_EDIT_URL = `https://github.com/t3-oss/create-t3-app/tree/main/www`;
+export const GITHUB_EDIT_URL = `https://github.com/rbnog/shipspeed/tree/main/www`;
 
-export const COMMUNITY_INVITE_URL = `https://t3.gg/discord`;
+export const COMMUNITY_INVITE_URL = `https://github.com/rbnog/shipspeed/discussions`;
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
-  indexName: "create-t3-app",
+  indexName: "shipspeed",
   appId: "0LE5592BV4",
   apiKey: "892c4647b96fe1b3d0b7d8de1c5b5e40",
 };
 
-export type OuterHeaders = "Create T3 App" | "Deployment" | "Usage";
+export type OuterHeaders = "Create T3 App" | "ShipSpeed" | "Deployment" | "Usage";
 
 export interface SidebarItem<
   TCode extends KnownLanguageCode = KnownLanguageCode,
@@ -120,6 +120,13 @@ export const SIDEBAR: Sidebar = {
       { text: "T3 Collection", link: "en/t3-collection" },
       { text: "Examples", link: "en/examples" },
       { text: "Other Recommendations", link: "en/other-recs" },
+    ],
+    ShipSpeed: [
+      { text: "Better Auth", link: "en/shipspeed/better-auth" },
+      { text: "shadcn/ui", link: "en/shipspeed/shadcn" },
+      { text: "Polar Payments", link: "en/shipspeed/polar" },
+      { text: "Resend Emails", link: "en/shipspeed/resend" },
+      { text: "Admin Dashboard", link: "en/shipspeed/admin-dashboard" },
     ],
     Usage: [
       { text: "First Steps", link: "en/usage/first-steps" },
@@ -416,9 +423,15 @@ export const SIDEBAR: Sidebar = {
 };
 
 export const SIDEBAR_HEADER_MAP: Record<
-  Exclude<KnownLanguageCode, "en">,
-  Record<OuterHeaders, string>
+  KnownLanguageCode,
+  Partial<Record<OuterHeaders, string>>
 > = {
+  en: {
+    "Create T3 App": "Create T3 App",
+    ShipSpeed: "ShipSpeed",
+    Usage: "Usage",
+    Deployment: "Deployment",
+  },
   es: {
     "Create T3 App": "Create T3 App",
     Usage: "Uso",

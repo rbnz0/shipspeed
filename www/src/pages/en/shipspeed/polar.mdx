@@ -1,0 +1,62 @@
+---
+title: Polar Payments
+description: Accept payments with Polar in ShipSpeed.
+layout: ../../layouts/docs.astro
+lang: en
+isMdx: true
+---
+
+import Callout from "../../components/docs/callout.jsx";
+
+ShipSpeed integrates [Polar](https://polar.sh) for payments and subscriptions.
+
+## Setup
+
+Add the following environment variables to your `.env`:
+
+```bash
+POLAR_ACCESS_TOKEN="your-polar-access-token"
+POLAR_WEBHOOK_SECRET="your-webhook-secret"
+POLAR_ENV="sandbox" # or "production"
+```
+
+Get your access token from the [Polar Dashboard](https://dashboard.polar.sh/settings).
+
+## Routes
+
+### Checkout
+
+Redirect users to Polar checkout:
+
+```tsx
+import Link from "next/link";
+
+<Link href="/checkout?productId=YOUR_PRODUCT_ID">
+  Subscribe
+</Link>
+```
+
+The checkout route (`/checkout`) is pre-configured to create a checkout session and redirect to Polar.
+
+### Customer Portal
+
+Authenticated users can manage their subscriptions via `/portal`. The portal route resolves the customer ID from their Better Auth session.
+
+### Webhooks
+
+The webhook handler at `/api/webhook/polar` receives events:
+
+- `subscription.created`
+- `subscription.updated`
+- `subscription.revoked`
+- `order.created`
+- `order.refunded`
+- `customer.created`
+
+<Callout type="warning">
+Update the webhook handler in `src/app/api/webhook/polar/route.ts` to persist subscription state to your database.
+</Callout>
+
+## Customization
+
+Edit `src/app/checkout/route.ts` to customize the success URL or product selection logic.

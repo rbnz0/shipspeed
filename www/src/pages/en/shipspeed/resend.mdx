@@ -1,0 +1,57 @@
+---
+title: Resend Emails
+description: Send transactional emails with Resend in ShipSpeed.
+layout: ../../layouts/docs.astro
+lang: en
+isMdx: true
+---
+
+import Callout from "../../components/docs/callout.jsx";
+
+ShipSpeed uses [Resend](https://resend.com) for transactional emails.
+
+## Setup
+
+Add the following environment variables to your `.env`:
+
+```bash
+RESEND_API_KEY="re_xxxxxxxx"
+RESEND_FROM_EMAIL="onboarding@yourdomain.com"
+```
+
+Get your API key from the [Resend Dashboard](https://resend.com/api-keys).
+
+## Usage
+
+The `sendEmail` helper is available in `src/lib/email.ts`:
+
+```tsx
+import { sendEmail } from "@/lib/email";
+
+await sendEmail({
+  to: "user@example.com",
+  subject: "Welcome to ShipSpeed",
+  html: "<p>Welcome aboard!</p>",
+});
+```
+
+## Better Auth Integration
+
+Resend is automatically wired into Better Auth for:
+
+- **Email verification** on sign-up
+- **Password reset** emails
+
+If `RESEND_API_KEY` is not set, email sending is skipped gracefully with a console warning.
+
+<Callout type="info">
+To customize email templates, edit the `sendVerificationEmail` and `sendResetPasswordEmail` hooks in `src/server/better-auth/config.ts`.
+</Callout>
+
+## React Email (Optional)
+
+For rich email templates, consider adding [React Email](https://react.email):
+
+```bash
+npm install @react-email/components react-email
+```

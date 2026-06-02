@@ -1,0 +1,69 @@
+---
+title: Better Auth
+description: Authentication and authorization with Better Auth in ShipSpeed.
+layout: ../../layouts/docs.astro
+lang: en
+isMdx: true
+---
+
+import Callout from "../../components/docs/callout.jsx";
+
+ShipSpeed uses [Better Auth](https://www.better-auth.com) for authentication. It supports email/password, OAuth (GitHub by default), passkeys, two-factor authentication, and organizations out of the box.
+
+## Setup
+
+### Environment Variables
+
+Better Auth requires the following environment variables (already included in your `.env`):
+
+```bash
+BETTER_AUTH_SECRET="your-secret-key"
+BETTER_AUTH_GITHUB_CLIENT_ID="your-github-client-id"
+BETTER_AUTH_GITHUB_CLIENT_SECRET="your-github-client-secret"
+```
+
+Generate a secure `BETTER_AUTH_SECRET` with:
+
+```bash
+openssl rand -base64 32
+```
+
+### Database
+
+Better Auth stores users, sessions, accounts, and plugin data in your database. Run the migration after scaffolding:
+
+```bash
+npx @better-auth/cli migrate
+```
+
+<Callout type="info">
+The Prisma schema shipped with ShipSpeed already includes tables for `organization`, `member`, `invitation`, `twoFactor`, and `passkey` plugins.
+</Callout>
+
+## Features
+
+### Email & Password
+Enabled by default. Users can sign up and log in with email/password. Email verification is wired to Resend if configured.
+
+### OAuth (GitHub)
+Configure your GitHub OAuth app and set the callback URL to:
+
+```
+http://localhost:3000/api/auth/callback/github
+```
+
+### Two-Factor Authentication
+Users can enable TOTP-based 2FA. The admin dashboard lets admins view 2FA status and revoke sessions.
+
+### Organizations
+Users can create up to 5 organizations with 100 members each. Manage orgs, members, and invitations from the admin dashboard.
+
+### Passkeys
+WebAuthn passkey support is enabled. Users can register passkeys for passwordless login.
+
+### Admin Plugin
+The admin plugin provides server-side APIs for user management (ban, unban, role changes, password reset, impersonation).
+
+## Customization
+
+Edit `src/server/better-auth/config.ts` to add more OAuth providers, adjust plugin settings, or customize email templates.

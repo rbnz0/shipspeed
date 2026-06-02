@@ -8,21 +8,21 @@ lang: en
 import { IntroductionTab } from "../../components/docs/introductionTab";
 
 <IntroductionTab client:load />
-## The T3 Stack
+## ShipSpeed
 
-The _"T3 Stack"_ is a web development stack made by [Theo](https://twitter.com/t3dotgg) focused on simplicity, modularity, and full-stack typesafety.
+ShipSpeed is a CLI built on top of the [T3 Stack](https://create.t3.gg) that adds production-ready features out of the box: [**Better Auth**](https://www.better-auth.com), [**shadcn/ui**](https://ui.shadcn.com), [**Polar**](https://polar.sh) payments, [**Resend**](https://resend.com) emails, and a full-featured **admin dashboard**.
 
-The core pieces are [**Next.js**](https://nextjs.org/) and [**TypeScript**](https://typescriptlang.org/). [**Tailwind CSS**](https://tailwindcss.com/) is almost always included. If you're doing anything resembling backend, [**tRPC**](https://trpc.io/), [**Prisma**](https://prisma.io/), and [**NextAuth.js**](https://next-auth.js.org/) are great additions too.
+The core pieces are [**Next.js**](https://nextjs.org/) and [**TypeScript**](https://typescriptlang.org/). [**Tailwind CSS**](https://tailwindcss.com/) and [**shadcn/ui**](https://ui.shadcn.com) handle styling. For the backend, choose [**tRPC**](https://trpc.io/), [**Prisma**](https://prisma.io/) or [**Drizzle**](https://orm.drizzle.team), and [**Better Auth**](https://www.better-auth.com) for authentication.
 
-You may have noticed that there are a… lot of pieces. That's by design. Swap pieces in and out as you need - this stack is modular at its core :)
+Everything is optional and modular. Ship what you need.
 
-## So... what is create-t3-app? A template?
+## So... what is create-shipspeed? A template?
 
-Kind of? `create-t3-app` is a CLI built by seasoned T3 Stack devs to streamline the setup of a modular T3 Stack app. This means each piece is optional, and the "template" is generated based on your specific needs.
+Kind of? `create-shipspeed` is a CLI that scaffolds a production-ready Next.js app with the features you select. Each piece is optional — pick Better Auth or NextAuth.js, Prisma or Drizzle, add Polar payments, Resend emails, or the admin dashboard. The template is generated based on your specific needs.
 
 After countless projects and many years on this tech, we have lots of opinions and insights. We've done our best to encode them into this CLI.
 
-This is **NOT** an all-inclusive template. We **expect** you to bring your own libraries that solve the needs of **YOUR** application. While we don't want to prescribe solutions to more specific problems like state management and deployment, we [do have some recommendations listed here](/en/other-recs).
+This is **NOT** an all-inclusive template. We **expect** you to bring your own libraries that solve the needs of **YOUR** application. Check out our [ShipSpeed docs](/en/shipspeed/better-auth) for the new features and the [original T3 recommendations](/en/other-recs) for everything else.
 
 ## T3 Axioms
 
