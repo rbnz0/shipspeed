@@ -5,39 +5,39 @@
 @layer base {
   /* Design System Theming */
   html {
-    --color-default: 236 228 236;
-    --color-neutral: 29 40 58;
-    --color-primary: 112 64 255;
-    --color-secondary: 58 191 248;
-    --color-accent: 244 113 181;
-    --color-warning: 244 193 82;
-    --color-error: 251 111 132;
-    --color-success: 43 212 189;
-    --color-info: 12 166 233;
-    --color-foreground: 15 23 42;
-    --color-background: 236 228 236;
+    --color-default: 250 250 250;
+    --color-neutral: 24 24 27;
+    --color-primary: 24 24 27;
+    --color-secondary: 113 113 122;
+    --color-accent: 161 161 170;
+    --color-warning: 234 179 8;
+    --color-error: 239 68 68;
+    --color-success: 34 197 94;
+    --color-info: 59 130 246;
+    --color-foreground: 9 9 11;
+    --color-background: 250 250 250;
 
-    @apply bg-default text-slate-900;
+    @apply bg-default text-zinc-900;
   }
 
   html.dark {
-    --color-default: 15 23 41;
-    --color-neutral: 29 40 58;
-    --color-primary: 112 64 255;
-    --color-secondary: 58 191 248;
-    --color-accent: 244 113 181;
-    --color-warning: 244 193 82;
-    --color-error: 251 111 132;
-    --color-success: 43 212 189;
-    --color-info: 12 166 233;
-    --color-foreground: 232 221 255;
-    --color-background: 15 23 41;
+    --color-default: 9 9 11;
+    --color-neutral: 24 24 27;
+    --color-primary: 244 244 245;
+    --color-secondary: 161 161 170;
+    --color-accent: 113 113 122;
+    --color-warning: 234 179 8;
+    --color-error: 239 68 68;
+    --color-success: 34 197 94;
+    --color-info: 59 130 246;
+    --color-foreground: 244 244 245;
+    --color-background: 9 9 11;
 
-    @apply bg-default text-ss-purple-100;
+    @apply bg-default text-ss-gray-100;
   }
 
   html {
-    @apply scroll-smooth accent-primary scrollbar-thin scrollbar-track-transparent scrollbar-thumb-ss-purple-300 dark:scrollbar-track-transparent dark:scrollbar-thumb-ss-purple-300;
+    @apply scroll-smooth accent-primary scrollbar-thin scrollbar-track-transparent scrollbar-thumb-ss-gray-300 dark:scrollbar-track-transparent dark:scrollbar-thumb-ss-gray-300;
   }
 
   /* Typewriter */
@@ -107,7 +107,7 @@
   }
 
   .ss-scrollbar {
-    @apply scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-ss-purple-300 dark:scrollbar-track-ss-purple-200/10 dark:scrollbar-thumb-ss-purple-300;
+    @apply scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-ss-gray-300 dark:scrollbar-track-ss-gray-200/10 dark:scrollbar-thumb-ss-gray-300;
   }
 
   .ss-scrollbar::-webkit-scrollbar-thumb {
@@ -147,7 +147,7 @@
 
   /* Markdown Styling */
   .markdown {
-    @apply flex w-full flex-col items-start justify-start px-4 leading-relaxed text-slate-900 selection:bg-ss-purple-200 selection:text-ss-purple-500 dark:text-ss-purple-100 dark:selection:bg-ss-purple-100 dark:selection:text-slate-900;
+    @apply flex w-full flex-col items-start justify-start px-4 leading-relaxed text-slate-900 selection:bg-ss-gray-200 selection:text-ss-gray-500 dark:text-ss-gray-100 dark:selection:bg-ss-gray-100 dark:selection:text-slate-900;
   }
   .markdown h1 {
     @apply mt-8 mb-4 text-3xl font-extrabold;
@@ -174,10 +174,10 @@
     @apply mb-0 text-sm;
   }
   .markdown a:not(.heading-link--hidden---effects) {
-    @apply text-ss-purple-500 underline decoration-slate-500 
+    @apply text-ss-gray-500 underline decoration-slate-500 
           decoration-dotted underline-offset-2  
-          hover:text-ss-purple-700 dark:text-ss-purple-200 
-          dark:decoration-ss-purple-200 dark:hover:text-ss-purple-300;
+          hover:text-ss-gray-700 dark:text-ss-gray-200 
+          dark:decoration-ss-gray-200 dark:hover:text-ss-gray-300;
   }
 
   :is([dir="rtl"]) .markdown a[rel~="noreferrer"] > span {
@@ -189,15 +189,15 @@
   }
 
   .markdown .code-wrapper {
-    @apply inline rounded border border-ss-purple-200 bg-ss-purple-200/40 px-0.5 py-[0.5px] dark:border-ss-purple-400/30 dark:bg-ss-purple-400/20;
+    @apply inline rounded border border-ss-gray-200 bg-ss-gray-200/40 px-0.5 py-[0.5px] dark:border-ss-gray-400/30 dark:bg-ss-gray-400/20;
   }
 
   .markdown .remark-code-title {
-    @apply z-10 -mb-1 mt-3 w-full rounded-t-md border border-ss-purple-300/80 bg-[#191724] px-2 py-1 font-mono text-ss-purple-200;
+    @apply z-10 -mb-1 mt-3 w-full rounded-t-md border border-ss-gray-300/80 bg-[#191724] px-2 py-1 font-mono text-ss-gray-200;
   }
 
   .markdown pre {
-    @apply mx-auto mb-3 rounded border border-ss-purple-300/80 p-2 pl-3 font-mono shadow-xl sm:pt-2;
+    @apply mx-auto mb-3 rounded border border-ss-gray-300/80 p-2 pl-3 font-mono shadow-xl sm:pt-2;
   }
 
   .markdown ol {
@@ -205,10 +205,10 @@
   }
 
   .markdown details {
-    @apply mt-2 w-full rounded-md border border-ss-purple-300/80 bg-[#191724] px-3 transition-all duration-300 ease-in-out;
+    @apply mt-2 w-full rounded-md border border-ss-gray-300/80 bg-[#191724] px-3 transition-all duration-300 ease-in-out;
   }
   .markdown details[open] {
-    @apply bg-ss-purple-200/10;
+    @apply bg-ss-gray-200/10;
   }
   .markdown details pre {
     @apply border-0 shadow-none;
@@ -233,14 +233,14 @@
     @apply align-top;
   }
   .markdown blockquote a {
-    @apply text-slate-900 dark:text-ss-purple-50;
+    @apply text-slate-900 dark:text-ss-gray-50;
   }
   .DocSearch-SearchBar {
-    @apply my-3 rounded-md bg-purple-400 p-2 text-sm;
+    @apply my-3 rounded-md bg-zinc-900 p-2 text-sm;
   }
 
   #DocSearch-SearchBar {
-    @apply my-3 rounded-md bg-purple-400 p-2 text-sm;
+    @apply my-3 rounded-md bg-zinc-900 p-2 text-sm;
   }
 
   .embed {

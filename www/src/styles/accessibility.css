@@ -7,7 +7,7 @@
 }
 
 *:not(.focus-none) {
-  @apply outline-2 outline-offset-2 !outline-ss-purple-400 transition-[outline-offset] focus-visible:outline;
+  @apply outline-2 outline-offset-2 !outline-ss-gray-400 transition-[outline-offset] focus-visible:outline;
 }
 
 *:not(:active):focus-visible {

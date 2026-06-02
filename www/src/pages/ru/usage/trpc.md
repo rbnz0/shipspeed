@@ -7,7 +7,7 @@ lang: ru
 
 tRPC позволяет нам писать типобезопасные API от конца до конца (end-to-end) без какой-либо генерации кода или накладных расходов на выполнение. Он использует отличную инференцию TypeScript для вывода типов маршрутизатора вашего API и позволяет вызывать процедуры API из вашего фронтенда с полной типобезопасностью и автодополнением. Используя tRPC, ваш фронтенд и бэкенд чувствуют себя ближе друг к другу, чем когда-либо, обеспечивая исключительный опыт разработчика.
 
-<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-gray-200 dark:text-ss-gray-50 text-zinc-900 dark:bg-ss-gray-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>I built tRPC to allow people to move faster by removing the need of a traditional API-layer, while still having confidence that our apps won't break as we rapidly iterate.<span aria-hidden="true">&quot;</span>

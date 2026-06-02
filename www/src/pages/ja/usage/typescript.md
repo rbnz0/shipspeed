@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: ja
 ---
 
-<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-gray-200 dark:text-ss-gray-50 text-zinc-900 dark:bg-ss-gray-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>ガードレールではなく、セーフティネットを作る<span aria-hidden="true">&quot;</span>

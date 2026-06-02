@@ -7,7 +7,7 @@ lang: ja
 
 tRPC では、コード生成やランタイムの肥大化なしで、エンドツーエンドの型安全な API を書くことができます。TypeScript の優れた型推論機能を利用して API ルーターの型定義を推論し、フロントエンドから 完全に型安全かつ自動補完で API プロシージャを呼び出すことができます。tRPC を使用すると、フロントエンドとバックエンドがより近しいものに感じられ、極上の開発者体験を得ることができます。
 
-<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-gray-200 dark:text-ss-gray-50 text-zinc-900 dark:bg-ss-gray-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>私は、従来の API レイヤーの必要性を排除することによって、迅速なイテレーションを回してもアプリケーションが壊れないという自信を持ちつつ、人々がより速く動けるようにするために tRPC を開発しました。"
