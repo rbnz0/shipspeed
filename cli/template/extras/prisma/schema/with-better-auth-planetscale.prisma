@@ -1,6 +1,8 @@
 // Prisma schema for Better Auth
 // learn more: https://better-auth.com/docs/concepts/database
 
+// Run `npx @better-auth/cli migrate` after updating this schema
+
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -36,9 +38,17 @@ model User {
   image         String?   @db.Text
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @default(now()) @updatedAt
+  role          String?
+  banned        Boolean   @default(false)
+  banReason     String?   @db.Text
+  banExpires    DateTime?
   sessions      Session[]
   accounts      Account[]
   posts         Post[]
+  members       Member[]
+  invitations   Invitation[]
+  twoFactors    TwoFactor[]
+  passkeys      Passkey[]
 
   @@unique([email])
   @@map("user")
@@ -56,6 +66,7 @@ model Session {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([token])
+  @@index([userId])
   @@map("session")
 }
 
@@ -75,6 +86,7 @@ model Account {
   createdAt             DateTime  @default(now())
   updatedAt             DateTime  @updatedAt
 
+  @@index([userId])
   @@map("account")
 }
 
@@ -87,4 +99,81 @@ model Verification {
   updatedAt  DateTime @default(now()) @updatedAt
 
   @@map("verification")
+}
+
+// Better Auth: organization plugin
+model Organization {
+  id          String       @id
+  name        String
+  slug        String?      @unique
+  logo        String?      @db.Text
+  metadata    String?      @db.Text
+  createdAt   DateTime     @default(now())
+  members     Member[]
+  invitations Invitation[]
+
+  @@map("organization")
+}
+
+model Member {
+  id             String       @id
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role           String
+  createdAt      DateTime     @default(now())
+
+  @@unique([organizationId, userId])
+  @@index([organizationId])
+  @@index([userId])
+  @@map("member")
+}
+
+model Invitation {
+  id             String       @id
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  email          String
+  role           String?
+  status         String
+  expiresAt      DateTime
+  inviterId      String
+  user           User         @relation(fields: [inviterId], references: [id], onDelete: Cascade)
+  createdAt      DateTime     @default(now())
+
+  @@index([organizationId])
+  @@index([inviterId])
+  @@map("invitation")
+}
+
+// Better Auth: twoFactor plugin
+model TwoFactor {
+  id          String @id
+  secret      String @db.Text
+  backupCodes String @db.Text
+  userId      String
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId])
+  @@index([userId])
+  @@map("twoFactor")
+}
+
+// Better Auth: passkey plugin
+model Passkey {
+  id           String    @id
+  name         String?
+  publicKey    String    @db.Text
+  privateKey   String?   @db.Text
+  counter      Int       @default(0)
+  deviceType   String?
+  backedUp     Boolean   @default(false)
+  transports   String?
+  userId       String
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt    DateTime? @default(now())
+
+  @@index([userId])
+  @@map("passkey")
 }

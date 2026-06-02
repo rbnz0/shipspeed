@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function sendEmail({
   to,
@@ -13,8 +13,12 @@ export async function sendEmail({
   text?: string;
   html?: string;
 }) {
+  if (!resend || !process.env.RESEND_FROM_EMAIL) {
+    console.warn("Resend is not configured. Skipping email send.");
+    return;
+  }
   return resend.emails.send({
-    from: process.env.RESEND_FROM_EMAIL!,
+    from: process.env.RESEND_FROM_EMAIL,
     to,
     subject,
     text,

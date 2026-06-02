@@ -23,6 +23,13 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    // Polar payments (optional — only required if using Polar)
+    POLAR_ACCESS_TOKEN: z.string().optional(),
+    POLAR_WEBHOOK_SECRET: z.string().optional(),
+    POLAR_ENV: z.enum(["sandbox", "production"]).default("sandbox"),
+    // Resend emails (optional — only required if using Resend)
+    RESEND_API_KEY: z.string().optional(),
+    RESEND_FROM_EMAIL: z.string().email().optional(),
   },
 
   /**
@@ -44,6 +51,11 @@ export const env = createEnv({
     BETTER_AUTH_GITHUB_CLIENT_SECRET: process.env.BETTER_AUTH_GITHUB_CLIENT_SECRET,
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
+    POLAR_ACCESS_TOKEN: process.env.POLAR_ACCESS_TOKEN,
+    POLAR_WEBHOOK_SECRET: process.env.POLAR_WEBHOOK_SECRET,
+    POLAR_ENV: process.env.POLAR_ENV,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

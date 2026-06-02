@@ -8,6 +8,7 @@ import { twoFactor } from "better-auth/plugins";
 
 import { env } from "~/env";
 import { db } from "~/server/db";
+import { sendEmail } from "~/lib/email";
 
 export const auth = betterAuth({
   appName: "ShipSpeed",
@@ -16,6 +17,23 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+    requireEmailVerification: true,
+    sendVerificationEmail: async ({ user, url }) => {
+      if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL) return;
+      await sendEmail({
+        to: user.email,
+        subject: "Verify your email",
+        html: `<p>Click the link below to verify your email:</p><a href="${url}">Verify Email</a>`,
+      });
+    },
+    sendResetPasswordEmail: async ({ user, url }) => {
+      if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL) return;
+      await sendEmail({
+        to: user.email,
+        subject: "Reset your password",
+        html: `<p>Click the link below to reset your password:</p><a href="${url}">Reset Password</a>`,
+      });
+    },
   },
   socialProviders: {
     github: {
