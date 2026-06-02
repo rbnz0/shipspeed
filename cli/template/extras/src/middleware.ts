@@ -7,8 +7,19 @@ const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX = 100; // requests per window
 
+function pruneRateLimitStore() {
+  const now = Date.now();
+  for (const [ip, record] of rateLimitStore.entries()) {
+    if (now > record.resetTime) {
+      rateLimitStore.delete(ip);
+    }
+  }
+}
+
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
+  pruneRateLimitStore();
+
   const record = rateLimitStore.get(ip);
 
   if (!record || now > record.resetTime) {
@@ -24,9 +35,18 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+function getClientIp(request: NextRequest): string {
+  // Vercel and common proxies set x-forwarded-for
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) {
+    return forwarded.split(",")[0]?.trim() ?? request.ip ?? "unknown";
+  }
+  return request.ip ?? "unknown";
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const ip = request.ip ?? "unknown";
+  const ip = getClientIp(request);
 
   // Apply rate limiting to auth and API routes
   if (pathname.startsWith("/api/auth") || pathname.startsWith("/api/trpc")) {
@@ -68,6 +88,14 @@ export async function middleware(request: NextRequest) {
   response.headers.set(
     "Permissions-Policy",
     "camera=(), microphone=(), geolocation=()"
+  );
+  response.headers.set(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';"
+  );
+  response.headers.set(
+    "Strict-Transport-Security",
+    "max-age=63072000; includeSubDomains; preload"
   );
 
   return response;

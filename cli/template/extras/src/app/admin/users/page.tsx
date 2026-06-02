@@ -18,6 +18,7 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
+  UserRound,
 } from "lucide-react";
 
 import { authClient } from "@/server/better-auth/client";
@@ -279,6 +280,16 @@ export default function AdminUsersPage() {
     }
   };
 
+  const handleImpersonate = async (userId: string) => {
+    try {
+      await authClient.admin.impersonateUser({ userId });
+      toast.success("Impersonating user — redirecting...");
+      window.location.href = "/";
+    } catch {
+      toast.error("Failed to impersonate user");
+    }
+  };
+
   const handleCreateUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -446,6 +457,10 @@ export default function AdminUsersPage() {
                                   <Eye className="mr-2 h-4 w-4" />
                                   View Details
                                 </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => handleImpersonate(user.id)}>
+                                  <UserRound className="mr-2 h-4 w-4" />
+                                  Impersonate
+                                </DropdownMenuItem>
                                 <DropdownMenuItem onClick={() => openDialog(user, "role")}>
                                   <UserCog className="mr-2 h-4 w-4" />
                                   Change Role
@@ -574,6 +589,10 @@ export default function AdminUsersPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 pt-4">
+                    <Button size="sm" variant="secondary" onClick={() => handleImpersonate(selectedUser.id)}>
+                      <UserRound className="mr-2 h-4 w-4" />
+                      Impersonate
+                    </Button>
                     <Button size="sm" onClick={() => openDialog(selectedUser, "role")}>
                       <UserCog className="mr-2 h-4 w-4" />
                       Change Role
