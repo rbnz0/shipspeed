@@ -7,7 +7,7 @@ lang: zh-hans
 
 tRPC 能够让我们在无需代码自动生成器的帮助或在运行时额外检测的情况下，写出端对端类型安全的 API。它利用了 TypeScript 的强大推断功能来推断出你 API 路由的类型定义，并让你在前端能够调用 API 时充分享受完全类型安全和全自动补全的特性。当使用 tRPC 时，你应用的前端和后端部分会感觉比以前更加紧密，这带来了非常棒的开发体验。
 
-<blockquote className="w-full relative border-l-4 italic bg-t3-purple-200 dark:text-t3-purple-50 text-zinc-900 dark:bg-t3-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>我创建 tRPC 的目的是为了通过移除传统的 API 层来帮助人们更快地构建应用，但与此同时依然保证 App 在快速迭代的构建过程中不会出现大问题。<span aria-hidden="true">&quot;</span>

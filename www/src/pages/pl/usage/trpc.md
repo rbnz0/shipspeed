@@ -7,7 +7,7 @@ lang: pl
 
 tRPC pozwala nam pisanie API będących w pełni typesafe bez żadnego generowania kodu czy też zaśmiecania runtime'u. Korzysta on ze świetnego type inference od Typecripta aby przekazywać definicje routerów oraz pozwala Ci na korzystanie z procedur API na frontendzie z pełnym tyepsafety i autouzupełnianiem. Jeśli korzystasz z tRPC, twój frontend i backend będą sprawiały wrażenie bycia bardziej połączonymi niż kiedykolwiek, pozwalając na niespotykany DX (developer experience).
 
-<blockquote className="w-full relative border-l-4 italic bg-t3-purple-200 dark:text-t3-purple-50 text-zinc-900 dark:bg-t3-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>Zbudowałem tRPC aby umożliwić każdemu szybsze robienie postępów, usuwając przy tym potrzebę korzystania z tradycyjnej wartswy API oraz zachowując pewność, iż nasze aplikacje nie zepsują się nadążając za własnym rozwojem.<span aria-hidden="true">&quot;</span>

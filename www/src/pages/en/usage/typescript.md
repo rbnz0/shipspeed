@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: en
 ---
 
-<blockquote className="w-full relative border-l-4 italic bg-t3-purple-200 dark:text-t3-purple-50 text-zinc-900 dark:bg-t3-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>Build safety nets, not guard rails<span aria-hidden="true">&quot;</span>
@@ -13,7 +13,7 @@ lang: en
   </div>
   <cite className="flex items-center justify-end pr-4 pb-2">
     <div className="flex flex-col items-start not-italic">
-      <span className=" text-sm font-semibold">A core principle of the T3 Stack</span>
+      <span className=" text-sm font-semibold">A ShipSpeed philosophy</span>
     </div>
   </cite>
 </blockquote>

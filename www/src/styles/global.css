@@ -33,11 +33,11 @@
     --color-foreground: 232 221 255;
     --color-background: 15 23 41;
 
-    @apply bg-default text-t3-purple-100;
+    @apply bg-default text-ss-purple-100;
   }
 
   html {
-    @apply scroll-smooth accent-primary scrollbar-thin scrollbar-track-transparent scrollbar-thumb-t3-purple-300 dark:scrollbar-track-transparent dark:scrollbar-thumb-t3-purple-300;
+    @apply scroll-smooth accent-primary scrollbar-thin scrollbar-track-transparent scrollbar-thumb-ss-purple-300 dark:scrollbar-track-transparent dark:scrollbar-thumb-ss-purple-300;
   }
 
   /* Typewriter */
@@ -106,11 +106,11 @@
     text-align: inline-start;
   }
 
-  .t3-scrollbar {
-    @apply scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-t3-purple-300 dark:scrollbar-track-t3-purple-200/10 dark:scrollbar-thumb-t3-purple-300;
+  .ss-scrollbar {
+    @apply scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-ss-purple-300 dark:scrollbar-track-ss-purple-200/10 dark:scrollbar-thumb-ss-purple-300;
   }
 
-  .t3-scrollbar::-webkit-scrollbar-thumb {
+  .ss-scrollbar::-webkit-scrollbar-thumb {
     @apply rounded-full;
   }
 
@@ -147,7 +147,7 @@
 
   /* Markdown Styling */
   .markdown {
-    @apply flex w-full flex-col items-start justify-start px-4 leading-relaxed text-slate-900 selection:bg-t3-purple-200 selection:text-t3-purple-500 dark:text-t3-purple-100 dark:selection:bg-t3-purple-100 dark:selection:text-slate-900;
+    @apply flex w-full flex-col items-start justify-start px-4 leading-relaxed text-slate-900 selection:bg-ss-purple-200 selection:text-ss-purple-500 dark:text-ss-purple-100 dark:selection:bg-ss-purple-100 dark:selection:text-slate-900;
   }
   .markdown h1 {
     @apply mt-8 mb-4 text-3xl font-extrabold;
@@ -174,10 +174,10 @@
     @apply mb-0 text-sm;
   }
   .markdown a:not(.heading-link--hidden---effects) {
-    @apply text-t3-purple-500 underline decoration-slate-500 
+    @apply text-ss-purple-500 underline decoration-slate-500 
           decoration-dotted underline-offset-2  
-          hover:text-t3-purple-700 dark:text-t3-purple-200 
-          dark:decoration-t3-purple-200 dark:hover:text-t3-purple-300;
+          hover:text-ss-purple-700 dark:text-ss-purple-200 
+          dark:decoration-ss-purple-200 dark:hover:text-ss-purple-300;
   }
 
   :is([dir="rtl"]) .markdown a[rel~="noreferrer"] > span {
@@ -189,15 +189,15 @@
   }
 
   .markdown .code-wrapper {
-    @apply inline rounded border border-t3-purple-200 bg-t3-purple-200/40 px-0.5 py-[0.5px] dark:border-t3-purple-400/30 dark:bg-t3-purple-400/20;
+    @apply inline rounded border border-ss-purple-200 bg-ss-purple-200/40 px-0.5 py-[0.5px] dark:border-ss-purple-400/30 dark:bg-ss-purple-400/20;
   }
 
   .markdown .remark-code-title {
-    @apply z-10 -mb-1 mt-3 w-full rounded-t-md border border-t3-purple-300/80 bg-[#191724] px-2 py-1 font-mono text-t3-purple-200;
+    @apply z-10 -mb-1 mt-3 w-full rounded-t-md border border-ss-purple-300/80 bg-[#191724] px-2 py-1 font-mono text-ss-purple-200;
   }
 
   .markdown pre {
-    @apply mx-auto mb-3 rounded border border-t3-purple-300/80 p-2 pl-3 font-mono shadow-xl sm:pt-2;
+    @apply mx-auto mb-3 rounded border border-ss-purple-300/80 p-2 pl-3 font-mono shadow-xl sm:pt-2;
   }
 
   .markdown ol {
@@ -205,10 +205,10 @@
   }
 
   .markdown details {
-    @apply mt-2 w-full rounded-md border border-t3-purple-300/80 bg-[#191724] px-3 transition-all duration-300 ease-in-out;
+    @apply mt-2 w-full rounded-md border border-ss-purple-300/80 bg-[#191724] px-3 transition-all duration-300 ease-in-out;
   }
   .markdown details[open] {
-    @apply bg-t3-purple-200/10;
+    @apply bg-ss-purple-200/10;
   }
   .markdown details pre {
     @apply border-0 shadow-none;
@@ -233,7 +233,7 @@
     @apply align-top;
   }
   .markdown blockquote a {
-    @apply text-slate-900 dark:text-t3-purple-50;
+    @apply text-slate-900 dark:text-ss-purple-50;
   }
   .DocSearch-SearchBar {
     @apply my-3 rounded-md bg-purple-400 p-2 text-sm;

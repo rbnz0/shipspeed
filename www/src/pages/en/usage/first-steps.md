@@ -11,7 +11,7 @@ You just scaffolded a new ShipSpeed app and are ready to go. Here is the bare mi
 
 ### MySQL, PostgreSQL
 
-If you chose MySQL or PostgreSQL as your database, your T3 app will come with a `start-database.sh` bash script that can create a docker container with a database for local development. If you already have a database, feel free to delete this file and put your database credentials in `.env`. On macOS, you can also use [DBngin](https://dbngin.com/) if you don't want to use docker.
+If you chose MySQL or PostgreSQL as your database, your ShipSpeed app will come with a `start-database.sh` bash script that can create a docker container with a database for local development. If you already have a database, feel free to delete this file and put your database credentials in `.env`. On macOS, you can also use [DBngin](https://dbngin.com/) if you don't want to use docker.
 
 ### Prisma
 

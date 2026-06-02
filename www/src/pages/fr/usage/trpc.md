@@ -7,7 +7,7 @@ lang: fr
 
 tRPC nous permet d'écrire des API fortement typées de bout en bout sans aucune génération de code ni surcharge d'exécution. Il utilise l'inférence de TypeScript pour déduire les définitions de type de votre routeur d'API et vous permet d'appeler vos procédures d'API à partir de votre client avec une sécurité de type complète et une saisie semi-automatique dans votre éditeur de code. Lorsque vous utilisez tRPC, vous sentirez votre frontend et votre backend plus proches que jamais, ce qui permet une expérience de développement exceptionnelle.
 
-<blockquote className="w-full relative border-l-4 italic bg-t3-purple-200 dark:text-t3-purple-50 text-zinc-900 dark:bg-t3-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>J'ai écrit tRPC pour permettre aux gens de coder plus rapidement en supprimant le besoin d'une couche API traditionnelle, tout en ayant la certitude que nos applications ne se briseront pas lorsque nous itérerons rapidement.<span aria-hidden="true">&quot;</span>

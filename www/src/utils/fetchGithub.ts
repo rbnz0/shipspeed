@@ -67,7 +67,7 @@ export const fetchGithub = async <T extends "commits" | "repo">(
   const res = await fetch(url, {
     headers: {
       Authorization: auth,
-      "User-Agent": "@ct3a-www/1.0",
+      "User-Agent": "@shipspeed-www/1.0",
     },
   });
 

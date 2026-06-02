@@ -220,7 +220,7 @@ export const runCli = async (): Promise<CliResults> => {
     .version(getVersion(), "-v, --version", "Display the version number")
     .addHelpText(
       "afterAll",
-      `\n ShipSpeed is built on top of the T3 Stack and adds Better Auth, shadcn/ui, payments, and more.\n`
+      `\n ShipSpeed is a production-ready Next.js boilerplate with Better Auth, shadcn/ui, Polar payments, Resend emails, and a fully-featured admin dashboard.\n`
     )
     .parse(process.argv);
 
@@ -481,7 +481,7 @@ export const runCli = async (): Promise<CliResults> => {
     };
   } catch (err) {
     // If the user is not calling create-shipspeed from an interactive terminal, inquirer will throw an IsTTYError
-    // If this happens, we catch the error, tell the user what has happened, and then continue to run the program with a default t3 app
+    // If this happens, we catch the error, tell the user what has happened, and then continue to run the program with a default ShipSpeed app
     if (err instanceof IsTTYError) {
       logger.warn(`
   ${CREATE_SHIPSPEED} needs an interactive terminal to provide options`);

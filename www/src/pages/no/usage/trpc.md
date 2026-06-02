@@ -8,7 +8,7 @@ lang: no
 tRPC lar oss skrive ende-til-ende typesikre APIer, helt uten kodegenerering eller runtime-bloat.
 tRPC bruker TypeScripts _inferens_ for å automatisk utlede API-ruterens typedefinisjoner og lar deg kalle API-prosedyrene dine fra frontend med full typesikkerhet og autofullføring. Når du bruker tRPC, føles frontend og backend nærmere enn noen gang, noe som resulterer i en enestående utvikleropplevelse.
 
-<blockquote className="w-full relative border-l-4 italic bg-t3-purple-200 dark:text-t3-purple-50 text-zinc-900 dark:bg-t3-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
+<blockquote className="w-full relative border-l-4 italic bg-ss-purple-200 dark:text-ss-purple-50 text-zinc-900 dark:bg-ss-purple-300/20 p-2 rounded-md text-sm my-3 border-neutral-500 quote">
   <div className="relative w-fit flex items-center justify-center p-1">
     <p className="mb-4 text-lg">
       <span aria-hidden="true">&quot;</span>"Jeg bygde tRPC for å forbedre hastigheten på utviklingen av applikasjoner ved å fjerne behovet for et tradisjonelt API-lag. Samtidig kan vi fortsatt stole på at de vil være stabile når man itererer raskt.<span aria-hidden="true">&quot;</span>

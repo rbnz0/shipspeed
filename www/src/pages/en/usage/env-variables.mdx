@@ -8,7 +8,7 @@ isMdx: true
 
 import Callout from "../../../components/docs/callout.tsx";
 
-ShipSpeed uses its own package [@t3-oss/env-nextjs](https://env.t3.gg) along with [zod](https://zod.dev) under the hood for validating environment variables at runtime _and_ buildtime by providing a simple logic in `src/env.js`.
+ShipSpeed uses [@t3-oss/env-nextjs](https://env.t3.gg) along with [zod](https://zod.dev) for validating environment variables at runtime _and_ buildtime. Define your schema in `src/env.js`.
 
 ## env.js
 
@@ -31,11 +31,11 @@ export const env = createEnv({
 });
 ```
 
-T3 Env uses the `createEnv` function to create the schema validate both client and server-side environment variables.
+The `createEnv` function builds a schema that validates both client and server-side environment variables.
 
 <Callout type="info">
-  For more information about how `createEnv` works internally, check out the [T3
-  Env](https://env.t3.gg/docs/introduction) docs
+  For more information about how `createEnv` works internally, check out the
+  [@t3-oss/env-nextjs docs](https://env.t3.gg/docs/introduction)
 </Callout>
 
 ## Using Environment Variables
