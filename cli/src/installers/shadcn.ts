@@ -19,6 +19,8 @@ export const shadcnInstaller: Installer = ({ projectDir, appRouter }) => {
     "@radix-ui/react-select",
     "@radix-ui/react-separator",
     "@radix-ui/react-slot",
+    "@radix-ui/react-tabs",
+    "sonner",
   ];
 
   addPackageDependency({

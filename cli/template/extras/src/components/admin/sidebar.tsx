@@ -2,30 +2,33 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import {
   LayoutDashboard,
   Users,
   Building2,
   Shield,
-  Settings,
+  Monitor,
   LogOut,
   ChevronLeft,
-  ChevronRight,
+  Menu,
+  X,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { authClient } from "@/server/better-auth/client";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/users", label: "Users", icon: Users },
+  { href: "/admin/sessions", label: "Sessions", icon: Monitor },
   { href: "/admin/organizations", label: "Organizations", icon: Building2 },
   { href: "/admin/security", label: "Security", icon: Shield },
 ];
 
-export function AdminSidebar() {
+function SidebarContent({ onItemClick }: { onItemClick?: () => void }) {
   const pathname = usePathname();
 
   const handleSignOut = async () => {
@@ -34,24 +37,27 @@ export function AdminSidebar() {
   };
 
   return (
-    <aside className="flex h-screen w-64 flex-col border-r bg-card">
-      <div className="flex h-16 items-center border-b px-6">
-        <span className="text-lg font-bold tracking-tight">ShipSpeed Admin</span>
+    <div className="flex h-full flex-col">
+      <div className="flex h-14 items-center border-b px-4 lg:px-6">
+        <span className="text-base font-semibold tracking-tight">
+          ShipSpeed
+        </span>
       </div>
 
-      <nav className="flex-1 space-y-1 p-4">
+      <nav className="flex-1 space-y-1 p-3">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
 
           return (
             <Link
               key={item.href}
               href={item.href}
+              onClick={onItemClick}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all",
+                "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-primary text-primary-foreground shadow-sm"
+                  ? "bg-primary text-primary-foreground"
                   : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
               )}
             >
@@ -62,23 +68,50 @@ export function AdminSidebar() {
         })}
       </nav>
 
-      <div className="border-t p-4 space-y-2">
+      <div className="border-t p-3 space-y-1">
         <Link
           href="/"
-          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
         >
           <ChevronLeft className="h-4 w-4" />
           Back to App
         </Link>
-        <Button
-          variant="ghost"
-          className="w-full justify-start gap-3 px-3 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+        <button
           onClick={handleSignOut}
+          className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
         >
           <LogOut className="h-4 w-4" />
           Sign Out
-        </Button>
+        </button>
       </div>
-    </aside>
+    </div>
+  );
+}
+
+export function AdminSidebar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      {/* Mobile */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex h-14 items-center border-b bg-background px-4">
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="mr-4">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-60 p-0">
+            <SidebarContent onItemClick={() => setOpen(false)} />
+          </SheetContent>
+        </Sheet>
+        <span className="font-semibold">Admin</span>
+      </div>
+
+      {/* Desktop */}
+      <aside className="hidden lg:flex h-screen w-60 flex-col border-r bg-card">
+        <SidebarContent />
+      </aside>
+    </>
   );
 }

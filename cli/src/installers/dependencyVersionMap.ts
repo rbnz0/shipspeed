@@ -57,6 +57,10 @@ export const dependencyVersionMap = {
   "@radix-ui/react-select": "^2.1.6",
   "@radix-ui/react-separator": "^1.1.2",
   "@radix-ui/react-slot": "^1.1.2",
+  "@radix-ui/react-tabs": "^1.1.3",
+
+  // Toast notifications
+  sonner: "^2.0.3",
 
   // biome
   "@biomejs/biome": "^2.2.5",

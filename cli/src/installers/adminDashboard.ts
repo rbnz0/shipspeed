@@ -52,6 +52,8 @@ export const adminDashboardInstaller: Installer = ({ projectDir, appRouter, pack
     "@radix-ui/react-select",
     "@radix-ui/react-separator",
     "@radix-ui/react-slot",
+    "@radix-ui/react-tabs",
+    "sonner",
   ];
 
   addPackageDependency({
