@@ -30,15 +30,15 @@
     },
     {
       "source": "/showcase",
-      "destination": "/en/t3-collection"
+      "destination": "/en/introduction"
     },
     {
       "source": "/collection",
-      "destination": "/en/t3-collection"
+      "destination": "/en/introduction"
     },
     {
       "source": "/awesome",
-      "destination": "/en/t3-collection"
+      "destination": "/en/introduction"
     }
   ]
 }

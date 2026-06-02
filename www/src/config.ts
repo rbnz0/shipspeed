@@ -144,15 +144,8 @@ export const SIDEBAR: Sidebar = {
   es: {
     "ShipSpeed": [
       { text: "Introducción", link: "es/introduction" },
-      { text: "¿Por qué CT3A?", link: "es/why" },
       { text: "Instalación", link: "es/installation" },
-      {
-        text: "Estructura de Carpetas (Pages)",
-        link: "es/folder-structure-pages",
-      },
       { text: "Preguntas Frecuentes", link: "es/faq" },
-      { text: "Colección T3", link: "es/t3-collection" },
-      { text: "Otras Recomendaciones", link: "es/other-recs" },
     ],
     Usage: [
       { text: "Primeros Pasos", link: "es/usage/first-steps" },
@@ -173,12 +166,8 @@ export const SIDEBAR: Sidebar = {
   ja: {
     "ShipSpeed": [
       { text: "イントロダクション", link: "ja/introduction" },
-      { text: "CT3A を選ぶ理由", link: "ja/why" },
       { text: "インストール", link: "ja/installation" },
-      { text: "ファルダ構成 (Pages)", link: "ja/folder-structure-pages" },
       { text: "FAQ", link: "ja/faq" },
-      { text: "T3 コレクション", link: "ja/t3-collection" },
-      { text: "その他のオススメ", link: "ja/other-recs" },
     ],
     Usage: [
       { text: "はじめの一歩", link: "ja/usage/first-steps" },
@@ -202,13 +191,8 @@ export const SIDEBAR: Sidebar = {
   pl: {
     "ShipSpeed": [
       { text: "Wstęp", link: "pl/introduction" },
-      { text: "Dlaczego CT3A?", link: "pl/why" },
       { text: "Instalacja", link: "pl/installation" },
-      { text: "Struktura Projektu (Pages)", link: "pl/folder-structure-pages" },
       { text: "FAQ", link: "pl/faq" },
-      { text: "Kolekcja T3", link: "pl/t3-collection" },
-      { text: "Przykłady", link: "pl/examples" },
-      { text: "Inne Rekomendacje", link: "pl/other-recs" },
     ],
     Usage: [
       { text: "Pierwsze Kroki", link: "pl/usage/first-steps" },
@@ -232,13 +216,8 @@ export const SIDEBAR: Sidebar = {
   uk: {
     "ShipSpeed": [
       { text: "Вступ", link: "uk/introduction" },
-      { text: "Чому CT3A?", link: "uk/why" },
       { text: "Встановлення", link: "uk/installation" },
-      { text: "Структура папок (Pages)", link: "uk/folder-structure-pages" },
       { text: "FAQ", link: "uk/faq" },
-      { text: "T3 Колекція", link: "uk/t3-collection" },
-      { text: "Приклади", link: "uk/examples" },
-      { text: "Інші рекомендації", link: "uk/other-recs" },
     ],
     Usage: [
       { text: "Перші кроки", link: "uk/usage/first-steps" },
@@ -263,16 +242,8 @@ export const SIDEBAR: Sidebar = {
   fr: {
     "ShipSpeed": [
       { text: "Introduction", link: "fr/introduction" },
-      { text: "Pourquoi CT3A?", link: "fr/why" },
       { text: "Installation", link: "fr/installation" },
-      {
-        text: "Structure des dossiers (Pages)",
-        link: "fr/folder-structure-pages",
-      },
       { text: "FAQ", link: "fr/faq" },
-      { text: "Collection T3", link: "fr/t3-collection" },
-      { text: "Exemples", link: "fr/examples" },
-      { text: "Autres recommandations", link: "fr/other-recs" },
     ],
     Usage: [
       { text: "Premiers pas", link: "fr/usage/first-steps" },
@@ -296,15 +267,8 @@ export const SIDEBAR: Sidebar = {
   pt: {
     "ShipSpeed": [
       { text: "Introdução", link: "pt/introduction" },
-      { text: "Por que o CT3A?", link: "pt/why" },
       { text: "Instalação", link: "pt/installation" },
-      {
-        text: "Estrutura de Pastas (Pages)",
-        link: "pt/folder-structure-pages",
-      },
       { text: "Perguntas Frequentes", link: "pt/faq" },
-      { text: "Coleção T3", link: "pt/t3-collection" },
-      { text: "Outras Recomendações", link: "pt/other-recs" },
     ],
     Usage: [
       { text: "Primeiros Passos", link: "pt/usage/first-steps" },
@@ -328,12 +292,8 @@ export const SIDEBAR: Sidebar = {
   ru: {
     "ShipSpeed": [
       { text: "Введение", link: "ru/introduction" },
-      { text: "Почему CT3A?", link: "ru/why" },
       { text: "Установка", link: "ru/installation" },
-      { text: "Файловая структура (Pages)", link: "ru/folder-structure-pages" },
       { text: "FAQ", link: "ru/faq" },
-      { text: "T3 коллекция", link: "ru/t3-collection" },
-      { text: "Дополнительные рекомендации", link: "ru/other-recs" },
     ],
     Usage: [
       { text: "Первые шаги", link: "ru/usage/first-steps" },
@@ -357,12 +317,8 @@ export const SIDEBAR: Sidebar = {
   no: {
     "ShipSpeed": [
       { text: "Introduksjon", link: "no/introduction" },
-      { text: "Hvorfor CT3A?", link: "no/why" },
       { text: "Installasjon", link: "no/installation" },
-      { text: "Mappestruktur (Pages)", link: "no/folder-structure-pages" },
       { text: "FAQ", link: "no/faq" },
-      { text: "T3-Kolleksjonen", link: "no/t3-collection" },
-      { text: "Andre Anbefalinger", link: "no/other-recs" },
     ],
     Usage: [
       { text: "Første Steg", link: "no/usage/first-steps" },
@@ -386,12 +342,8 @@ export const SIDEBAR: Sidebar = {
   "zh-hans": {
     "ShipSpeed": [
       { text: "简介", link: "zh-hans/introduction" },
-      { text: "为什么选择 CT3A?", link: "zh-hans/why" },
       { text: "安装", link: "zh-hans/installation" },
-      { text: "文件夹结构 (Pages)", link: "zh-hans/folder-structure-pages" },
       { text: "常见疑问", link: "zh-hans/faq" },
-      { text: "T3 合集", link: "zh-hans/t3-collection" },
-      { text: "其他推荐", link: "zh-hans/other-recs" },
     ],
     Usage: [
       { text: "第一步", link: "zh-hans/usage/first-steps" },
