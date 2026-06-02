@@ -1,6 +1,6 @@
 ---
 title: イントロダクション
-description: T3 Stackの紹介
+description: ShipSpeed Stackの紹介
 layout: ../../layouts/docs.astro
 lang: ja
 ---
@@ -9,29 +9,29 @@ lang: ja
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YkOSUVzOAA4" title="The best stack for your next project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## T3 Stack
+## ShipSpeed Stack
 
-「T3 Stack」は、[Theo](https://twitter.com/t3dotgg)が作った Web 開発スタックで、シンプルさ、モジュール性、フルスタックに渡っての型安全性に焦点を当てています。
+「ShipSpeed Stack」は、[Theo](https://twitter.com/rbnog)が作った Web 開発スタックで、シンプルさ、モジュール性、フルスタックに渡っての型安全性に焦点を当てています。
 
 核となるのは[**Next.js**](https://nextjs.org/)と[**TypeScript**](https://typescriptlang.org/)です。また、[**Tailwind CSS**](https://tailwindcss.com/)は、ほぼ必ず含まれています。バックエンドに近いことをするのであれば、[**tRPC**](https://trpc.io/), [**Prisma**](https://prisma.io/), [**NextAuth.js**](https://next-auth.js.org/) も素晴らしい追加要素になるでしょう。
 
 お気づきかもしれませんが、構成要素の数が多いのですが、意図的にそうしており、必要に応じて構成要素を入れ替えることができます。このスタックはモジュール式です。:）
 
-## さて、create-t3-app とは何でしょう？テンプレート？
+## さて、create-shipspeed とは何でしょう？テンプレート？
 
-一種そのようなものです。`create-t3-app`は、モジュール式の T3 Stack アプリケーションのセットアップを効率化するために、経験豊富な T3 Stack 開発者によって作られた CLI です。つまり、各パーツはオプションであり、「テンプレート」があなたの特定のニーズに基づいて生成されることを意味します。
+一種そのようなものです。`create-shipspeed`は、モジュール式の ShipSpeed Stack アプリケーションのセットアップを効率化するために、経験豊富な ShipSpeed Stack 開発者によって作られた CLI です。つまり、各パーツはオプションであり、「テンプレート」があなたの特定のニーズに基づいて生成されることを意味します。
 
 長年の間、数え切れないほどのプロジェクトにおいてこの技術に携わってきた私たちには、たくさんの意見や洞察があります。私たちは、それらをこの CLI に反映させるために最善を尽くしました。
 
 ただしこれは、すべてを網羅したテンプレートでは**ありません**。私たちは、あなたが **あなたの**アプリケーションのニーズを解決する独自のライブラリを持ってくることを**期待しています**。状態管理やデプロイメントなど、より具体的な問題に対する解決策を規定するつもりはありませんが、私たちは[ここにいくつかの推奨事項を挙げています](/en/other-recs).
 
-## T3 原則
+## ShipSpeed 原則
 
-率直に言って、T3 Stack は「_主張の強い_」プロジェクトです。私たちは、開発に関する一握りの核となる信念を共有し、私たちの判断基準としています。
+率直に言って、ShipSpeed Stack は「_主張の強い_」プロジェクトです。私たちは、開発に関する一握りの核となる信念を共有し、私たちの判断基準としています。
 
 ### 問題を解決する
 
-「何でもかんでも追加してしまう」という罠に容易に陥りがちですが、わたしたちは明示的にそれを避けます。`create-t3-app` に追加するものはすべて、その領域における固有の問題を解決している必要があります。したがって状態管理ライブラリ(Zustand、Redux 等)は含めませんが、NextAuth.js などは追加し、Prisma や tRPC などを統合します。
+「何でもかんでも追加してしまう」という罠に容易に陥りがちですが、わたしたちは明示的にそれを避けます。`create-shipspeed` に追加するものはすべて、その領域における固有の問題を解決している必要があります。したがって状態管理ライブラリ(Zustand、Redux 等)は含めませんが、NextAuth.js などは追加し、Prisma や tRPC などを統合します。
 
 ### 責任を負って血を流す
 
@@ -39,4 +39,4 @@ lang: ja
 
 ### 型安全は必須
 
-Create T3 App の目標は、**型安全な**フルスタック Web アプリケーションを新規開発するための最も迅速な方法を提供することです。生産性を高め、バグの少ない製品を提供するのに役立つので、型安全性を真剣に考えています。Create T3 App の型安全性を損なうような妥協は他のプロジェクトで行うべき決定です。
+ShipSpeed の目標は、**型安全な**フルスタック Web アプリケーションを新規開発するための最も迅速な方法を提供することです。生産性を高め、バグの少ない製品を提供するのに役立つので、型安全性を真剣に考えています。ShipSpeed の型安全性を損なうような妥協は他のプロジェクトで行うべき決定です。

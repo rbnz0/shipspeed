@@ -53,7 +53,7 @@ export default function Search({ isLanding }: { isLanding: boolean }) {
     <>
       <button
         type="button"
-        aria-label="Search Create T3 App"
+        aria-label="Search ShipSpeed"
         ref={searchButtonRef}
         onClick={onOpen}
         className={clsx(

@@ -7,7 +7,7 @@ import Tabs from "../../../components/docs/tabs.astro";
 
 ## Retrieving session server side
 
-Sometimes you might want to request the session on the server. To do so, use the `auth` helper function that `create-t3-app` provides.
+Sometimes you might want to request the session on the server. To do so, use the `auth` helper function that `create-shipspeed` provides.
 
 ```tsx:app/page.tsx
 import { auth } from "~/server/auth";
@@ -20,7 +20,7 @@ export default async function Home() {
 
 ## Inclusion of `user.id` on the Session
 
-Create T3 App is configured to utilise the [session callback](https://authjs.dev/guides/extending-the-session) in the NextAuth.js config to include the user's ID within the `session` object.
+ShipSpeed is configured to utilise the [session callback](https://authjs.dev/guides/extending-the-session) in the NextAuth.js config to include the user's ID within the `session` object.
 
 ```ts:server/auth/config.ts
 callbacks: {
@@ -51,7 +51,7 @@ The same pattern can be used to add any other data to the `session` object, such
 
 ## Usage with tRPC
 
-When using NextAuth.js with tRPC, you can create reusable, protected procedures using [middleware](https://trpc.io/docs/v10/middlewares). This allows you to create procedures that can only be accessed by authenticated users. `create-t3-app` sets all of this up for you, allowing you to easily access the session object within authenticated procedures.
+When using NextAuth.js with tRPC, you can create reusable, protected procedures using [middleware](https://trpc.io/docs/v10/middlewares). This allows you to create procedures that can only be accessed by authenticated users. `create-shipspeed` sets all of this up for you, allowing you to easily access the session object within authenticated procedures.
 
 This is done in a two step process:
 
@@ -108,7 +108,7 @@ const userRouter = router({
 <Tabs slotOne="Prisma" slotTwo="Drizzle" tabName="db-provider">
   <div slot="1">
     Getting NextAuth.js to work with Prisma requires a lot of [initial
-    setup](https://authjs.dev/reference/adapter/prisma/). `create-t3-app`
+    setup](https://authjs.dev/reference/adapter/prisma/). `create-shipspeed`
     handles all of this for you, and if you select both Prisma and NextAuth.js,
     you'll get a fully working authentication system with all the required
     models preconfigured. We ship your scaffolded app with a preconfigured
@@ -122,7 +122,7 @@ const userRouter = router({
   </div>
   <div slot="2">
     Getting NextAuth.js to work with Drizzle requires a lot of [initial
-    setup](https://authjs.dev/getting-started/adapters/drizzle). `create-t3-app`
+    setup](https://authjs.dev/getting-started/adapters/drizzle). `create-shipspeed`
     handles all of this for you, and if you select both Drizzle and NextAuth.js,
     you'll get a fully working authentication system with all the required
     models preconfigured. We ship your scaffolded app with a preconfigured

@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: pl
 ---
 
-Netlify, to alternatywny provider do deploymentu z podobnym założeniem do Vercela. Po przykładowe repozytorium bazujące na tej stronie, zobacz [`ajcwebdev/ct3a-netlify`](https://github.com/ajcwebdev/ct3a-netlify).
+Netlify, to alternatywny provider do deploymentu z podobnym założeniem do Vercela. Po przykładowe repozytorium bazujące na tej stronie, zobacz [`ajcwebdev/shipspeed-netlify`](https://github.com/ajcwebdev/shipspeed-netlify).
 
 ## Dlaczego hostować na Netlify'u?
 
@@ -83,4 +83,4 @@ Wrzuć do sieci swój projekt korzystając z polecenia [`ntl deploy`](https://do
 ntl deploy --prod --build
 ```
 
-Aby zobaczyć działający przykład na Netlify, odwiedź stronę [ct3a.netlify.app](https://ct3a.netlify.app/).
+Aby zobaczyć działający przykład na Netlify, odwiedź stronę [shipspeed.netlify.app](https://shipspeed.netlify.app/).

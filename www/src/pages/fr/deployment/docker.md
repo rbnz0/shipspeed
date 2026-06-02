@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: fr
 ---
 
-Vous pouvez containeriser cette stack et la déployer en tant que conteneur unique à l'aide de Docker, ou en tant que partie d'un ensemble de conteneurs en utilisant docker-compose. Voir [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker) pour un exemple basé sur cette documentation.
+Vous pouvez containeriser cette stack et la déployer en tant que conteneur unique à l'aide de Docker, ou en tant que partie d'un ensemble de conteneurs en utilisant docker-compose. Voir [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker) pour un exemple basé sur cette documentation.
 
 ## Configuration du projet sous Docker
 
@@ -16,7 +16,7 @@ Veuillez noter que Next.js nécessite des variables d’environnements qui sont 
 
 ### 1. Configuration de Next
 
-Dans votre fichier [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js), ajouter l'entrée `output` avec comme valeur `standalone` [réduit la taille de l'image Docker en se basant sur la sortie du processus de génération](https://nextjs.org/docs/advanced-features/output-file-tracing):
+Dans votre fichier [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js), ajouter l'entrée `output` avec comme valeur `standalone` [réduit la taille de l'image Docker en se basant sur la sortie du processus de génération](https://nextjs.org/docs/advanced-features/output-file-tracing):
 
 ```diff
 export default defineNextConfig({
@@ -140,8 +140,8 @@ CMD ["node", "server.js"]
 Générer et exécuter l'image localement avec les commandes suivantes:
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 Ouvrez [localhost:3000](http://localhost:3000/) pour voir votre application s'exécuter.
@@ -169,7 +169,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -197,7 +197,7 @@ railway up
 railway open
 ```
 
-Allez dans "Variables" et rajoutez votre `DATABASE_URL`. Ensuite, allez dans "Settings" et sélectionnez "Generate Domain.". Pour voir un exemple qui fonctionne sur Railway, visitez [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/).
+Allez dans "Variables" et rajoutez votre `DATABASE_URL`. Ensuite, allez dans "Settings" et sélectionnez "Generate Domain.". Pour voir un exemple qui fonctionne sur Railway, visitez [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/).
 
 ## Ressources utiles
 

@@ -1,11 +1,11 @@
 ---
 title: Primeiros passos
-description: Começando com seu novo T3 App
+description: Começando com seu novo ShipSpeed
 layout: ../../../layouts/docs.astro
 lang: pt
 ---
 
-Você acabou de criar um novo aplicativo T3 e está pronto para começar. Aqui está o mínimo para que seu aplicativo funcione.
+Você acabou de criar um novo aplicativo ShipSpeed e está pronto para começar. Aqui está o mínimo para que seu aplicativo funcione.
 
 ## Banco de dados
 
@@ -31,5 +31,5 @@ Agora você deve conseguir fazer login.
 ## Próximos passos
 
 - Se sua aplicação incluir tRPC, confira `src/pages/index.tsx` e `src/server/trpc/router/post.ts` para ver como funcionam as consultas tRPC.
-- Dê uma olhada na documentação `create-t3-app`, bem como nos documentos dos pacotes que sua aplicação inclui.
-- Junte-se ao nosso [Discord](https://t3.gg/discord) e dê-nos uma estrela no [GitHub](https://github.com/t3-oss/create-t3-app)! :)
+- Dê uma olhada na documentação `create-shipspeed`, bem como nos documentos dos pacotes que sua aplicação inclui.
+- Junte-se ao nosso [Discord](https://github.com/rbnog/shipspeed/discussions) e dê-nos uma estrela no [GitHub](https://github.com/rbnog/shipspeed)! :)

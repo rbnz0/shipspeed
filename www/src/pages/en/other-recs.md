@@ -5,9 +5,9 @@ layout: ../../layouts/docs.astro
 lang: en
 ---
 
-We recognize that the libraries included in `create-t3-app` don't solve every problem. While we encourage you to begin your project with the things that we provide, there will come a time when you need to bring in other packages. Only you can know what your project needs, but here are some things that we find ourselves recommending frequently.
+We recognize that the libraries included in `create-shipspeed` don't solve every problem. While we encourage you to begin your project with the things that we provide, there will come a time when you need to bring in other packages. Only you can know what your project needs, but here are some things that we find ourselves recommending frequently.
 
-These are recommendations by individual Create T3 App contributors and should not be seen as "official" endorsements by the Create T3 App team or T3-OSS. _**Please do your own research, especially before committing to paid services**_.
+These are recommendations by individual ShipSpeed contributors and should not be seen as "official" endorsements by the ShipSpeed team. _**Please do your own research, especially before committing to paid services**_.
 
 ## State Management
 
@@ -95,7 +95,7 @@ Framer Motion provides a simple, declarative syntax and allows you to write less
 Vercel took the hell of web deployments and made it a set-and-forget GitHub integration. We've scaled to hundreds of thousands of users without issue. AWS-powered, just a way better interface :)
 
 - [Vercel Homepage](https://vercel.com/)
-- [Create T3 App Vercel deployment guide](/en/deployment/vercel)
+- [ShipSpeed Vercel deployment guide](/en/deployment/vercel)
 
 ### PlanetScale
 

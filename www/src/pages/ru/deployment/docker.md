@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: ru
 ---
 
-Вы можете контейнеризировать этот стек и развернуть его как один контейнер с помощью Docker или как часть группы контейнеров с помощью docker-compose. Смотрите [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker) для примера репозитория на основе этой документации.
+Вы можете контейнеризировать этот стек и развернуть его как один контейнер с помощью Docker или как часть группы контейнеров с помощью docker-compose. Смотрите [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker) для примера репозитория на основе этой документации.
 
 ## Конфигурация проекта Docker
 
@@ -16,7 +16,7 @@ lang: ru
 
 ### 1. Конфигурация Next
 
-В вашем [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js), добавьте конфигурацию `output` со значением `standalone` для [уменьшения размера образа с помощью автоматического использования трассировок вывода](https://nextjs.org/docs/advanced-features/output-file-tracing):
+В вашем [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js), добавьте конфигурацию `output` со значением `standalone` для [уменьшения размера образа с помощью автоматического использования трассировок вывода](https://nextjs.org/docs/advanced-features/output-file-tracing):
 
 ```diff
 export default defineNextConfig({
@@ -130,7 +130,7 @@ CMD ["node", "server.js"]
 >
 > - _Эмуляция `--platform=linux/amd64` может не быть необходимой после перехода на Node 18._
 > - _Посмотрите [`node:alpine`](https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine) чтобы понять, почему `libc6-compat` может быть необходим._
-> - _Использование образов, основанных на Alpine 3.17 [может привести к проблемам с Prisma](https://github.com/t3-oss/create-t3-app/issues/975). Установка `engineType = "binary"` решает проблему с Alpine 3.17, [но имеет связанные с этим затраты производительности](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
+> - _Использование образов, основанных на Alpine 3.17 [может привести к проблемам с Prisma](https://github.com/rbnog/shipspeed/issues/975). Установка `engineType = "binary"` решает проблему с Alpine 3.17, [но имеет связанные с этим затраты производительности](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
 > - _Next.js собирает [анонимные данные о телеметрии общего использования](https://nextjs.org/telemetry). Раскомментируйте первый экземпляр `ENV NEXT_TELEMETRY_DISABLED 1`, чтобы отключить телеметрию во время сборки. Раскомментируйте второй экземпляр, чтобы отключить телеметрию во время выполнения._
 
 </div>
@@ -141,8 +141,8 @@ CMD ["node", "server.js"]
 Соберите и запустите этот образ локально с помощью следующих команд:
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 Откройте [localhost:3000](http://localhost:3000/) чтобы увидеть запущенное приложение.
@@ -170,7 +170,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -198,7 +198,7 @@ railway up
 railway open
 ```
 
-Перейдите к "Variables" и включите ваш `DATABASE_URL`. Затем перейдите к "Settings" и выберите "Generate Domain." Чтобы увидеть работающий пример на Railway, перейдите к [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/).
+Перейдите к "Variables" и включите ваш `DATABASE_URL`. Затем перейдите к "Settings" и выберите "Generate Domain." Чтобы увидеть работающий пример на Railway, перейдите к [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/).
 
 ## Полезные ресурсы
 

@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: pt
 ---
 
-Recomendamos fazer o deploy de sua aplicação na [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Isso facilita muito o deploy de sua aplicação Next.js.
+Recomendamos fazer o deploy de sua aplicação na [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Isso facilita muito o deploy de sua aplicação Next.js.
 
 ## Configuração do projeto
 
@@ -22,7 +22,7 @@ A Vercel provavelmente configurará seu comando de build e publicará o diretór
 
 ## Usando o painel de controle da Vercel
 
-1. Depois de enviar seu código para um repositório GitHub, faça login na [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) com o GitHub e clique em **Add New Project**.
+1. Depois de enviar seu código para um repositório GitHub, faça login na [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) com o GitHub e clique em **Add New Project**.
 
 ![Novo projeto no Vercel](/images/vercel-new-project.webp)
 

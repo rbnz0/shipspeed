@@ -5,10 +5,10 @@ layout: ../../layouts/docs.astro
 lang: no
 ---
 
-Vi er klar over at bibliotekene som er inkludert i `create-t3-app` ikke løser alle problemer.
+Vi er klar over at bibliotekene som er inkludert i `create-shipspeed` ikke løser alle problemer.
 Selv om vi oppfordrer deg til å starte prosjektet med tingene vi tilbyr, vil det garantert komme en tid da du må inkludere andre pakker. Bare du kan vite hva prosjektet ditt trenger, men her er noen ting vi ofte anbefaler å bruke.
 
-Disse anbefalingene er gitt av individuelle create-t3-app-bidragsytere og skal ikke tas som "offisielle" godkjenninger gitt av create-t3-app-teamet eller T3-OSS. _**Vennligst gjør din egen undersøkelse, spesielt før du velger betaltingstjenester**_.
+Disse anbefalingene er gitt av individuelle create-shipspeed-bidragsytere og skal ikke tas som "offisielle" godkjenninger gitt av create-shipspeed-teamet eller rbnog. _**Vennligst gjør din egen undersøkelse, spesielt før du velger betaltingstjenester**_.
 
 ## Statehåndtering
 
@@ -95,7 +95,7 @@ Framer Motion tilbyr en enkel, deklarativ syntaks og lar deg lage komplekse anim
 Vercel har gjort web-app-hosting til en lek. Vi har skalert applikasjonen vår til hundretusenvis av brukere, og vi har aldri støtt på noen problemer. Vercel bruker AWS-teknologi, og tilbyr et mye bedre brukergrensesnitt enn mange andre tjenester.
 
 - [Vercels Hjemmeside](https://vercel.com/)
-- [Create T3 App Vercel-utrullingsveiledning](/no/deployment/vercel)
+- [ShipSpeed Vercel-utrullingsveiledning](/no/deployment/vercel)
 
 ### PlanetScale
 
@@ -125,7 +125,7 @@ Vi elsker Prisma og PlanetScale, men enkelte prosjekter tremger noen ganger en m
 
 **For serverløse WebSockets**
 
-Hvis WebSockets er hovedfokuset for prosjektet ditt, kan det være lurt å vurdere en mer tradisjonell backend-løsning som [Fastify](https://www.fastify.io/) (som [også fungerer med tRPC!](https://trpc.io/docs/v10/fastify)). For raskt å legge til WebSockets i en T3-app er Pusher et utmerket valg.
+Hvis WebSockets er hovedfokuset for prosjektet ditt, kan det være lurt å vurdere en mer tradisjonell backend-løsning som [Fastify](https://www.fastify.io/) (som [også fungerer med tRPC!](https://trpc.io/docs/v10/fastify)). For raskt å legge til WebSockets i en ShipSpeed er Pusher et utmerket valg.
 
 - [Pusher Hjemmeside](https://pusher.com/)
 

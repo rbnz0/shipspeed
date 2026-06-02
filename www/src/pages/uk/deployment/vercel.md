@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: uk
 ---
 
-Ми рекомендуємо деплоїти вашу програму на [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Він дозволяє дуже легко деплоїти Next.js програми.
+Ми рекомендуємо деплоїти вашу програму на [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Він дозволяє дуже легко деплоїти Next.js програми.
 
 ## Конфігурація проекту
 
@@ -22,7 +22,7 @@ lang: uk
 
 ## Використання Vercel Dashboard
 
-1. Після відправки вашого коду до репозиторію GitHub зареєструйтесь на [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) з GitHub і натисніть **Add New Project**.
+1. Після відправки вашого коду до репозиторію GitHub зареєструйтесь на [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) з GitHub і натисніть **Add New Project**.
 
 ![Новий проект на Vercel](/images/vercel-new-project.webp)
 

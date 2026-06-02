@@ -36,7 +36,7 @@ const User = () => {
 
 ## サーバーサイドでセッションを取得する
 
-時には、サーバー上でセッションを要求したいこともあるかもしれません。そのためには、`create-t3-app`が提供するヘルパー関数 `getServerAuthSession` を使ってセッションをプリフェッチし、`getServerSideProps` を使ってクライアントに渡します：
+時には、サーバー上でセッションを要求したいこともあるかもしれません。そのためには、`create-shipspeed`が提供するヘルパー関数 `getServerAuthSession` を使ってセッションをプリフェッチし、`getServerSideProps` を使ってクライアントに渡します：
 
 ```tsx:pages/users/[id].tsx
 import { getServerAuthSession } from "../server/auth";
@@ -59,7 +59,7 @@ const User = () => {
 
 ## セッションに `user.id` を含める
 
-Create T3 App は、NextAuth.js の設定にある[session callback](https://next-auth.js.org/configuration/callbacks#session-callback)を利用して、ユーザー ID を`session`オブジェクトに含めるように設定します。
+ShipSpeed は、NextAuth.js の設定にある[session callback](https://next-auth.js.org/configuration/callbacks#session-callback)を利用して、ユーザー ID を`session`オブジェクトに含めるように設定します。
 
 ```ts:server/auth.ts
 callbacks: {
@@ -90,11 +90,11 @@ declare module "next-auth" {
 
 ## tRPC との併用
 
-NextAuth.js を tRPC で利用する場合、[ミドルウェア](https://trpc.io/docs/v10/middlewares) を使って、再利用可能で保護されたプロシージャを作成することができます。これにより、認証されたユーザーのみがアクセスできるプロシージャを作成することができます。`create-t3-app`は、認証されたプロシージャの中でセッションオブジェクトに簡単にアクセスできるように、すべてセットアップしてくれます。
+NextAuth.js を tRPC で利用する場合、[ミドルウェア](https://trpc.io/docs/v10/middlewares) を使って、再利用可能で保護されたプロシージャを作成することができます。これにより、認証されたユーザーのみがアクセスできるプロシージャを作成することができます。`create-shipspeed`は、認証されたプロシージャの中でセッションオブジェクトに簡単にアクセスできるように、すべてセットアップしてくれます。
 
 これは、2 段階のプロセスで行われます：
 
-1. [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession) 関数を使用して、リクエストヘッダーからセッションを取得します。通常の `getSession`の代わりに`getServerSession` を使用する利点は、サーバーサイドのみの関数であるため、不要なフェッチ呼び出しが発生しないことです。`create-t3-app`は、この特殊な API を抽象化するヘルパー関数を作成するので、セッションにアクセスするたびに、NextAuth.js のオプションと`getServerSession` 関数の両方をインポートする必要がありません。
+1. [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession) 関数を使用して、リクエストヘッダーからセッションを取得します。通常の `getSession`の代わりに`getServerSession` を使用する利点は、サーバーサイドのみの関数であるため、不要なフェッチ呼び出しが発生しないことです。`create-shipspeed`は、この特殊な API を抽象化するヘルパー関数を作成するので、セッションにアクセスするたびに、NextAuth.js のオプションと`getServerSession` 関数の両方をインポートする必要がありません。
 
 ```ts:server/auth.ts
 export const getServerAuthSession = (ctx: {
@@ -152,7 +152,7 @@ const userRouter = router({
 
 ## Prisma との併用法
 
-NextAuth.js を Prisma と共に動作させるには、多くの[初期設定](https://authjs.dev/reference/adapter/prisma/)が必要ですが、`create-t3-app` はこのすべてを処理します。`create-t3-app` の実行において Prisma と NextAuth.js の両方を選択すると、必要なモデルがすべて設定された、完全に動作する認証システムを手に入れることができます。初期構成として生成されたアプリケーションには、Discord OAuth プロバイダがあらかじめ設定されています。これを使っているのは一番簡単に始められるからで、`.env`にトークンを設定するだけで準備完了です。しかし、[NextAuth.js ドキュメント](https://next-auth.js.org/providers/) に従えば、簡単に他のプロバイダを追加することもできます。なお、プロバイダによっては、特定のモデルに余分のフィールドを追加しなければならない場合があります。利用したいプロバイダのドキュメントを読んで、必要なフィールドがすべて揃っていることを確認することをお勧めします。
+NextAuth.js を Prisma と共に動作させるには、多くの[初期設定](https://authjs.dev/reference/adapter/prisma/)が必要ですが、`create-shipspeed` はこのすべてを処理します。`create-shipspeed` の実行において Prisma と NextAuth.js の両方を選択すると、必要なモデルがすべて設定された、完全に動作する認証システムを手に入れることができます。初期構成として生成されたアプリケーションには、Discord OAuth プロバイダがあらかじめ設定されています。これを使っているのは一番簡単に始められるからで、`.env`にトークンを設定するだけで準備完了です。しかし、[NextAuth.js ドキュメント](https://next-auth.js.org/providers/) に従えば、簡単に他のプロバイダを追加することもできます。なお、プロバイダによっては、特定のモデルに余分のフィールドを追加しなければならない場合があります。利用したいプロバイダのドキュメントを読んで、必要なフィールドがすべて揃っていることを確認することをお勧めします。
 
 ### モデルに新しいフィールドを追加する
 
@@ -174,7 +174,7 @@ NextAuth.js を Prisma と共に動作させるには、多くの[初期設定](
 
 ## Next.js ミドルウェアを使った利用法
 
-NextAuth.js を Next.js ミドルウェアで利用する場合、認証に [JWT セッション戦略](https://next-auth.js.org/configuration/nextjs#caveats)を利用する必要があります。これは、ミドルウェアが JWT である場合にのみ、セッションクッキーにアクセスすることができるためです。デフォルトでは、Create T3 App は、データベースアダプターとして Prisma と組み合わせて、**default**データベースストラテジーを使用するように構成されています。
+NextAuth.js を Next.js ミドルウェアで利用する場合、認証に [JWT セッション戦略](https://next-auth.js.org/configuration/nextjs#caveats)を利用する必要があります。これは、ミドルウェアが JWT である場合にのみ、セッションクッキーにアクセスすることができるためです。デフォルトでは、ShipSpeed は、データベースアダプターとして Prisma と組み合わせて、**default**データベースストラテジーを使用するように構成されています。
 
 ## デフォルトの DiscordProvider を設定する
 

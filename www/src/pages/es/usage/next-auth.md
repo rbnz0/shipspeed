@@ -36,7 +36,7 @@ const User = () => {
 
 ## Incluir `user.id` en la Sesión
 
-`create-t3-app` está configurado para utilizar el [callback de sesión](https://next-auth.js.org/configuration/callbacks#session-callback) en la configuración de NextAuth.js para incluir el ID del usuario dentro del objeto `session`.
+`create-shipspeed` está configurado para utilizar el [callback de sesión](https://next-auth.js.org/configuration/callbacks#session-callback) en la configuración de NextAuth.js para incluir el ID del usuario dentro del objeto `session`.
 
 ```ts:pages/api/auth/[...nextauth].ts
 callbacks: {
@@ -67,11 +67,11 @@ El mismo patrón se puede usar para agregar cualquier otro dato al objeto `sessi
 
 ## Uso con tRPC
 
-Cuando utilices NextAuth.js con tRPC, puedes crear procedimientos protegidos reutilizables usando [middleware](https://trpc.io/docs/v10/middlewares). Esto te permite crear procedimientos a los que solo los usuarios autenticados pueden acceder. `create-t3-app` establece todo esto para ti, lo que te permite acceder fácilmente al objeto de sesión dentro de los procedimientos autenticados.
+Cuando utilices NextAuth.js con tRPC, puedes crear procedimientos protegidos reutilizables usando [middleware](https://trpc.io/docs/v10/middlewares). Esto te permite crear procedimientos a los que solo los usuarios autenticados pueden acceder. `create-shipspeed` establece todo esto para ti, lo que te permite acceder fácilmente al objeto de sesión dentro de los procedimientos autenticados.
 
 Esto se hace en un proceso de dos pasos:
 
-1. Toma la sesión de las cabeceras de la solicitud utilizando la función [`unstable_getServerSession`](https://next-auth.js.org/configuration/nextjs#unstable_getserversession). No te preocupes, esta función es segura: el nombre incluye `unstable` (_inestable_) solo porque la implementación de la API podría cambiar en el futuro. La ventaja de usar `unstable_getServerSession` en lugar de la función `getSession` regular es que es una función solo del lado del servidor y no activa llamadas innecesarias. `create-t3-app` crea una función de ayuda que abstrae a esta API peculiar.
+1. Toma la sesión de las cabeceras de la solicitud utilizando la función [`unstable_getServerSession`](https://next-auth.js.org/configuration/nextjs#unstable_getserversession). No te preocupes, esta función es segura: el nombre incluye `unstable` (_inestable_) solo porque la implementación de la API podría cambiar en el futuro. La ventaja de usar `unstable_getServerSession` en lugar de la función `getSession` regular es que es una función solo del lado del servidor y no activa llamadas innecesarias. `create-shipspeed` crea una función de ayuda que abstrae a esta API peculiar.
 
 ```ts:server/common/get-server-auth-session.ts
 export const getServerAuthSession = async (ctx: {
@@ -129,7 +129,7 @@ const userRouter = router({
 
 ## Uso con Prisma
 
-Hacer que NextAuth.js funcione con Prisma requiere una gran cantidad de [configuración inicial](https://authjs.dev/reference/adapter/prisma/). `create-t3-app` maneja todo esto para ti, y si seleccionas Prisma y NextAuth.js, obtendrás un sistema de autenticación completamente funcional con todos los modelos requeridos preconfigurados. Creamos tu aplicación con un proveedor de Discord Oauth preconfigurado, que elegimos porque es uno de los más fáciles de comenzar, solo proporciona tus tokens en el `.env` y listo. Sin embargo, puedes agregar fácilmente más proveedores siguiendo la documentación de [NextAuth.JS](https://next-auth.js.org/providers/). Ten en cuenta que ciertos proveedores requieren que se agregen campos adicionales a ciertos modelos. Te recomendamos que leas la documentación del proveedor que deseas utilizar para asegurarte de tener todos los campos requeridos.
+Hacer que NextAuth.js funcione con Prisma requiere una gran cantidad de [configuración inicial](https://authjs.dev/reference/adapter/prisma/). `create-shipspeed` maneja todo esto para ti, y si seleccionas Prisma y NextAuth.js, obtendrás un sistema de autenticación completamente funcional con todos los modelos requeridos preconfigurados. Creamos tu aplicación con un proveedor de Discord Oauth preconfigurado, que elegimos porque es uno de los más fáciles de comenzar, solo proporciona tus tokens en el `.env` y listo. Sin embargo, puedes agregar fácilmente más proveedores siguiendo la documentación de [NextAuth.JS](https://next-auth.js.org/providers/). Ten en cuenta que ciertos proveedores requieren que se agregen campos adicionales a ciertos modelos. Te recomendamos que leas la documentación del proveedor que deseas utilizar para asegurarte de tener todos los campos requeridos.
 
 ### Agregar nuevos campos a tus modelos
 
@@ -151,7 +151,7 @@ Si, por ejemplo, deseas agregar un campo `role` al modelo `User`, necesitarías 
 
 ## Uso con el middleware Next.js
 
-El uso de NextAuth.js con el middleware Next.js [requiere el uso de la estrategia de sesión JWT](https://next-auth.js.org/configuration/nextjs#caveats) para la autenticación. Esto se debe a que el middleware solo puede acceder a la cookie de sesión si es un JWT. De forma predeterminada, `create-t3-app` está configurado para usar la estrategia de base de datos **predeterminada**, en combinación con Prisma como adaptador de base de datos.
+El uso de NextAuth.js con el middleware Next.js [requiere el uso de la estrategia de sesión JWT](https://next-auth.js.org/configuration/nextjs#caveats) para la autenticación. Esto se debe a que el middleware solo puede acceder a la cookie de sesión si es un JWT. De forma predeterminada, `create-shipspeed` está configurado para usar la estrategia de base de datos **predeterminada**, en combinación con Prisma como adaptador de base de datos.
 
 ## Configuración del DiscordProvider predeterminado
 

@@ -6,7 +6,7 @@ lang: ar
 dir: rtl
 ---
 
-ننصحك بنشر تطبيقك عبر [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) فهو أسهل، خاصة لتطبيقات Next.js.
+ننصحك بنشر تطبيقك عبر [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) فهو أسهل، خاصة لتطبيقات Next.js.
 
 ## إعداد المشروع
 
@@ -23,7 +23,7 @@ dir: rtl
 
 ## استخدام لوحة تحكم Vercel
 
-1. بعد دفع مشروعك الي Github سجل الدخول إلى [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) عن طريق Github واضغط علي **Add New Project**
+1. بعد دفع مشروعك الي Github سجل الدخول إلى [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) عن طريق Github واضغط علي **Add New Project**
 
 ![New project on Vercel](/images/vercel-new-project.webp)
 

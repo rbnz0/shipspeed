@@ -15,16 +15,16 @@ const options = {
     try {
       sdk.openProject(
         {
-          title: "T3 Examples",
-          description: "T3 example apps.",
+          title: "ShipSpeed Examples",
+          description: "ShipSpeed example apps.",
           template: "node",
           files: {
             "package.json": `{
-                    "name": "T3 Examples",
+                    "name": "ShipSpeed Examples",
                     "version": "1.0.0",
                     "description": "My Next.js app",
                     "scripts":{
-                        "dev": " echo 'y' | npx create-t3-app example-app --CI ${checkedInputs} && cd ./example-app  && rm ../package.json " }
+                        "dev": " echo 'y' | npx create-shipspeed example-app --CI ${checkedInputs} && cd ./example-app  && rm ../package.json " }
                 }`,
           },
           settings: {

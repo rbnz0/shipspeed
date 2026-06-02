@@ -9,7 +9,7 @@ on:
 jobs:
   comment:
     if: |
-      github.repository_owner == 't3-oss' &&
+      github.repository_owner == 'rbnog' &&
       ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     name: Write comment to the PR

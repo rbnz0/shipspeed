@@ -36,7 +36,7 @@ const User = () => {
 
 ## Otrzymywanie sesji po stronie serwera
 
-Czasem możesz chcieć otrzymać sesję na serwerze. Aby to zrobić, pobierz sesję korzystając z funkcji pomocniczej `getServerAuthSession` dostarczanej przez Create T3 App a następnie prześlij ją do klienta korzystając z `getServerSideProps`:
+Czasem możesz chcieć otrzymać sesję na serwerze. Aby to zrobić, pobierz sesję korzystając z funkcji pomocniczej `getServerAuthSession` dostarczanej przez ShipSpeed a następnie prześlij ją do klienta korzystając z `getServerSideProps`:
 
 ```tsx:pages/users/[id].tsx
 import { getServerAuthSession } from "../server/auth";
@@ -56,7 +56,7 @@ const User = () => {
 
 ## Dołączanie `user.id` do sesji
 
-Create T3 App jest skonfigurowany tak, aby wykorzystać [callback `session`](https://next-auth.js.org/configuration/callbacks#session-callback) w konfiguracji NextAuth.js do dodania ID użytkownika do obiektu `session`.
+ShipSpeed jest skonfigurowany tak, aby wykorzystać [callback `session`](https://next-auth.js.org/configuration/callbacks#session-callback) w konfiguracji NextAuth.js do dodania ID użytkownika do obiektu `session`.
 
 ```ts:server/auth.ts
 callbacks: {
@@ -87,11 +87,11 @@ Ten sam sposób wykorzystany może zostać do dodania większej ilości danych n
 
 ## Korzystanie wraz z tRPC
 
-Jeżeli używasz NextAuth.js oraz tRPC, stworzyć można zabezpieczone procedury (z możliwością wielokrotnego użycia) korzystając z [middleware'ów](https://trpc.io/docs/v10/middlewares). Pozwala to na umieszczenie procedur, które zainicjowane być mogą jedynie przez autoryzowanych użytkowników. `create-t3-app` wszystko to dla Ciebie konfiguruje, dając ci możliwość łatwego dostępu do obiektu sesji wśród autoryzowanych procedur.
+Jeżeli używasz NextAuth.js oraz tRPC, stworzyć można zabezpieczone procedury (z możliwością wielokrotnego użycia) korzystając z [middleware'ów](https://trpc.io/docs/v10/middlewares). Pozwala to na umieszczenie procedur, które zainicjowane być mogą jedynie przez autoryzowanych użytkowników. `create-shipspeed` wszystko to dla Ciebie konfiguruje, dając ci możliwość łatwego dostępu do obiektu sesji wśród autoryzowanych procedur.
 
 Konfiguracja ta zachodzi w dwóch krokach:
 
-1. Pobierz sesję z headerów zapytania korzystając z funkcji [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession). Zaletą korzystania z `getServerSession` zamiast `getSession` jest fakt, iż jest to funkcja wywoływana jedynie po stronie serwera i nie inicjuje ona żadnych niepotrzebnych zapytań. `create-t3-app` tworzy funkcję pomocniczą, która ułatwia korzystanie z `getServerSession` - nie musisz więc importować zarówno opcji NextAuth.js jak i funkcji `getServerSession` za każdym razem, kiedy chcesz otrzymać sesję.
+1. Pobierz sesję z headerów zapytania korzystając z funkcji [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession). Zaletą korzystania z `getServerSession` zamiast `getSession` jest fakt, iż jest to funkcja wywoływana jedynie po stronie serwera i nie inicjuje ona żadnych niepotrzebnych zapytań. `create-shipspeed` tworzy funkcję pomocniczą, która ułatwia korzystanie z `getServerSession` - nie musisz więc importować zarówno opcji NextAuth.js jak i funkcji `getServerSession` za każdym razem, kiedy chcesz otrzymać sesję.
 
 ```ts:server/auth.ts
 export const getServerAuthSession = (ctx: {
@@ -149,7 +149,7 @@ const userRouter = router({
 
 ## Korzystanie wraz z Prismą
 
-Przygotowanie NextAuth.js do pracy z Prismą wymaga wiele [wstępnej konfiguracji](https://authjs.dev/reference/adapter/prisma/). `create-t3-app` zajmuje się nią za Ciebie, a jeśli wybierzesz zarówno Prismę i NextAuth.js, otrzymasz w pełni działający system uwierzytelniania, wraz z wszystkimi potrzebnymi modelami bazy danych. Szablon aplikacji, który dostarczamy, zawiera domyślnie provider OAuth Discorda, który wybraliśmy z powodu bycia jednym z łatwiejszych do obsługiwania - jedyne, co musiz zrobić, to podać tokeny w pliku `.env`... i gotowe! Jeżeli jednak chcesz skorzystać z czegoś innego, możesz w łatwy sposób dołączyć inne providery opierając się na [dokumentacji NextAuth.js](https://next-auth.js.org/providers/). Uwaga - niektóre z providerów wymagają większej ilości pól na modelach w bazie danych. Polecamy Ci przeczytać dokumentację providera, z którego chciałbyś skorzystać aby upewnić się, iż posiadasz wszystko, czego potrzebujesz.
+Przygotowanie NextAuth.js do pracy z Prismą wymaga wiele [wstępnej konfiguracji](https://authjs.dev/reference/adapter/prisma/). `create-shipspeed` zajmuje się nią za Ciebie, a jeśli wybierzesz zarówno Prismę i NextAuth.js, otrzymasz w pełni działający system uwierzytelniania, wraz z wszystkimi potrzebnymi modelami bazy danych. Szablon aplikacji, który dostarczamy, zawiera domyślnie provider OAuth Discorda, który wybraliśmy z powodu bycia jednym z łatwiejszych do obsługiwania - jedyne, co musiz zrobić, to podać tokeny w pliku `.env`... i gotowe! Jeżeli jednak chcesz skorzystać z czegoś innego, możesz w łatwy sposób dołączyć inne providery opierając się na [dokumentacji NextAuth.js](https://next-auth.js.org/providers/). Uwaga - niektóre z providerów wymagają większej ilości pól na modelach w bazie danych. Polecamy Ci przeczytać dokumentację providera, z którego chciałbyś skorzystać aby upewnić się, iż posiadasz wszystko, czego potrzebujesz.
 
 ### Dodawanie nowych pól do modeli
 
@@ -171,7 +171,7 @@ Jeżeli przykładowo chcesz dodać pole `role` (roli) do modelu `User` (użytkow
 
 ## Korzystanie wraz z middlewarem Next.js
 
-Wykorzystanie middleware'a Next.js [wymaga od Ciebie skorzystania ze strategii JWT](https://next-auth.js.org/configuration/nextjs#caveats) do autoryzacji. Dzieje się tak, ponieważ middleware jest w stanie pobierać ciasteczko sesji jedynie, gdy jest ono JWT. Create T3 App jest skonfigurowany tak, by wykorzystać **domyślną** strategię bazy danych, wraz z Prismą jako jej adapterem.
+Wykorzystanie middleware'a Next.js [wymaga od Ciebie skorzystania ze strategii JWT](https://next-auth.js.org/configuration/nextjs#caveats) do autoryzacji. Dzieje się tak, ponieważ middleware jest w stanie pobierać ciasteczko sesji jedynie, gdy jest ono JWT. ShipSpeed jest skonfigurowany tak, by wykorzystać **domyślną** strategię bazy danych, wraz z Prismą jako jej adapterem.
 
 ## Konfigurowanie domyślnego providera Discord (`DiscordProvider`)
 

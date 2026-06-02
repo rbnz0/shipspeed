@@ -1,11 +1,11 @@
 ---
 title: Zmienne Środowiskowe
-description: Jak zacząć z Create T3 App
+description: Jak zacząć z ShipSpeed
 layout: ../../../layouts/docs.astro
 lang: pl
 ---
 
-Create T3 App korzysta z paczki [Zod](https://github.com/colinhacks/zod) w celu walidacji twoich zmiennych środowiskowych podczas runtime'u _oraz_ budowania aplikacji. Dołączane są z tego powodu dodatkowe narzędzia w pliku `src/env.js`.
+ShipSpeed korzysta z paczki [Zod](https://github.com/colinhacks/zod) w celu walidacji twoich zmiennych środowiskowych podczas runtime'u _oraz_ budowania aplikacji. Dołączane są z tego powodu dodatkowe narzędzia w pliku `src/env.js`.
 
 ## env.js
 

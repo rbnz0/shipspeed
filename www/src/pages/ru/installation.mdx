@@ -1,6 +1,6 @@
 ---
 title: Установка
-description: Инструкции по установке Create T3 App
+description: Инструкции по установке ShipSpeed
 layout: ../../layouts/docs.astro
 lang: ru
 isMdx: true
@@ -8,30 +8,30 @@ isMdx: true
 
 import Callout from "../../components/docs/callout.tsx";
 
-Для создания приложения с помощью `create-t3-app`, запустите одну из следующих трёх команд и ответьте на вопросы командной строки:
+Для создания приложения с помощью `create-shipspeed`, запустите одну из следующих трёх команд и ответьте на вопросы командной строки:
 
 ### npm
 
 ```bash
-npm create t3-app@latest
+npm create ShipSpeed@latest
 ```
 
 ### yarn
 
 ```bash
-yarn create t3-app
+yarn create ShipSpeed
 ```
 
 ### pnpm
 
 ```bash
-pnpm create t3-app@latest
+pnpm create ShipSpeed@latest
 ```
 
 ### bun
 
 ```bash
-bun create t3-app@latest
+bun create ShipSpeed@latest
 ```
 
 После того, как приложение будет создано, ознакомьтесь с [первыми шагами](/ru/usage/first-steps), чтобы начать работу над вашим новым приложением.
@@ -42,7 +42,7 @@ bun create t3-app@latest
 | ----------------- | ---------------------------------------------------------------------------- |
 | `[dir]`           | Добавьте аргумент каталога с именем проекта                                  |
 | `--noGit`         | Явно сообщите CLI не инициализировать новый git репозиторий в проекте        |
-| `-y`, `--default` | Обойти CLI и создать новое t3-приложение с помощью всех выбранных параметров |
+| `-y`, `--default` | Обойти CLI и создать новое ShipSpeed с помощью всех выбранных параметров |
 | `--noInstall`     | Сгенерировать проект без установки зависимостей                              |
 
 ## Экспериментальное использование
@@ -65,8 +65,8 @@ bun create t3-app@latest
 
 ### Например
 
-Следующий пример создаст приложение T3 с tRPC и Tailwind CSS.
+Следующий пример создаст приложение ShipSpeed с tRPC и Tailwind CSS.
 
 ```bash
-pnpm dlx create-t3-app@latest --CI --trpc --tailwind
+pnpm dlx create-shipspeed@latest --CI --trpc --tailwind
 ```

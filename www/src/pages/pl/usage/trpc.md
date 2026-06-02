@@ -97,7 +97,7 @@ Natychmiast zauważysz, jak dobrze działa type-safety i autouzupełnianie. Jak 
 
 ## Korzystanie z błędów biblioteki Zod
 
-Domyślnie `create-t3-app` konfiguruje [error formatter](https://trpc.io/docs/error-formatting), który pozwala pobierać błędy z biblioteki Zod, jeśli na backendzie wystąpią błędy walidacji.
+Domyślnie `create-shipspeed` konfiguruje [error formatter](https://trpc.io/docs/error-formatting), który pozwala pobierać błędy z biblioteki Zod, jeśli na backendzie wystąpią błędy walidacji.
 
 Przykładowe użycie:
 
@@ -127,7 +127,7 @@ function MyComponent() {
 
 ## Pliki
 
-tRPC wymaga dużo boilerplate'u, który `create-t3-app` przygotowuje za Ciebie. Przejdźmy więc po kolei po plikach, które są generowane:
+tRPC wymaga dużo boilerplate'u, który `create-shipspeed` przygotowuje za Ciebie. Przejdźmy więc po kolei po plikach, które są generowane:
 
 ### 📄 `pages/api/trpc/[trpc].ts`
 
@@ -137,7 +137,7 @@ Jest to właściwy punkt początkowy dla twojego API - to on ujawnia dla reszty 
 
 Plik ten podzielony jest na dwie części - tworzenie kontekstu oraz inicjalizacji tRPC:
 
-1. Definiujemy kontekst przesyłany do procedur tRPC. Kontekst, to dane do których dostęp mają wszystkie twoje procedury tRPC. Jest to doskonałe miejsce do umieszczenia rzeczy, takich jak połączenia z bazą danych, informacje o uwierzytelnianiu, itp. W Create T3 App korzystamy z dwóch funkcji, aby umożliwić korzystanie z części kontekstu bez dostępu do obiektu zapytania.
+1. Definiujemy kontekst przesyłany do procedur tRPC. Kontekst, to dane do których dostęp mają wszystkie twoje procedury tRPC. Jest to doskonałe miejsce do umieszczenia rzeczy, takich jak połączenia z bazą danych, informacje o uwierzytelnianiu, itp. W ShipSpeed korzystamy z dwóch funkcji, aby umożliwić korzystanie z części kontekstu bez dostępu do obiektu zapytania.
 
 - `createInnerTRPCContext`: Tutaj definiujesz kontekst, który nie zależy od obiektu zapytania, np. połączenie z bazą danych. Możesz wykorzystać tą funkcję do [testów integracji](#przykładowy-test-integracji) oraz [funkcji pomocniczych SSG](https://trpc.io/docs/v10/ssg-helpers), gdzie nie posiadasz obiektu zapytania.
 

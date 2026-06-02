@@ -35,7 +35,7 @@ tRPC nos permite escribir APIs con seguridad de tipos de extremo a extremo sin n
 
 ## Archivos
 
-tRPC requiere una gran cantidad de archivos que `create-t3-app` genera para ti. Revisemos los archivos que se generan:
+tRPC requiere una gran cantidad de archivos que `create-shipspeed` genera para ti. Revisemos los archivos que se generan:
 
 ### 📄 `pages/api/trpc/[trpc].ts`
 
@@ -43,7 +43,7 @@ Este es el punto de entrada para tu API y expone el enrutador tRPC. Normalmente,
 
 ### 📄 `server/trpc/context.ts`
 
-Este archivo es donde defines el contexto que se pasa a tus procedimientos tRPC. El contexto son datos a los que todos tus procedimientos tRPC tendrán acceso, y es un excelente lugar para poner cosas como conexiones de bases de datos, información de autenticación, etc. En create-t3-app, usamos dos funciones, para habilitar el uso de un subconjunto del contexto cuando no tenemos acceso al objeto de la solicitud.
+Este archivo es donde defines el contexto que se pasa a tus procedimientos tRPC. El contexto son datos a los que todos tus procedimientos tRPC tendrán acceso, y es un excelente lugar para poner cosas como conexiones de bases de datos, información de autenticación, etc. En create-shipspeed, usamos dos funciones, para habilitar el uso de un subconjunto del contexto cuando no tenemos acceso al objeto de la solicitud.
 
 - `createContextInner`: aquí es donde defines el contexto que no depende de la solicitud, ejemplo: tu conexión de base de datos. Puedes usar esta función para [Pruebas de integración](#muestra-integración-test) o [ssg-helpers](https://trpc.io/docs/v10/ssg-helpers) donde no tienes un objeto de solicitud.
 

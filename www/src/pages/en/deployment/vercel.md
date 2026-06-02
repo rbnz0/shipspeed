@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: en
 ---
 
-We recommend deploying your app to [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). It makes it super easy to deploy Next.js apps.
+We recommend deploying your app to [Vercel](https://vercel.com/?utm_source=shipspeed&utm_campaign=oss). It makes it super easy to deploy Next.js apps.
 
 ## Project Configuration
 
@@ -21,7 +21,7 @@ Vercel will likely configure your build command and publish the directory automa
 
 ## Using the Vercel Dashboard
 
-1. After pushing your code to a GitHub repository, sign up for [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) with GitHub and click on **Add New Project**.
+1. After pushing your code to a GitHub repository, sign up for [Vercel](https://vercel.com/?utm_source=shipspeed&utm_campaign=oss) with GitHub and click on **Add New Project**.
 
 ![New project on Vercel](/images/vercel-new-project.webp)
 

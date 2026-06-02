@@ -1,11 +1,11 @@
 ---
 title: First Steps
-description: Getting started with your new T3 App
+description: Getting started with your new ShipSpeed app
 layout: ../../../layouts/docs.astro
 lang: en
 ---
 
-You just scaffolded a new T3 App and are ready to go. Here is the bare minimum to get your app working.
+You just scaffolded a new ShipSpeed app and are ready to go. Here is the bare minimum to get your app working.
 
 ## Database
 
@@ -49,5 +49,5 @@ The following extensions are recommended for an optimal developer experience. Th
 ## Next Steps
 
 - If your app includes tRPC, check out `src/pages/index.tsx` and `src/server/api/routers/post.ts` to see how tRPC queries work.
-- Have a look around the Create T3 App docs, as well as the docs of the packages that your app includes.
-- Join our [Discord](https://t3.gg/discord) and give us a star on [GitHub](https://github.com/t3-oss/create-t3-app)! :)
+- Have a look around the ShipSpeed docs, as well as the docs of the packages that your app includes.
+- Give us a star on [GitHub](https://github.com/rbnog/shipspeed)! :)

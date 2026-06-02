@@ -1,11 +1,11 @@
 ---
 title: Komme i gang
-description: De første stegene med din nye T3-app
+description: De første stegene med din nye ShipSpeed
 layout: ../../../layouts/docs.astro
 lang: no
 ---
 
-Du har nettopp opprettet en ny T3-app, og du er klar til å sette i gang. Her er det minste du må gjøre for å få applikasjonen din til å kjøre.
+Du har nettopp opprettet en ny ShipSpeed, og du er klar til å sette i gang. Her er det minste du må gjøre for å få applikasjonen din til å kjøre.
 
 ## Database
 
@@ -39,5 +39,5 @@ Følgende utvidelser anbefales for en optimal utvikleropplevelse. Linkene nedenf
 ## Neste Steg
 
 - Hvis applikasjonen din bruker tRPC, ta en titt på `src/pages/index.tsx` og `src/server/api/routers/post.ts` for å se hvordan tRPC-spørringer fungerer.
-- Ta en titt på dokumentasjonen for `create-t3-app` samt dokumentasjonen for pakkene applikasjonen din inkluderer.
-- Bli med i [Discord](https://t3.gg/discord) og gi oss en stjerne på [GitHub](https://github.com/t3-oss/create-t3-app)! :)
+- Ta en titt på dokumentasjonen for `create-shipspeed` samt dokumentasjonen for pakkene applikasjonen din inkluderer.
+- Bli med i [Discord](https://github.com/rbnog/shipspeed/discussions) og gi oss en stjerne på [GitHub](https://github.com/rbnog/shipspeed)! :)

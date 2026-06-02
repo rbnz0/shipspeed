@@ -12,21 +12,8 @@ lang: en
     </p>
   </div>
   <cite className="flex items-center justify-end pr-4 pb-2">
-    <img
-      alt="Avatar of @t3dotgg"
-      className="w-12 rounded-full bg-neutral-500 [margin-inline-end:16px]"
-      src="/images/theo_300x300.webp"
-    />
     <div className="flex flex-col items-start not-italic">
-      <span className=" text-sm font-semibold">Theo - creator of the T3 Stack</span>
-      <a
-        href="https://twitter.com/t3dotgg"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-sm"
-      >
-        @t3dotgg
-      </a>
+      <span className=" text-sm font-semibold">A core principle of the T3 Stack</span>
     </div>
   </cite>
 </blockquote>
@@ -45,7 +32,7 @@ While many new TypeScript developers are concerned with _writing_ TypeScript, ma
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RmGHnYUqQ4k" title="You might be using Typescript wrong" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Check out Theo's video on how [you might be using TypeScript wrong](https://www.youtube.com/watch?v=RmGHnYUqQ4k).
+Check out this video on how [you might be using TypeScript wrong](https://www.youtube.com/watch?v=RmGHnYUqQ4k).
 
 ## Powerful uses of type inference
 

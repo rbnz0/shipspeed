@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: no
 ---
 
-Stakken kan rulles ut med Docker. Enten som en enkel kontainer eller som en gruppe kontainere ved hjelp av `docker-compose`. Se [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker) for et eksempel-_repo_ som er basert på denne dokumentasjonen.
+Stakken kan rulles ut med Docker. Enten som en enkel kontainer eller som en gruppe kontainere ved hjelp av `docker-compose`. Se [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker) for et eksempel-_repo_ som er basert på denne dokumentasjonen.
 
 ## Docker-prosjektkonfigurasjon
 
@@ -16,7 +16,7 @@ Vær klar over at Next.js krever forskjellig håndtering av variabler som er sat
 
 ### 1. Next.js-konfigurasjon
 
-I [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js), legg til _output_-alternativet `standalone` for å redusere størrelsen på Docker-_imaget_ ved å benytte ["Output File Tracing"](https://nextjs.org/docs/advanced-features/output-file-tracing):
+I [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js), legg til _output_-alternativet `standalone` for å redusere størrelsen på Docker-_imaget_ ved å benytte ["Output File Tracing"](https://nextjs.org/docs/advanced-features/output-file-tracing):
 
 ```diff
 export default defineNextConfig({
@@ -140,8 +140,8 @@ CMD ["node", "server.js"]
 Bygg og start opp bildet lokalt med følgende kommandoer:
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_her" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_her" shipspeed-docker
 ```
 
 Åpne [localhost:3000](http://localhost:3000/) for å se programmet som kjøres.
@@ -169,7 +169,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_her
 ```
@@ -197,7 +197,7 @@ railway up
 railway open
 ```
 
-Gå til "Variables" og lim inn `DATABASE_URL`. Gå deretter til "Settings" og velg "Generate Domain". For å se et kjørende eksempel på Railway, besøk [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/).
+Gå til "Variables" og lim inn `DATABASE_URL`. Gå deretter til "Settings" og velg "Generate Domain". For å se et kjørende eksempel på Railway, besøk [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/).
 
 ## Nyttige Ressurser
 

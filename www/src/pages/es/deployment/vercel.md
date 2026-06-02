@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: es
 ---
 
-Recomendamos desplegar tu aplicación en [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Vercel hace que sea muy fácil desplegar aplicaciones Next.js.
+Recomendamos desplegar tu aplicación en [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Vercel hace que sea muy fácil desplegar aplicaciones Next.js.
 
 ## Configuración del proyecto
 
@@ -22,7 +22,7 @@ Es probable que Vercel configure el comando de compilación y publique el direct
 
 ## Uso del panel de control de Vercel
 
-1. Después de enviar tu código a un repositorio de GitHub, registrate en [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) con GitHub y haz clic en **Agregar nuevo proyecto**.
+1. Después de enviar tu código a un repositorio de GitHub, registrate en [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) con GitHub y haz clic en **Agregar nuevo proyecto**.
 
 ![Nuevo proyecto en Vercel](/images/vercel-new-project.webp)
 

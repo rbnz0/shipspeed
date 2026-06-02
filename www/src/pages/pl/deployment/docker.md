@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: pl
 ---
 
-Stack ten możesz skonteneryzować i zdeploy'ować jako pojedynczy kontener korzystając z Dockera, czy też jako część grupy kontenerów korzystając z docker-compose. Po przykładowe repozytorium bazowane na tym dokumencie, zobacz [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker).
+Stack ten możesz skonteneryzować i zdeploy'ować jako pojedynczy kontener korzystając z Dockera, czy też jako część grupy kontenerów korzystając z docker-compose. Po przykładowe repozytorium bazowane na tym dokumencie, zobacz [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker).
 
 ## Konfiguracja Projektu z Dockerem
 
@@ -16,7 +16,7 @@ Należy pamiętać, że Next.js wymaga innego procesu na czas budowania (dostęp
 
 ### 1. Konfiguracja Next.js
 
-W swoim pliku [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js), dodaj opcję konfiguracji outputu `standalone` aby [zredukować rozmiar zdjęć poprzez automatyczne wykorzystanie danych wyjściowych](https://nextjs.org/docs/advanced-features/output-file-tracing):
+W swoim pliku [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js), dodaj opcję konfiguracji outputu `standalone` aby [zredukować rozmiar zdjęć poprzez automatyczne wykorzystanie danych wyjściowych](https://nextjs.org/docs/advanced-features/output-file-tracing):
 
 ```diff
 export default defineNextConfig({
@@ -130,7 +130,7 @@ CMD ["node", "server.js"]
 >
 > - _Emulacja platformy z flagą `--platform=linux/amd64` może nie być potrzebna podczas korzystania z Node'a w wersji 18._
 > - _Aby zrozumieć, dlaczego `libc6-compat` może być potrzebny, zobacz [`node:alpine`](https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine)._
-> - _Korzystanie z obrazów bazujących na Alpine 3.17 [może powodować problemy z Prismą](https://github.com/t3-oss/create-t3-app/issues/975). Ustawienie `engineType = "binary"` rozwiązuje ten problem, [niestety kosztem wydajności](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
+> - _Korzystanie z obrazów bazujących na Alpine 3.17 [może powodować problemy z Prismą](https://github.com/rbnog/shipspeed/issues/975). Ustawienie `engineType = "binary"` rozwiązuje ten problem, [niestety kosztem wydajności](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
 > - _Next.js zbiera [anonimowe dane telemetryczne o ogólnym użyciu](https://nextjs.org/telemetry). Odkomentuj pierwsze wystąpienie `ENV NEXT_TELEMETRY_DISABLED 1` aby wyłączyć telemetrię podczas budowania. Odkomentuj drugie wystąpienie, aby wyłączyć telemetrię w produkcie końcowym._
 
 </div>
@@ -141,8 +141,8 @@ CMD ["node", "server.js"]
 Zbuduj i uruchom ten obraz lokalnie korzystając z następujących komend:
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 Otwórz [localhost:3000](http://localhost:3000/) aby zobaczyć uruchomioną aplikację.
@@ -170,7 +170,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -198,7 +198,7 @@ railway up
 railway open
 ```
 
-Przejdź do zakładki "Zmienne" ("Variables") i dodaj tam swój `DATABASE_URL`. Następnie przejdź do ustawień ("Settings") i wybierz opcję "Wygeneruj Domenę." ("Generate Domain."). Aby zobaczyć działający przykład na Railway, odwiedź stronę [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/).
+Przejdź do zakładki "Zmienne" ("Variables") i dodaj tam swój `DATABASE_URL`. Następnie przejdź do ustawień ("Settings") i wybierz opcję "Wygeneruj Domenę." ("Generate Domain."). Aby zobaczyć działający przykład na Railway, odwiedź stronę [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/).
 
 ## Przydatne Zasoby
 

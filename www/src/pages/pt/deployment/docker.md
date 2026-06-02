@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: pt
 ---
 
-Você pode colocar essa stack em contêineres e fazer deploy dela como um único contêiner usando o Docker ou como parte de um grupo de contêineres usando o docker-compose. Veja [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker) para um repositório de exemplo baseado neste documento.
+Você pode colocar essa stack em contêineres e fazer deploy dela como um único contêiner usando o Docker ou como parte de um grupo de contêineres usando o docker-compose. Veja [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker) para um repositório de exemplo baseado neste documento.
 
 ## Configuração do Projeto Docker
 
@@ -16,7 +16,7 @@ Por favor, note que o Next.js requer um processo diferente para variáveis de am
 
 ### 1. Configuração do Next
 
-Em seu arquivo [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js), configure a opção `output` como `standalone` para [reduzir o tamanho de imagens](https://nextjs.org/docs/advanced-features/output-file-tracing):
+Em seu arquivo [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js), configure a opção `output` como `standalone` para [reduzir o tamanho de imagens](https://nextjs.org/docs/advanced-features/output-file-tracing):
 
 ```diff
 export default defineNextConfig({
@@ -130,7 +130,7 @@ CMD ["node", "server.js"]
 >
 > - _A emulação de `--platform=linux/amd64` pode não ser necessária após a mudança para o Node 18._
 > - _Consulte [`node:alpine`](https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine) para entender por que `libc6-compat` pode ser necessário._
-> - _Usando imagens baseadas em Alpine 3.17 [pode causar problemas no Prisma](https://github.com/t3-oss/create-t3-app/issues/975). Realizando a configuração: `engineType = "binary"` corrige esse problema no Alpine 3.17, [mas apresenta um custo de performance adicional](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
+> - _Usando imagens baseadas em Alpine 3.17 [pode causar problemas no Prisma](https://github.com/rbnog/shipspeed/issues/975). Realizando a configuração: `engineType = "binary"` corrige esse problema no Alpine 3.17, [mas apresenta um custo de performance adicional](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
 > - _Next.js coleta [dados anônimos de telemetria sobre uso geral](https://nextjs.org/telemetry). Remova o primeiro comentário de `ENV NEXT_TELEMETRY_DISABLED 1` para desabilitar a telemetria durante o build. Remova o segundo comentário para desabilitar a telemetria durante o tempo de execução._
 
 </div>
@@ -141,8 +141,8 @@ CMD ["node", "server.js"]
 Execute `build` e `run` desta imagem localmente com os seguintes comandos:
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 Abra [localhost:3000](http://localhost:3000/) para ver sua aplicação rodando.
@@ -170,7 +170,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -198,7 +198,7 @@ railway up
 railway open
 ```
 
-Vá para "Variables" e inclua seu `DATABASE_URL`. Em seguida, vá para "Settings" e selecione "Generate Domain". Para ver um exemplo em execução no Railway, visite [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/).
+Vá para "Variables" e inclua seu `DATABASE_URL`. Em seguida, vá para "Settings" e selecione "Generate Domain". Para ver um exemplo em execução no Railway, visite [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/).
 
 ## Recursos Úteis
 

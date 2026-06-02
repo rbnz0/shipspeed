@@ -1,12 +1,12 @@
 ---
 title: Environment Variables
-description: بدء الاستخدام مع create-t3-app
+description: بدء الاستخدام مع create-shipspeed
 layout: ../../../layouts/docs.astro
 lang: ar
 dir: rtl
 ---
 
-إن `Create-T3-App` تستخدم [Zod](https://github.com/colinhacks/zod) للتأكد من صلاحية الـ environment variables أثناء الـ runtime عن طريق توفير بعض الملفات الاضافة
+إن `create-shipspeed` تستخدم [Zod](https://github.com/colinhacks/zod) للتأكد من صلاحية الـ environment variables أثناء الـ runtime عن طريق توفير بعض الملفات الاضافة
 
 📁 src/env
 

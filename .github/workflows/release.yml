@@ -10,7 +10,7 @@ on:
 
 jobs:
   release:
-    if: ${{ github.repository_owner == 't3-oss' }}
+    if: ${{ github.repository_owner == 'rbnog' }}
     permissions:
       contents: write # to create release (changesets/action)
       id-token: write # OpenID Connect token needed for provenance

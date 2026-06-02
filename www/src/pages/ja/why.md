@@ -1,11 +1,11 @@
 ---
-title: CT3A を選ぶ理由
-description: なぜあなたは次のプロジェクトで Create T3 App を選ぶべきなのか
+title: ShipSpeed を選ぶ理由
+description: なぜあなたは次のプロジェクトで ShipSpeed を選ぶべきなのか
 layout: ../../layouts/docs.astro
 lang: ja
 ---
 
-私たちが Create T3 App の開発を始めたのは、[Theo](https://twitter.com/t3dotgg)が自分の好みの技術のテンプレートを作ることを拒んだからです。create-next-app や[Astro's CLI](https://astro.build)、そして型安全性への全面的な愛に触発されて、Create T3 App チームは新しく T3 Stack プロジェクトを始めるための最高の出発点を作るために懸命に働きました。
+私たちが ShipSpeed の開発を始めたのは、[Theo](https://twitter.com/rbnog)が自分の好みの技術のテンプレートを作ることを拒んだからです。create-next-app や[Astro's CLI](https://astro.build)、そして型安全性への全面的な愛に触発されて、ShipSpeed チームは新しく ShipSpeed Stack プロジェクトを始めるための最高の出発点を作るために懸命に働きました。
 
 Next.js を型安全な方法で使うことに興味があるなら、こここそが始めるべき場所です。私たちが選択した技術的選択について興味がある方は、引き続きお読みください :)
 
@@ -25,7 +25,7 @@ Next.js は、React を使ったアプリケーションを作成するための
 
 ## なぜ tRPC/Prisma/Tailwind/etc なのか？
 
-私たちは物事をできるだけシンプルに保つべきだと信じてやってきましたが、これらの構成要素は私たちが作ってきた、「アプリ」っぽいすべてのプロジェクトで使ってきたことがわかりました。`create-t3-app`は、必要とする構成要素を導入できるように、すばらしく良い仕事をしてくれます。
+私たちは物事をできるだけシンプルに保つべきだと信じてやってきましたが、これらの構成要素は私たちが作ってきた、「アプリ」っぽいすべてのプロジェクトで使ってきたことがわかりました。`create-shipspeed`は、必要とする構成要素を導入できるように、すばらしく良い仕事をしてくれます。
 
 ### tRPC
 

@@ -36,7 +36,7 @@ dir: rtl
 
 ## Files
 
-لسوء الحظ فإن tRPC تتطلب قليلاً من الـ boilerplate ولكن لحسن الحظ فان `create-t3-app` تحمل عنك هذا العبء.
+لسوء الحظ فإن tRPC تتطلب قليلاً من الـ boilerplate ولكن لحسن الحظ فان `create-shipspeed` تحمل عنك هذا العبء.
 
 ### 📄 ملف `pages/api/trpc/[trpc].ts`
 

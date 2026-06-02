@@ -1,6 +1,6 @@
 ---
 title: مقدمة
-description: مقدمة إلى T3 Stack
+description: مقدمة إلى ShipSpeed Stack
 layout: ../../layouts/docs.astro
 lang: ar
 dir: rtl
@@ -10,23 +10,23 @@ dir: rtl
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YkOSUVzOAA4" title="The best stack for your next project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## T3 Stack
+## ShipSpeed Stack
 
-الـ T3 Stack هو Stack لتطوير تطبيقات الويب بُني علي فَلسفة البساطة، قابلية إعادة الاستخدام (فصل المركبات وإعادة استخدامها) و الحصول على typesafety في جميع أزكان التطبيق.
+الـ ShipSpeed Stack هو Stack لتطوير تطبيقات الويب بُني علي فَلسفة البساطة، قابلية إعادة الاستخدام (فصل المركبات وإعادة استخدامها) و الحصول على typesafety في جميع أزكان التطبيق.
 
 الأجزاء الأساسية هم [**Next.js**](https://nextjs.org/)، و [**TypeScript**](https://typescriptlang.org/)، و [**Tailwind CSS**](https://tailwindcss.com/) ودائما ما تَكون مُضافة، إذا كان مشروعك يتطلب Backend فَيُمكنك إضافة [**tRPC**](https://trpc.io/)، و [**Prisma**](https://prisma.io/)، و [**NextAuth.js**](https://next-auth.js.org/).
 
 لعلك لاحظت أن هناك الكثير من... الأجزاء. هذا ما رغبنا بتصميمه, لك مُطلق الحرية أن تُضف جزء وتَحذف أُخرى كما تحتاج - يكون أساس Stack خاضع لاحتياجاتك.
 
-## حسنا… ما هو create-t3-app؟ أهو قالب (template)؟
+## حسنا… ما هو create-shipspeed؟ أهو قالب (template)؟
 
-نوعا من. أُنشئ `create-t3-app` بواسطة مطورون متمرسون ليبسط CLI إعداد تطبيق T3 قَدر الإمكان. فَكُل جزء اختياري، هذا يعني أنك تنشئ قالبك حسب احتياجك.
+نوعا من. أُنشئ `create-shipspeed` بواسطة مطورون متمرسون ليبسط CLI إعداد تطبيق ShipSpeed قَدر الإمكان. فَكُل جزء اختياري، هذا يعني أنك تنشئ قالبك حسب احتياجك.
 
 بعد أنشاء العديد من المشروعات وممارسة تلك الأدوات لسنين، كسبنا العديد من الخبرات والآراء، وفعلنا قدر المستطاع لوضعهم داخل CLI.
 
 **أنه ليس** بقالب شامل علي كل ما تحتاجة، نتوقع منك أن تُضيف مكتباتك الخاصة لحل ما سيواجهك من مشكلات **في تطبيقك**. علي الرغم من أننا نريد أن نترك لك مُطلق الحرية في حل المشاكل مثل state management ونشر التطبيق، [لكن لدينا بعض الترشيحات لك](/ar/other-recs).
 
-## T3 Axioms
+## ShipSpeed Axioms
 
 لنكون شفافون - هذا _مشروع متعدد الآراء_. نتشارك جميعاََ في عدد قليل من المعتقدات الأساسية حَول كيفية البناء ونتخذها كأساس قراراتنا.
 
@@ -40,5 +40,5 @@ dir: rtl
 
 ### Typesafety ليس خياراََ
 
-قد حددنا مُسبقاَ أن الهدف الأوحد من `create-t3-app` هو أن نوفر بِداية سَريعة لتطوير تطبيقات full-stack مع اتخاذ **typesafe** كأولوية, فهو أمر لابد منه لتحسين فاعليتك كمطور بواسطة تقليل عدد Bugs قدر الإمكان.
-أي حل وسط يضر typesafe في `create-t3-app` يَجب اتخاذه في مشروع مختلف.
+قد حددنا مُسبقاَ أن الهدف الأوحد من `create-shipspeed` هو أن نوفر بِداية سَريعة لتطوير تطبيقات full-stack مع اتخاذ **typesafe** كأولوية, فهو أمر لابد منه لتحسين فاعليتك كمطور بواسطة تقليل عدد Bugs قدر الإمكان.
+أي حل وسط يضر typesafe في `create-shipspeed` يَجب اتخاذه في مشروع مختلف.

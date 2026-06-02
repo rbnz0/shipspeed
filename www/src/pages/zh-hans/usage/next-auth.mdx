@@ -39,7 +39,7 @@ const User = () => {
 
 ## 在服务端检索 session
 
-有时你可能想在服务端请求 session。 为此, 可以使用 `create-t3-app` 提供的`getServerAuthSession` 辅助函数来预获取 session，然后使用 `getServerSideProps` 将其传递给客户端：
+有时你可能想在服务端请求 session。 为此, 可以使用 `create-shipspeed` 提供的`getServerAuthSession` 辅助函数来预获取 session，然后使用 `getServerSideProps` 将其传递给客户端：
 
 ```tsx:pages/users/[id].tsx
 import { getServerAuthSession } from "../server/auth";
@@ -62,7 +62,7 @@ const User = () => {
 
 ## 在 session 中添加 `user.id`
 
-默认设置下， Create T3 App 利用了 NextAuth.js 配置里的 [session 回调函数](https://next-auth.js.org/configuration/callbacks#session-callback) 来帮你将用户的 ID 添加到 `session` 对象里。
+默认设置下， ShipSpeed 利用了 NextAuth.js 配置里的 [session 回调函数](https://next-auth.js.org/configuration/callbacks#session-callback) 来帮你将用户的 ID 添加到 `session` 对象里。
 
 ```ts:server/auth.ts
 callbacks: {
@@ -93,11 +93,11 @@ declare module "next-auth" {
 
 ## 搭配 tRPC 的用法
 
-当你搭配 NextAuth.js 和 tRPC 一同使用时，你可以通过 [中间件](https://trpc.io/docs/v10/middlewares) 来创建可复用的、受保护的 procedure 路由函数。只有登入后的用户才能访问这些受保护的路由。`create-t3-app` 已经为你铺好了路，使你能够在认证路由里轻松访问到 session 里的数据。
+当你搭配 NextAuth.js 和 tRPC 一同使用时，你可以通过 [中间件](https://trpc.io/docs/v10/middlewares) 来创建可复用的、受保护的 procedure 路由函数。只有登入后的用户才能访问这些受保护的路由。`create-shipspeed` 已经为你铺好了路，使你能够在认证路由里轻松访问到 session 里的数据。
 
 这个过程可以被分为两步完成：
 
-1. 先通过函数 [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession) 从请求头里获得 session。使用 `getServerSession` 而不是普通的 `getSession` 函数的优势是，它是一个服务端的函数，不会触发无必要的数据请求调用。 `create-t3-app` 创建了一个帮助函数，将这个特殊的 API 抽象了出来，这样你就不需要每次访问会话时都导入你的 NextAuth.js 选项以及 `getServerSession` 函数。
+1. 先通过函数 [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession) 从请求头里获得 session。使用 `getServerSession` 而不是普通的 `getSession` 函数的优势是，它是一个服务端的函数，不会触发无必要的数据请求调用。 `create-shipspeed` 创建了一个帮助函数，将这个特殊的 API 抽象了出来，这样你就不需要每次访问会话时都导入你的 NextAuth.js 选项以及 `getServerSession` 函数。
 
 ```ts:server/auth.ts
 export const getServerAuthSession = (ctx: {
@@ -155,7 +155,7 @@ const userRouter = router({
 
 ## 搭配 Prisma 使用
 
-要将 NextAuth.js 搭配 Prisma 一起使用需要非常多的 [初始化步骤](https://authjs.dev/reference/adapter/prisma/)。`create-t3-app` 可以帮你完成这些工作，如果你在用 CLI 创建应用时同时选择了 Prisma 和 NextAuth.js，那你的应用已经集成了一个完全正常运行的认证系统，所有的数据库模型都已经预先配置好了。我们为你的应用预先配置了 Discord OAuth 认证服务，因为它是最方便实现的服务之一 —— 只需要在 `.env` 文件里提供令牌即可。然而，你也可以根据 [NextAuth.js 文档](https://next-auth.js.org/providers/) 来轻松添加更多其他第三方认证服务。要注意的是有部分特定的第三方服务需要你在数据模型上添加额外的字段。我们推荐你去阅读你想要添加的第三方验证服务的文档，以便确保你已经提供所有要求的字段了。
+要将 NextAuth.js 搭配 Prisma 一起使用需要非常多的 [初始化步骤](https://authjs.dev/reference/adapter/prisma/)。`create-shipspeed` 可以帮你完成这些工作，如果你在用 CLI 创建应用时同时选择了 Prisma 和 NextAuth.js，那你的应用已经集成了一个完全正常运行的认证系统，所有的数据库模型都已经预先配置好了。我们为你的应用预先配置了 Discord OAuth 认证服务，因为它是最方便实现的服务之一 —— 只需要在 `.env` 文件里提供令牌即可。然而，你也可以根据 [NextAuth.js 文档](https://next-auth.js.org/providers/) 来轻松添加更多其他第三方认证服务。要注意的是有部分特定的第三方服务需要你在数据模型上添加额外的字段。我们推荐你去阅读你想要添加的第三方验证服务的文档，以便确保你已经提供所有要求的字段了。
 
 ### 给你的模型添加新的字段
 
@@ -177,7 +177,7 @@ const userRouter = router({
 
 ## 搭配 Next.js 中间件使用
 
-将 NextAuth.js 搭配 Next.js 中间件一同使用[需要采用 JWT session 策略](https://next-auth.js.org/configuration/nextjs#caveats) 来进行认证。这是因为只有当会话 cookie 为 JWT 时，中间件才能够获取到它。默认情况下，Create T3 App 会用 Prisma 作为数据库适配器，并采取**默认**的数据库策略。
+将 NextAuth.js 搭配 Next.js 中间件一同使用[需要采用 JWT session 策略](https://next-auth.js.org/configuration/nextjs#caveats) 来进行认证。这是因为只有当会话 cookie 为 JWT 时，中间件才能够获取到它。默认情况下，ShipSpeed 会用 Prisma 作为数据库适配器，并采取**默认**的数据库策略。
 
 <Callout type="warning">
   使用数据库会话是推荐的方法，如果要切换到 JWT 会话策略，请先了解

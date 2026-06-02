@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: ja
 ---
 
-このスタックをコンテナ化し、Docker を使用して単一のコンテナとしてデプロイすることができます。または、 docker-compose を使用して複数のコンテナのグループの一部としてデプロイすることもできます。このドキュメントに基づいたサンプルリポジトリは [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker) をご覧ください。
+このスタックをコンテナ化し、Docker を使用して単一のコンテナとしてデプロイすることができます。または、 docker-compose を使用して複数のコンテナのグループの一部としてデプロイすることもできます。このドキュメントに基づいたサンプルリポジトリは [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker) をご覧ください。
 
 ## Docker プロジェクトの設定
 
@@ -16,7 +16,7 @@ Next.js では、ビルド時の変数（フロントエンドで利用可能、
 
 ### 1. Next の設定
 
-[`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js) に、[出力ファイルのトレースを自動的に活用してイメージサイズを小さくする](https://nextjs.org/docs/advanced-features/output-file-tracing)ための`standalone`出力オプション設定を追加してください：
+[`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js) に、[出力ファイルのトレースを自動的に活用してイメージサイズを小さくする](https://nextjs.org/docs/advanced-features/output-file-tracing)ための`standalone`出力オプション設定を追加してください：
 
 ```diff
 export default defineNextConfig({
@@ -130,7 +130,7 @@ CMD ["node", "server.js"]
 >
 > - _Node 18 への移行後は、`--platform=linux/amd64`のエミュレーションが不要になる場合があります。_
 > - _なぜ `libc6-compat` が必要なのかについては [`node:alpine`](https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine) を参照してください。._
-> - _[Alpine 3.17 ベースのイメージを使用すると、Prisma で問題が発生することがあります](https://github.com/t3-oss/create-t3-app/issues/975)。`engineType="binary"`を設定すると、Alpine 3.17 の問題は解決されますが、[ただし、関連するパフォーマンスコストが発生します](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
+> - _[Alpine 3.17 ベースのイメージを使用すると、Prisma で問題が発生することがあります](https://github.com/rbnog/shipspeed/issues/975)。`engineType="binary"`を設定すると、Alpine 3.17 の問題は解決されますが、[ただし、関連するパフォーマンスコストが発生します](https://www.prisma.io/docs/concepts/components/prisma-engines/query-engine#the-query-engine-at-runtime)._
 > - _Next.js は[一般的な使用方法に関する匿名のテレメトリーデータ](https://nextjs.org/telemetry)を収集します。ビルド時にテレメトリを無効にするには、`ENV NEXT_TELEMETRY_DISABLED 1` の最初のインスタンスのコメントを外してください。実行時にテレメトリを無効にするには、2 番目のインスタンスのコメントを外してください。_
 
 </div>
@@ -141,8 +141,8 @@ CMD ["node", "server.js"]
 以下のコマンドでこのイメージをローカルでビルドして実行します：
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 [localhost:3000](http://localhost:3000/)を開き、実行中のアプリケーションを確認します。
@@ -170,7 +170,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -198,7 +198,7 @@ railway up
 railway open
 ```
 
-"Variables"に行ってあなたの`DATABASE_URL`を指定します。その後、"Settings" に行き、"Generate Domain" を選択します。Railway 上での実行例を見るには[ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/)にアクセスしてください。
+"Variables"に行ってあなたの`DATABASE_URL`を指定します。その後、"Settings" に行き、"Generate Domain" を選択します。Railway 上での実行例を見るには[shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/)にアクセスしてください。
 
 ## お役立ち情報
 

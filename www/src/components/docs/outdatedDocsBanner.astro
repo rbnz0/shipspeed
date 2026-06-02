@@ -11,8 +11,8 @@ const [_1, _2, _3, ...rest] = path.split("/");
 const englishPath = `src/pages/en/${rest.join("/")}`;
 const engHref = `/en/${rest.join("/").replace(/\.[^/.]+$/, "")}`;
 
-const url = `https://api.github.com/repos/t3-oss/create-t3-app/commits?path=www/${path}&per_page=1`;
-const engUrl = `https://api.github.com/repos/t3-oss/create-t3-app/commits?path=www/${englishPath}&per_page=1`;
+const url = `https://api.github.com/repos/rbnog/shipspeed/commits?path=www/${path}&per_page=1`;
+const engUrl = `https://api.github.com/repos/rbnog/shipspeed/commits?path=www/${englishPath}&per_page=1`;
 
 // File may not be on Github yet, so we only throw an error if we're in production
 async function getCommitDiff() {

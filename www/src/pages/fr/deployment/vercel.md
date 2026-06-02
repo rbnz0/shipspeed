@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: fr
 ---
 
-Nous vous recommandons de déployer votre application sur [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Ce service facilite le déploiement d'application Next.js.
+Nous vous recommandons de déployer votre application sur [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Ce service facilite le déploiement d'application Next.js.
 
 ## Configuration du projet
 
@@ -22,7 +22,7 @@ Vercel va certainement configurer les commandes de génération et publier le r�
 
 ## Utilisation du tableau de bord Vercel
 
-1. Après avoir envoyer votre code sur GitHub, Inscrivez-vous sur [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) avec GitHub et cliquez ensuite sur **Add New Project**.
+1. Après avoir envoyer votre code sur GitHub, Inscrivez-vous sur [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) avec GitHub et cliquez ensuite sur **Add New Project**.
 
 ![Nouveau projet sur Vercel](/images/vercel-new-project.webp)
 

@@ -1,6 +1,6 @@
 ---
 title: Instalación
-description: Instrucciones de instalación para Create T3 App
+description: Instrucciones de instalación para ShipSpeed
 layout: ../../layouts/docs.astro
 lang: es
 isMdx: true
@@ -8,30 +8,30 @@ isMdx: true
 
 import Callout from "../../components/docs/callout.tsx";
 
-Para crear una aplicación usando `create-t3-app`, ejecuta cualquiera de los siguientes tres comandos y responde las preguntas en la línea de comandos:
+Para crear una aplicación usando `create-shipspeed`, ejecuta cualquiera de los siguientes tres comandos y responde las preguntas en la línea de comandos:
 
 ### npm
 
 ```bash
-npm create t3-app@latest
+npm create ShipSpeed@latest
 ```
 
 ### yarn
 
 ```bash
-yarn create t3-app
+yarn create ShipSpeed
 ```
 
 ### pnpm
 
 ```bash
-pnpm create t3-app@latest
+pnpm create ShipSpeed@latest
 ```
 
 ### bun
 
 ```bash
-bun create t3-app@latest
+bun create ShipSpeed@latest
 ```
 
 Después de que tu aplicación haya sido creada, consulta los [primeros pasos](/es/usage/first-steps) para comenzar con tu nueva aplicación.
@@ -42,7 +42,7 @@ Después de que tu aplicación haya sido creada, consulta los [primeros pasos](/
 | ----------------- | ----------------------------------------------------------------------------------------- |
 | `[dir]`           | Incluye un argumento de directorio con un nombre para el proyecto                         |
 | `--noGit`         | Dile explícitamente a la CLI que no inicialice un nuevo repositorio de git en el proyecto |
-| `-y`, `--default` | Omite la CLI y arranca una nueva aplicación t3 con todas las opciones seleccionadas       |
+| `-y`, `--default` | Omite la CLI y arranca una nueva aplicación ShipSpeed con todas las opciones seleccionadas       |
 | `--noInstall`     | Generar proyecto sin instalar dependencias                                                |
 
 ## Uso experimental
@@ -66,8 +66,8 @@ No es necesario que se excluya explícitamente los paquetes que no deseas. Sin e
 
 ### Ejemplo
 
-Lo siguiente sería una aplicación T3 con tRPC y Tailwind CSS.
+Lo siguiente sería una aplicación ShipSpeed con tRPC y Tailwind CSS.
 
 ```bash
-pnpm dlx create-t3-app@latest --CI --trpc --tailwind
+pnpm dlx create-shipspeed@latest --CI --trpc --tailwind
 ```

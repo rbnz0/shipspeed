@@ -4,7 +4,7 @@ description: Utrulling med Netlify
 layout: ../../../layouts/docs.astro
 ---
 
-Netlify er en alternativ distribusjonsleverandør på samme måte som Vercel. Se [`ajcwebdev/ct3a-netlify`](https://github.com/ajcwebdev/ct3a-netlify) for et eksempel-repo basert på dette dokumentet.
+Netlify er en alternativ distribusjonsleverandør på samme måte som Vercel. Se [`ajcwebdev/shipspeed-netlify`](https://github.com/ajcwebdev/shipspeed-netlify) for et eksempel-repo basert på dette dokumentet.
 
 ## Hvorfor hoste på Netlify
 
@@ -82,4 +82,4 @@ Rull ut prosjektet ditt med [`ntl deploy`](https://docs.netlify.com/cli/get-star
 ntl deploy --prod --build
 ```
 
-For å se et kjørende eksempel på Netlify, besøk [ct3a.netlify.app](https://ct3a.netlify.app/).
+For å se et kjørende eksempel på Netlify, besøk [shipspeed.netlify.app](https://shipspeed.netlify.app/).

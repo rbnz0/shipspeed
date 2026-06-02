@@ -1,11 +1,11 @@
 ---
-title: Por que CT3A?
-description: Porque você deve escolher o Create T3 App para o seu próximo projeto
+title: Por que ShipSpeed?
+description: Porque você deve escolher o ShipSpeed para o seu próximo projeto
 layout: ../../layouts/docs.astro
 lang: pt
 ---
 
-Nós começamos o create-t3-app porque o [Theo](https://twitter.com/t3dotgg) se recusou a criar um template com suas tecnologias favoritas. Inspirado pelo create-next-app, [a CLI do Astro](https://astro.build) e um amor geral pela segurança de tipos, o time do create-t3-app trabalhou duro para construir o melhor ponto de início possível para novos projetos com a T3 Stack.
+Nós começamos o create-shipspeed porque o [Theo](https://twitter.com/rbnog) se recusou a criar um template com suas tecnologias favoritas. Inspirado pelo create-next-app, [a CLI do Astro](https://astro.build) e um amor geral pela segurança de tipos, o time do create-shipspeed trabalhou duro para construir o melhor ponto de início possível para novos projetos com a ShipSpeed Stack.
 
 Se você está interessado em usar o Next.js de uma maneira typesafe, este é o lugar para começar. Se você está curioso sobre alguma das escolhas de tecnologias que fizemos, siga com a leitura :)
 
@@ -25,7 +25,7 @@ o Next.js oferece uma abordagem levemente opinada e altamente otimizada de criar
 
 ## Por que tRPC/Prisma/Tailwind/etc?
 
-Enquanto nós acreditamos em manter as coisas o mais simples o possível, nós frequentemente encontramos essas tecnologias sendo usadas em qualquer "projetinho" que criamos. O `create-t3-app` faz um bom serviço deixando você adotar apenas as peças que precisa.
+Enquanto nós acreditamos em manter as coisas o mais simples o possível, nós frequentemente encontramos essas tecnologias sendo usadas em qualquer "projetinho" que criamos. O `create-shipspeed` faz um bom serviço deixando você adotar apenas as peças que precisa.
 
 ### tRPC
 

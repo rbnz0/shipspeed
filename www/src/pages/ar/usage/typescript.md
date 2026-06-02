@@ -19,14 +19,14 @@ dir: rtl
       src="/images/theo_300x300.webp"
     />
     <div className="flex flex-col items-start not-italic">
-      <span className=" text-sm font-semibold">Theo - creator of the T3 Stack</span>
+      <span className=" text-sm font-semibold">Theo - creator of the ShipSpeed Stack</span>
       <a
-        href="https://twitter.com/t3dotgg"
+        href="https://twitter.com/rbnog"
         target="_blank"
         rel="noopener noreferrer"
         className="text-sm"
       >
-        @t3dotgg
+        @rbnog
       </a>
     </div>
   </cite>

@@ -1,11 +1,11 @@
 ---
 title: Pierwsze Kroki
-description: Jak zacząć pracę z nową aplikacją T3
+description: Jak zacząć pracę z nową aplikacją ShipSpeed
 layout: ../../../layouts/docs.astro
 lang: pl
 ---
 
-Skorzytałeś właśnie z szablonu aplikacji T3 i jesteś gotowy, aby zacząć z nim pracę. Tu znajdziesz minimalny setup, jaki powinieneś wykonać, aby uruchomić aplikację.
+Skorzytałeś właśnie z szablonu aplikacji ShipSpeed i jesteś gotowy, aby zacząć z nim pracę. Tu znajdziesz minimalny setup, jaki powinieneś wykonać, aby uruchomić aplikację.
 
 ## Baza Danych
 
@@ -48,5 +48,5 @@ Następujące rozszerzenia są przez nas polecane dla optymalnego DX'u. Poniższ
 ## Następne Kroki
 
 - Jeżeli twoja aplikacja zawiera tRPC, sprawdź pliki `src/pages/index.tsx` i `src/server/api/routers/post.ts` aby dowiedzieć się, jak działają zapytania wykonywane przez tRPC.
-- Rozejrzyj się po dokumentacji Create T3 App oraz dokumentacji paczek, z których korzysta twój projekt.
-- Dołącz do naszego serwera [Discord](https://t3.gg/discord) i dodaj gwiazdkę na repozytorium [GitHub](https://github.com/t3-oss/create-t3-app)! :)
+- Rozejrzyj się po dokumentacji ShipSpeed oraz dokumentacji paczek, z których korzysta twój projekt.
+- Dołącz do naszego serwera [Discord](https://github.com/rbnog/shipspeed/discussions) i dodaj gwiazdkę na repozytorium [GitHub](https://github.com/rbnog/shipspeed)! :)

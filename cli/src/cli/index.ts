@@ -8,7 +8,7 @@ import {
   type AvailablePackages,
   type DatabaseProvider,
 } from "~/installers/index.js";
-import { getVersion } from "~/utils/getT3Version.js";
+import { getVersion } from "~/utils/getShipSpeedVersion.js";
 import { getUserPkgManager } from "~/utils/getUserPkgManager.js";
 import { IsTTYError } from "~/utils/isTTYError.js";
 import { logger } from "~/utils/logger.js";
@@ -487,7 +487,7 @@ export const runCli = async (): Promise<CliResults> => {
   ${CREATE_SHIPSPEED} needs an interactive terminal to provide options`);
 
       const shouldContinue = await p.confirm({
-        message: `Continue scaffolding a default T3 app?`,
+        message: `Continue scaffolding a default ShipSpeed app?`,
         initialValue: true,
       });
 

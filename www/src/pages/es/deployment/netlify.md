@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: es
 ---
 
-Netlify es una alternativa al proveedor de despliegue en un sentido similar a Vercel. Ver [`ajcwebdev/ct3a-netlify`](https://github.com/ajcwebdev/ct3a-netlify) para ver un ejemplo de un repositorio basado en este documento.
+Netlify es una alternativa al proveedor de despliegue en un sentido similar a Vercel. Ver [`ajcwebdev/shipspeed-netlify`](https://github.com/ajcwebdev/shipspeed-netlify) para ver un ejemplo de un repositorio basado en este documento.
 
 ## ¿Por qué desplegar en Netlify?
 
@@ -81,4 +81,4 @@ Despliega tu proyecto con [`ntl deploy`](https://docs.netlify.com/cli/get-starte
 ntl deploy --prod --build
 ```
 
-Para ver un ejemplo en ejecución en Netlify, visita [ct3a.netlify.app](https://ct3a.netlify.app/).
+Para ver un ejemplo en ejecución en Netlify, visita [shipspeed.netlify.app](https://shipspeed.netlify.app/).

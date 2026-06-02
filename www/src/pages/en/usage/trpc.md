@@ -95,7 +95,7 @@ You'll immediately notice how good the autocompletion and typesafety is. As soon
 
 ## Inferring errors
 
-By default, `create-t3-app` sets up an [error formatter](https://trpc.io/docs/v11/server/error-formatting) that lets you infer your Zod Errors if you get validation errors on the backend.
+By default, `create-shipspeed` sets up an [error formatter](https://trpc.io/docs/v11/server/error-formatting) that lets you infer your Zod Errors if you get validation errors on the backend.
 
 Example usage:
 
@@ -125,7 +125,7 @@ function MyComponent() {
 
 ## Files
 
-tRPC requires quite a lot of boilerplate that `create-t3-app` sets up for you. Let's go over the files that are generated:
+tRPC requires quite a lot of boilerplate that `create-shipspeed` sets up for you. Let's go over the files that are generated:
 
 ### 📄 `pages/api/trpc/[trpc].ts`
 
@@ -135,7 +135,7 @@ This is the entry point for your API and exposes the tRPC router. Normally, you 
 
 This file is split up in two parts, context creation and tRPC initialization:
 
-1. We define the context that is passed to your tRPC procedures. Context is data that all of your tRPC procedures will have access to, and is a great place to put things like database connections, authentication information, etc. In create-t3-app we use two functions, to enable using a subset of the context when we do not have access to the request object.
+1. We define the context that is passed to your tRPC procedures. Context is data that all of your tRPC procedures will have access to, and is a great place to put things like database connections, authentication information, etc. In create-shipspeed we use two functions, to enable using a subset of the context when we do not have access to the request object.
 
 - `createInnerTRPCContext`: This is where you define context which doesn't depend on the request, e.g. your database connection. You can use this function for [integration testing](#sample-integration-test) or [ssg-helpers](https://trpc.io/docs/v10/client/nextjs/server-side-helpers) where you don't have a request object.
 
@@ -165,7 +165,7 @@ Lastly, we export a [helper type](https://trpc.io/docs/client/vanilla/infer-type
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x4mu-jOiA0Q" title="How tRPC really works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Create T3 App contributor [Christopher Ehrlich](https://twitter.com/ccccjjjjeeee) made [a video about data flows in tRPC](https://www.youtube.com/watch?v=x4mu-jOiA0Q). This video is recommended if you have used tRPC but still feel a bit unclear about how it works.
+ShipSpeed contributor [Christopher Ehrlich](https://twitter.com/ccccjjjjeeee) made [a video about data flows in tRPC](https://www.youtube.com/watch?v=x4mu-jOiA0Q). This video is recommended if you have used tRPC but still feel a bit unclear about how it works.
 
 ## How do I call my API externally?
 

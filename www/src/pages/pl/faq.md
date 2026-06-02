@@ -1,17 +1,17 @@
 ---
 title: FAQ
-description: Najczęściej zadawane pytania dotyczące Create T3 App
+description: Najczęściej zadawane pytania dotyczące ShipSpeed
 layout: ../../layouts/docs.astro
 lang: pl
 ---
 
-Tu znajdziesz najczęściej zadawane pytania dotyczące Create T3 App.
+Tu znajdziesz najczęściej zadawane pytania dotyczące ShipSpeed.
 
 ## Co dalej? Jak mam napisać aplikację?
 
 Staramy się, aby projekt ten był jak najprostszy - możesz zacząć już korzystać z zawartego w nim szablonu a następnie stopniowo dodawać potrzebne Ci rzeczy.
 
-Jeżeli nie znasz poszczególnych technologi użytych w projekcie, skorzystaj z odnośników do odpowiednich stron z dokumentacjami. Jeżeli dalej nie jesteś co do nich pewien, możesz dołączyć do naszego [serwera Discord](https://t3.gg/discord) i poprosić o pomoc.
+Jeżeli nie znasz poszczególnych technologi użytych w projekcie, skorzystaj z odnośników do odpowiednich stron z dokumentacjami. Jeżeli dalej nie jesteś co do nich pewien, możesz dołączyć do naszego [serwera Discord](https://github.com/rbnog/shipspeed/discussions) i poprosić o pomoc.
 
 - [Next.js](https://nextjs.org/)
 - [NextAuth.js](https://next-auth.js.org)
@@ -22,32 +22,32 @@ Jeżeli nie znasz poszczególnych technologi użytych w projekcie, skorzystaj z 
 
 ## Jak sprawić, by aplikacja była ciągle aktualna?
 
-Create T3 App to narzędzie do tworzenia szablonu, a nie framework. Oznacza to, że po inicjalizacji aplikacji jest ona już twoja. Nie istnieje żadne narzędzie CLI do wykorzystania po instalacji aplikacji, które utrzymałoby twoją aplikację aktualną. Jeżeli chcesz być na bieżąco z wprowadzanymi przez nas zmianami do szablonu, możesz [włączyć powiadomienia nowych wersji](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) dla naszego repozytorium. Pamiętaj jednak, że wprowadzanie każdej zmiany z naszego szablonu nie jest wcale wymagane.
+ShipSpeed to narzędzie do tworzenia szablonu, a nie framework. Oznacza to, że po inicjalizacji aplikacji jest ona już twoja. Nie istnieje żadne narzędzie CLI do wykorzystania po instalacji aplikacji, które utrzymałoby twoją aplikację aktualną. Jeżeli chcesz być na bieżąco z wprowadzanymi przez nas zmianami do szablonu, możesz [włączyć powiadomienia nowych wersji](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) dla naszego repozytorium. Pamiętaj jednak, że wprowadzanie każdej zmiany z naszego szablonu nie jest wcale wymagane.
 
 ## Jakie zasoby do nauki są dostępne?
 
-Poniższe elementy to jedne z najlepszych zasobów dla stacka T3, jednak społeczność oraz [Theo](https://youtu.be/rzwaaWH0ksk?t=1436) polecają Ci zacząć po prostu z niego korzystać. W ten sposób podczas pisania aplikacji zdobędziesz potrzebną wiedzę.
+Poniższe elementy to jedne z najlepszych zasobów dla stack ShipSpeed, jednak społeczność oraz [Theo](https://youtu.be/rzwaaWH0ksk?t=1436) polecają Ci zacząć po prostu z niego korzystać. W ten sposób podczas pisania aplikacji zdobędziesz potrzebną wiedzę.
 
-Jeżeli zastanawiasz się nad korzystaniem z Create T3 App, mogłeś już używać poszczególnych jego składowych w przeszłości. W takim przypadku spróbuj wskoczyć na głęboką wodę i nauczyć się innych jego części po drodze!
+Jeżeli zastanawiasz się nad korzystaniem z ShipSpeed, mogłeś już używać poszczególnych jego składowych w przeszłości. W takim przypadku spróbuj wskoczyć na głęboką wodę i nauczyć się innych jego części po drodze!
 
-Zdajemy sobie sprawę z tego, iż opisany wyżej sposób nie jest dla każdego najlepszy. Jeżeli więc w dalszym ciągu czujesz potrzebę skorzystania z innych źródeł (lub jeżeli nie jesteś wystarczająco pewny siebie / czujesz się przytłoczony stackiem), sprawdź te poradniki dotyczące Create T3 App (pamiętaj, że są one w języku angielskim):
+Zdajemy sobie sprawę z tego, iż opisany wyżej sposób nie jest dla każdego najlepszy. Jeżeli więc w dalszym ciągu czujesz potrzebę skorzystania z innych źródeł (lub jeżeli nie jesteś wystarczająco pewny siebie / czujesz się przytłoczony stackiem), sprawdź te poradniki dotyczące ShipSpeed (pamiętaj, że są one w języku angielskim):
 
 ### Artykuły
 
-- [Zbuduj aplikację full stack z Create T3 App](https://www.nexxel.dev/blog/ct3a-guestbook)
-- [Pierwsze spojrzenie na Create T3 App](https://dev.to/ajcwebdev/a-first-look-at-create-t3-app-1i8f)
-- [Migrowanie aplikacji T3 do Turborepo](https://www.jumr.dev/blog/t3-turbo)
-- [Integrowanie Stripe'a z Aplikacją T3](https://blog.nickramkissoon.com/posts/integrate-stripe-t3)
+- [Zbuduj aplikację full stack z ShipSpeed](https://www.nexxel.dev/blog/ShipSpeed-guestbook)
+- [Pierwsze spojrzenie na ShipSpeed](https://dev.to/ajcwebdev/a-first-look-at-create-shipspeed-1i8f)
+- [Migrowanie aplikacji ShipSpeed do Turborepo](https://www.jumr.dev/blog/t3-turbo)
+- [Integrowanie Stripe'a z aplikacją ShipSpeed](https://blog.nickramkissoon.com/posts/integrate-stripe-t3)
 
 ### Filmy
 
-- [T3 Stack Tutorial - FROM 0 TO PROD FOR $0 (Next.js, tRPC, TypeScript, Tailwind, Prisma & More)](https://www.youtube.com/watch?v=YkOSUVzOAA4) **(recommended)**
-- [Jack Herrington - Zbuduj aplikację do sporządzania notatek z T3 Stackiem](https://www.youtube.com/watch?v=J1gzN1SAhyM)
-- [Zbuduj klon Twittera z T3 Stackiem - tRPC, Next.js, Prisma, Tailwind oraz Zod](https://www.youtube.com/watch?v=nzJsYJPCc80)
-- [Zbuduj blog z T3 Stackiem - tRPC, TypeScript, Next.js, Prisma i Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
-- [Zbuduj live chat z T3 Stackiem - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
-- [T3 Stack - Jak go zbudowaliśmy](https://www.youtube.com/watch?v=H-FXwnEjSsI)
-- [Przegląd Create T3 App (Next, Typescript, Tailwind, tRPC, Next-Auth)](https://www.youtube.com/watch?v=VJH8dsPtbeU)
+- [ShipSpeed Stack Tutorial - FROM 0 TO PROD FOR $0 (Next.js, tRPC, TypeScript, Tailwind, Prisma & More)](https://www.youtube.com/watch?v=YkOSUVzOAA4) **(recommended)**
+- [Jack Herrington - Zbuduj aplikację do sporządzania notatek z ShipSpeed Stackiem](https://www.youtube.com/watch?v=J1gzN1SAhyM)
+- [Zbuduj klon Twittera z ShipSpeed Stackiem - tRPC, Next.js, Prisma, Tailwind oraz Zod](https://www.youtube.com/watch?v=nzJsYJPCc80)
+- [Zbuduj blog z ShipSpeed Stackiem - tRPC, TypeScript, Next.js, Prisma i Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
+- [Zbuduj live chat z ShipSpeed Stackiem - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
+- [ShipSpeed Stack - Jak go zbudowaliśmy](https://www.youtube.com/watch?v=H-FXwnEjSsI)
+- [Przegląd ShipSpeed (Next, Typescript, Tailwind, tRPC, Next-Auth)](https://www.youtube.com/watch?v=VJH8dsPtbeU)
 
 ## Dlaczego w projekcie są pliki `.js`?
 
@@ -57,9 +57,9 @@ Staramy się podkreślić, iż pliki te korzystają z TypeScripta nie bez powodu
 
 ## Mam problem z dodaniem i18n do aplikacji. Czy istnieje jakiś projekt, do którego mógłbym się odnieść przy jej budowaniu?
 
-Zdecydowaliśmy się nie umieszczać i18n w `create-t3-app`, ponieważ jest to bardzo kontrowersyjny temat i istnieje wiele sposobów, aby element ten zaimplementować.
+Zdecydowaliśmy się nie umieszczać i18n w `create-shipspeed`, ponieważ jest to bardzo kontrowersyjny temat i istnieje wiele sposobów, aby element ten zaimplementować.
 
-Jeżeli jednak nie wiesz jak wygląda poprawna interpretacja internacjonalizacji i chciałbyś zobaczyć przykładowy projekt, sprawdź [to repozytorium](https://github.com/juliusmarminge/t3-i18n) - ukazuje ono jak możesz dodać i18n do aplikacji T3 korzystając przy tym z [next-i18next](https://github.com/i18next/next-i18next).
+Jeżeli jednak nie wiesz jak wygląda poprawna interpretacja internacjonalizacji i chciałbyś zobaczyć przykładowy projekt, sprawdź [to repozytorium](https://github.com/juliusmarminge/t3-i18n) - ukazuje ono jak możesz dodać i18n do aplikacji ShipSpeed korzystając przy tym z [next-i18next](https://github.com/i18next/next-i18next).
 
 ## Dlaczego korzystamy z folderu `/pages` a nie `/app` z Next.js 13?
 

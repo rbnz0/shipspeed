@@ -4,7 +4,7 @@ description: Развертывание в Netlify
 layout: ../../../layouts/docs.astro
 ---
 
-Netlify это альтернативый провайдер развертывания, похожий на Vercel. Вот [`ajcwebdev/ct3a-netlify`](https://github.com/ajcwebdev/ct3a-netlify) пример репозитория на основе этой документации.
+Netlify это альтернативый провайдер развертывания, похожий на Vercel. Вот [`ajcwebdev/shipspeed-netlify`](https://github.com/ajcwebdev/shipspeed-netlify) пример репозитория на основе этой документации.
 
 ## Зачем развертывать на Netlify
 
@@ -82,4 +82,4 @@ ntl env:import .env
 ntl deploy --prod --build
 ```
 
-Для просмотра примера на Netlify, перейдите на [ct3a.netlify.app](https://ct3a.netlify.app/).
+Для просмотра примера на Netlify, перейдите на [shipspeed.netlify.app](https://shipspeed.netlify.app/).

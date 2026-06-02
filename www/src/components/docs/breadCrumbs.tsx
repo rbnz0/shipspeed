@@ -11,7 +11,7 @@ export default function BreadCrumbs() {
   const slugToEntryPath = (slug: SlugType): OuterHeaders => {
     switch (slug) {
       case "":
-        return "Create T3 App";
+        return "ShipSpeed";
       case "usage":
         return "Usage";
       case "deployment":

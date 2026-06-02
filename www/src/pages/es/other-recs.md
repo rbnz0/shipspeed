@@ -5,9 +5,9 @@ layout: ../../layouts/docs.astro
 lang: es
 ---
 
-Reconocemos que las librerías incluidas en `create-t3-app` no resuelven todos los problemas. Si bien te alentamos a comenzar tu proyecto con las cosas que proporcionamos, llegará un momento en que necesitarás traer otros paquetes. Solo tu puedes saber qué necesita tu proyecto, pero aquí hay algunas cosas que recomendamos con frecuencia.
+Reconocemos que las librerías incluidas en `create-shipspeed` no resuelven todos los problemas. Si bien te alentamos a comenzar tu proyecto con las cosas que proporcionamos, llegará un momento en que necesitarás traer otros paquetes. Solo tu puedes saber qué necesita tu proyecto, pero aquí hay algunas cosas que recomendamos con frecuencia.
 
-Estas son recomendaciones de colaboradores individuales de create-t3-app y no deben verse como respaldos "oficiales" por parte del equipo de create-t3-app o T3-OSS. _**Haz tu propia investigación, especialmente antes de comprometerte con servicios pagados**_.
+Estas son recomendaciones de colaboradores individuales de create-shipspeed y no deben verse como respaldos "oficiales" por parte del equipo de create-shipspeed o rbnog. _**Haz tu propia investigación, especialmente antes de comprometerte con servicios pagados**_.
 
 ## Administración de Estado
 
@@ -94,7 +94,7 @@ Framer Motion proporciona una sintaxis declarativa simple y te permite escribir 
 Vercel tomó el infierno de los despliegues web y lo convirtió en una integración de GitHub de configurar y olvidar. Hemos escalado a cientos de miles de usuarios sin problemas. Impulsado por AWS, simplemente una interfaz mucho mejor :)
 
 - [Página de inicio de Vercel](https://vercel.com/)
-- [Guía Create T3 App para desplegar en Vercel](/es/deployment/vercel)
+- [Guía ShipSpeed para desplegar en Vercel](/es/deployment/vercel)
 
 ### PlanetScale
 
@@ -124,7 +124,7 @@ Nos encantan Prisma y PlanetScale, pero algunos proyectos requieren una solució
 
 **Para WebSockets sin servidor**
 
-Si los WebSockets son el enfoque principal de tu proyecto, es posible que desees considerar un backend más tradicional como [Fastify](https://www.fastify.io/) (que [¡también funciona con tRPC!](https://trpc.io/docs/v10/fastify)). Pero para agregar rápidamente WebSockets a una aplicación T3, Pusher es una excelente opción.
+Si los WebSockets son el enfoque principal de tu proyecto, es posible que desees considerar un backend más tradicional como [Fastify](https://www.fastify.io/) (que [¡también funciona con tRPC!](https://trpc.io/docs/v10/fastify)). Pero para agregar rápidamente WebSockets a una aplicación ShipSpeed, Pusher es una excelente opción.
 
 - [Página de inicio de Pusher](https://pusher.com/)
 

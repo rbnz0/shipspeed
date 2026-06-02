@@ -1,11 +1,11 @@
 ---
 title: はじめの一歩
-description: 新しいT3アプリを使い始める
+description: 新しいShipSpeedを使い始める
 layout: ../../../layouts/docs.astro
 lang: ja
 ---
 
-新しい T3 アプリのために初期構成を生成し、準備ができたとして、ここではアプリを動作させるために必要な最低限の手順を説明します。
+新しい ShipSpeedのために初期構成を生成し、準備ができたとして、ここではアプリを動作させるために必要な最低限の手順を説明します。
 
 ## データベース
 
@@ -41,5 +41,5 @@ lang: ja
 ## 次のステップへ
 
 - もしあなたのアプリケーションが tRPC を含んでいるならば、`src/pages/index.tsx` と `src/server/api/routers/post.ts` をチェックして、tRPC クエリがどのように動作するかを見てください。
-- Create T3 App のドキュメントや、あなたのアプリケーションに含まれるパッケージのドキュメントを見てみてください。
-- [Discord](https://t3.gg/discord)に参加し、[GitHub](https://github.com/t3-oss/create-t3-app)でスターを付けてください！:)
+- ShipSpeed のドキュメントや、あなたのアプリケーションに含まれるパッケージのドキュメントを見てみてください。
+- [Discord](https://github.com/rbnog/shipspeed/discussions)に参加し、[GitHub](https://github.com/rbnog/shipspeed)でスターを付けてください！:)

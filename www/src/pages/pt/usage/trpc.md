@@ -95,7 +95,7 @@ Você notará imediatamente como o preenchimento automático e a segurança de t
 
 ## Inferindo erros
 
-Por padrão, `create-t3-app` configura um [formatador de erros](https://trpc.io/docs/error-formatting) que permite que você infira os erros do Zod se você receber erros de validação no back-end.
+Por padrão, `create-shipspeed` configura um [formatador de erros](https://trpc.io/docs/error-formatting) que permite que você infira os erros do Zod se você receber erros de validação no back-end.
 
 Exemplo de uso:
 
@@ -125,7 +125,7 @@ function MyComponent() {
 
 ## Arquivos
 
-O tRPC requer bastante do template que o `create-t3-app` configura para você. Vamos ver os arquivos que são gerados:
+O tRPC requer bastante do template que o `create-shipspeed` configura para você. Vamos ver os arquivos que são gerados:
 
 ### 📄 `pages/api/trpc/[trpc].ts`
 
@@ -135,7 +135,7 @@ Este é o ponto de entrada para sua API que expõe o roteador tRPC. Normalmente,
 
 Este arquivo é dividido em duas partes, criação de contexto e inicialização do tRPC:
 
-1. Definimos o contexto que é passado para seus procedimentos tRPC. O contexto são dados aos quais todos os seus procedimentos tRPC terão acesso, e é um ótimo lugar para colocar coisas como conexões com banco de dados, informações de autenticação, etc. Em create-t3-app, usamos duas funções, para habilitar o uso de um subconjunto do contexto quando não temos acesso ao objeto de solicitação.
+1. Definimos o contexto que é passado para seus procedimentos tRPC. O contexto são dados aos quais todos os seus procedimentos tRPC terão acesso, e é um ótimo lugar para colocar coisas como conexões com banco de dados, informações de autenticação, etc. Em create-shipspeed, usamos duas funções, para habilitar o uso de um subconjunto do contexto quando não temos acesso ao objeto de solicitação.
 
 - `createInnerTRPCContext`: É aqui que você define o contexto que não depende da solicitação, por exemplo sua conexão com o banco de dados. Você pode usar esta função para [teste de integração](#exemplo-de-teste-de-integração) ou [ssg-helpers](https://trpc.io/docs/v10/ssg-helpers) onde você não tem um objeto de solicitação/request.
 
@@ -165,7 +165,7 @@ Por fim, exportamos um [tipo auxiliar](https://trpc.io/docs/v10/infer-types#addi
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x4mu-jOiA0Q" title="How tRPC really works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Contribuidor do Create T3 App [Christopher Ehrlich](https://twitter.com/ccccjjjjeeee) fez [um vídeo sobre fluxos de dados em tRPC](https://www.youtube.com/watch?v=x4mu-jOiA0Q). Este vídeo é recomendado se você já usou o tRPC, mas ainda se sente um pouco incerto sobre como ele funciona.
+Contribuidor do ShipSpeed [Christopher Ehrlich](https://twitter.com/ccccjjjjeeee) fez [um vídeo sobre fluxos de dados em tRPC](https://www.youtube.com/watch?v=x4mu-jOiA0Q). Este vídeo é recomendado se você já usou o tRPC, mas ainda se sente um pouco incerto sobre como ele funciona.
 
 ## Como faço para chamar minha API externamente?
 

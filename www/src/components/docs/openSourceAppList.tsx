@@ -30,7 +30,7 @@ const projects: App[] = [
     link: "https://www.theninja-rpg.com",
   },
   {
-    description: "Create T3 Turbo - T3 Stack using Turborepo",
+    description: "ShipSpeed Turbo - T3 Stack using Turborepo",
     repoName: "create-t3-turbo",
     repo: "https://github.com/t3-oss/create-t3-turbo",
     linkName: "create-t3-turbo.vercel.app",

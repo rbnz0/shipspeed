@@ -1,6 +1,6 @@
 ---
 title: (Pages)بِنية المجلد
-description: بنية مجلد T3 App
+description: بنية مجلد ShipSpeed
 layout: ../../layouts/docs.astro
 lang: ar
 dir: rtl
@@ -67,14 +67,14 @@ import Form from "../../components/docs/folderStructureForm.astro";
 
 ### `src/server/auth.ts`
 
-يحتوي على الوظائف الخادمة (utilities) التي تقوم بالتوثيق مثل استرداد جلسة المستخدم (user session) من جانب السيرفر. اقرأ [NextAuth.js](https://create.t3.gg/ar/usage/next-auth#usage-with-trpc) للمزيد من المعلومات.
+يحتوي على الوظائف الخادمة (utilities) التي تقوم بالتوثيق مثل استرداد جلسة المستخدم (user session) من جانب السيرفر. اقرأ [NextAuth.js](https://shipspeed.dev/ar/usage/next-auth#usage-with-trpc) للمزيد من المعلومات.
 
 </div>
 <div data-components="prisma">
 
 #### `src/server/db.ts`
 
-يستخدم ملف `db.ts` ليوضح استخدام Prisma client بشكل شامل. اقرأ [استخدام Prisma](https://create.t3.gg/ar/usage/prisma#prisma-client) و[افضل الطرق لاستخدام Prisma client مع Next.js](https://www.prisma.io/docs/guides/database/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices) لمزيد من المعلومات.
+يستخدم ملف `db.ts` ليوضح استخدام Prisma client بشكل شامل. اقرأ [استخدام Prisma](https://shipspeed.dev/ar/usage/prisma#prisma-client) و[افضل الطرق لاستخدام Prisma client مع Next.js](https://www.prisma.io/docs/guides/database/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices) لمزيد من المعلومات.
 
 </div>
 <div data-components="prisma">
@@ -113,16 +113,16 @@ import Form from "../../components/docs/folderStructureForm.astro";
 
 إن ملف `trpc.ts` الملف الرئيسي لإعدادات back-end في tRPC. هنا:
 
-1. يحدد المحتوى المستخدم في طلبات tRPC. اقرأ [استعمال tRPC](https://create.t3.gg/ar/usage/trpc#-serverapitrpcts) للمزيد من المعلومات.
+1. يحدد المحتوى المستخدم في طلبات tRPC. اقرأ [استعمال tRPC](https://shipspeed.dev/ar/usage/trpc#-serverapitrpcts) للمزيد من المعلومات.
 
-2. يورد (export) نهج الوطيفة المساعدة. اقرأ [استعمال tRPC](https://create.t3.gg/ar/usage/trpc#-serverapitrpcts) للمزيد من المعلومات.
+2. يورد (export) نهج الوطيفة المساعدة. اقرأ [استعمال tRPC](https://shipspeed.dev/ar/usage/trpc#-serverapitrpcts) للمزيد من المعلومات.
 
 </div>
 <div data-components="trpc">
 
 #### `src/server/api/root.ts`
 
-يُستخدم ملف `root.ts` لدمج وظائف tRPC للوصول, وتوريدهم كوظيفة وصول واحدة، وكذلك أنواع بيانات الوظيفة المحددة، اقرأ المزيد هنا [tRPC usage](https://create.t3.gg/ar/usage/trpc#-serverapirootts).
+يُستخدم ملف `root.ts` لدمج وظائف tRPC للوصول, وتوريدهم كوظيفة وصول واحدة، وكذلك أنواع بيانات الوظيفة المحددة، اقرأ المزيد هنا [tRPC usage](https://shipspeed.dev/ar/usage/trpc#-serverapirootts).
 
 </div>
 
@@ -214,6 +214,6 @@ import Form from "../../components/docs/folderStructureForm.astro";
 
 ### `tsconfig.json`
 
-إن ملف `tsconfig.json` ضروري عند استخدام TypeScript. فعيلت بعض الإعدادات الغير افتراضية، مثل `strict mode`، لتوفير أفضل إمكانية للاستخدام الـ TypeScript في Create T3 App ومكتباتها، لمزيد من المعلومات اقرأ [TypeScript Docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) أو [TypeScript Usage](usage/typescript).
+إن ملف `tsconfig.json` ضروري عند استخدام TypeScript. فعيلت بعض الإعدادات الغير افتراضية، مثل `strict mode`، لتوفير أفضل إمكانية للاستخدام الـ TypeScript في ShipSpeed ومكتباتها، لمزيد من المعلومات اقرأ [TypeScript Docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) أو [TypeScript Usage](usage/typescript).
 
 </div>

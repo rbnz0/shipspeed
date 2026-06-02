@@ -95,7 +95,7 @@ Vous remarquerez immédiatement à quel point la saisie semi-automatique et la s
 
 ## Fichiers
 
-tRPC nécessite beaucoup de configuration que `create-t3-app` fait pour vous. Passons en revue les fichiers générés :
+tRPC nécessite beaucoup de configuration que `create-shipspeed` fait pour vous. Passons en revue les fichiers générés :
 
 ### 📄 `pages/api/trpc/[trpc].ts`
 
@@ -105,7 +105,7 @@ Il s'agit du point d'entrée de votre API et expose le routeur tRPC. Normalement
 
 Ce fichier est divisé en deux parties, la création du contexte et l'initialisation de tRPC :
 
-1. Nous définissons le contexte qui est passé à vos procédures tRPC. Le contexte sont des données auxquelles toutes vos procédures tRPC auront accès, et c'est un endroit idéal pour mettre des choses comme les connexions à la base de données, les informations d'authentification, etc. Dans create-t3-app, nous utilisons deux fonctions, pour activer l'utilisation d'un sous-ensemble du contexte lorsque nous n'avons pas accès à l'objet de requête.
+1. Nous définissons le contexte qui est passé à vos procédures tRPC. Le contexte sont des données auxquelles toutes vos procédures tRPC auront accès, et c'est un endroit idéal pour mettre des choses comme les connexions à la base de données, les informations d'authentification, etc. Dans create-shipspeed, nous utilisons deux fonctions, pour activer l'utilisation d'un sous-ensemble du contexte lorsque nous n'avons pas accès à l'objet de requête.
 
 - `createInnerTRPCContext` : c'est ici que vous définissez le contexte qui ne dépend pas de la requête, par ex. votre connexion à la base de données. Vous pouvez utiliser cette fonction pour les [tests d'intégration](#exemple-de-test-dintégration) ou [ssg-helpers](https://trpc.io/docs/v10/ssg-helpers) où vous n'avez pas d'objet de requête .
 
@@ -135,7 +135,7 @@ Enfin, nous exportons un [helper de type](https://trpc.io/docs/v10/infer-types#a
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x4mu-jOiA0Q" title="How tRPC really works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Le contributeur de Create T3 App [Christopher Ehrlich](https://twitter.com/ccccjjjjeeee) a réalisé [une vidéo sur les flux de données dans tRPC](https://www.youtube.com/watch?v=x4mu-jOiA0Q). Cette vidéo est recommandée si vous avez utilisé tRPC mais que vous ne savez toujours pas comment cela fonctionne.
+Le contributeur de ShipSpeed [Christopher Ehrlich](https://twitter.com/ccccjjjjeeee) a réalisé [une vidéo sur les flux de données dans tRPC](https://www.youtube.com/watch?v=x4mu-jOiA0Q). Cette vidéo est recommandée si vous avez utilisé tRPC mais que vous ne savez toujours pas comment cela fonctionne.
 
 ## Comment puis-je appeler mon API en externe ?
 

@@ -1,11 +1,11 @@
 ---
 title: 第一步
-description: 从你的全新 T3 App 开始吧
+description: 从你的全新 ShipSpeed 开始吧
 layout: ../../../layouts/docs.astro
 lang: zh-hans
 ---
 
-你刚刚创建了一个全新的 T3 App，并准备好继续。下面是一些最简化的必要准备，来让你的 App 运行起来。
+你刚刚创建了一个全新的 ShipSpeed，并准备好继续。下面是一些最简化的必要准备，来让你的 App 运行起来。
 
 ## 数据库
 
@@ -43,5 +43,5 @@ lang: zh-hans
 ## 下一步
 
 - 如果你的应用包含了 tRPC，参看 `src/pages/index.tsx` 和 `src/server/api/routers/post.ts` 来了解 tRPC 查询是如何工作的。
-- 浏览 Create T3 App 的文档，以及你应用中所用到包的文档。
-- 加入到我们的 [Discord](https://t3.gg/discord) 中，并记得在 [GitHub](https://github.com/t3-oss/create-t3-app) 上给我们的项目点颗星！ :)
+- 浏览 ShipSpeed 的文档，以及你应用中所用到包的文档。
+- 加入到我们的 [Discord](https://github.com/rbnog/shipspeed/discussions) 中，并记得在 [GitHub](https://github.com/rbnog/shipspeed) 上给我们的项目点颗星！ :)

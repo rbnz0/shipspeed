@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: no
 ---
 
-Vi anbefaler at du ruller ut applikasjonen din til [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Det gjør det superenkelt å rulle ut Next.js-applikasjoner.
+Vi anbefaler at du ruller ut applikasjonen din til [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Det gjør det superenkelt å rulle ut Next.js-applikasjoner.
 
 ## Prosjektkonfigurasjon
 
@@ -22,7 +22,7 @@ Vercel vil mest sannsynlig automatisk konfigurere byggekommandoen og publisere k
 
 ## Bruk av Vercel Dashboard
 
-1. Etter å ha pushet koden til et GitHub-repo, logger du på [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) med GitHub og klikker på **Add New Project**.
+1. Etter å ha pushet koden til et GitHub-repo, logger du på [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) med GitHub og klikker på **Add New Project**.
 
 ![Nytt prosjekt på Vercel](/images/vercel-new-project.webp)
 

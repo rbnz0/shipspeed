@@ -6,7 +6,7 @@ lang: ar
 dir: rtl
 ---
 
-يمكنك إستخدام الـ Stack داخل Docker Container أو كجزء من مجموعة containers عن طريق docker-compose، إقرأ المزيد هنا [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker)
+يمكنك إستخدام الـ Stack داخل Docker Container أو كجزء من مجموعة containers عن طريق docker-compose، إقرأ المزيد هنا [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker)
 
 ## تهيئة مشروع Docker
 
@@ -20,7 +20,7 @@ dir: rtl
 
 ### 1. إعداد Next
 
-في ملف [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js) قم بإضافة `standalone` حتى [تُقلل حجم الصور تلقائيا](https://nextjs.org/docs/advanced-features/output-file-tracing):
+في ملف [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js) قم بإضافة `standalone` حتى [تُقلل حجم الصور تلقائيا](https://nextjs.org/docs/advanced-features/output-file-tracing):
 
 ```diff
 export default defineNextConfig({
@@ -145,8 +145,8 @@ CMD ["node", "server.js"]
 قم ببناء وتشغيل هذه الصورة Locally باستخدام الأوامر التالية:
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 إفتح [localhost:3000](http://localhost:3000/) لتري تطبيقك يَعمل
@@ -174,7 +174,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -203,7 +203,7 @@ railway up
 railway open
 ```
 
-إذهب الي "Variables" وأضف `DATABASE_URL` ثُم الي "Settings" واختر "Generate Domain." لتري أمثلة علي Railway زُر [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/).
+إذهب الي "Variables" وأضف `DATABASE_URL` ثُم الي "Settings" واختر "Generate Domain." لتري أمثلة علي Railway زُر [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/).
 
 ## مصدر مُفيدة
 

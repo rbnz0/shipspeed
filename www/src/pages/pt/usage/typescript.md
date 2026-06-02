@@ -14,19 +14,19 @@ lang: pt
   </div>
   <cite className="flex items-center justify-end pr-4 pb-2">
     <img
-      alt="Avatar of @t3dotgg"
+      alt="Avatar of @rbnog"
       className="w-12 mr-4 rounded-full bg-neutral-500"
       src="/images/theo_300x300.webp"
     />
     <div className="flex flex-col items-start not-italic">
-      <span className=" text-sm font-semibold">Theo - Criador da T3 Stack</span>
+      <span className=" text-sm font-semibold">Theo - Criador da ShipSpeed Stack</span>
       <a
-        href="https://twitter.com/t3dotgg"
+        href="https://twitter.com/rbnog"
         target="_blank"
         rel="noopener noreferrer"
         className="text-sm"
       >
-        @t3dotgg
+        @rbnog
       </a>
     </div>
   </cite>

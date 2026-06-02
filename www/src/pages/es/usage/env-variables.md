@@ -1,11 +1,11 @@
 ---
 title: Variables de Entorno
-description: Empezando con create-t3-app
+description: Empezando con create-shipspeed
 layout: ../../../layouts/docs.astro
 lang: es
 ---
 
-Create-T3-App usa [Zod](https://github.com/colinhacks/zod) para validar tus variables de entorno en tiempo de ejecución _y_ tiempo de compilación proporcionando algunos archivos adicionales en el directorio `env`:
+create-shipspeed usa [Zod](https://github.com/colinhacks/zod) para validar tus variables de entorno en tiempo de ejecución _y_ tiempo de compilación proporcionando algunos archivos adicionales en el directorio `env`:
 
 📁 src/env
 

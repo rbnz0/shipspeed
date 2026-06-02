@@ -1,11 +1,11 @@
 ---
 title: Miljøvariabler
-description: Introduksjon til create-t3-app
+description: Introduksjon til create-shipspeed
 layout: ../../../layouts/docs.astro
 lang: no
 ---
 
-`create-t3-app` bruker [Zod](https://github.com/colinhacks/zod) for å validere miljøvariablene dine ved kjøretid _og_ ved byggetidspunkt. Ytterligere filer er angitt i `env`-katalogen for dette formålet:
+`create-shipspeed` bruker [Zod](https://github.com/colinhacks/zod) for å validere miljøvariablene dine ved kjøretid _og_ ved byggetidspunkt. Ytterligere filer er angitt i `env`-katalogen for dette formålet:
 
 📁 src/env
 

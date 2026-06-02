@@ -39,7 +39,7 @@ export default async function Home() {
             >
               <h3 className={styles.cardTitle}>Documentation →</h3>
               <div className={styles.cardText}>
-                Learn more about Create T3 App, the libraries it uses, and how
+                Learn more about ShipSpeed, the libraries it uses, and how
                 to deploy it.
               </div>
             </Link>

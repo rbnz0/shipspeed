@@ -4,7 +4,7 @@ description: Деплоймент в Netlify
 layout: ../../../layouts/docs.astro
 ---
 
-Netlify - це альтернативний провайдер деплою, схожий на Vercel. Ось [`ajcwebdev/ct3a-netlify`](https://github.com/ajcwebdev/ct3a-netlify) приклад репозиторію на основі цієї документації.
+Netlify - це альтернативний провайдер деплою, схожий на Vercel. Ось [`ajcwebdev/shipspeed-netlify`](https://github.com/ajcwebdev/shipspeed-netlify) приклад репозиторію на основі цієї документації.
 
 ## Навіщо деплоїти на Netlify
 
@@ -82,4 +82,4 @@ ntl env:import .env
 ntl deploy --prod --build
 ```
 
-Щоб переглянути приклад на Netlify, перейдіть на [ct3a.netlify.app](https://ct3a.netlify.app/).
+Щоб переглянути приклад на Netlify, перейдіть на [shipspeed.netlify.app](https://shipspeed.netlify.app/).

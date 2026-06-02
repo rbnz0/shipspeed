@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: pl
 ---
 
-Polecamy wykonywać deployment twojej aplikacji na platformę [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Pozwala ona w bardzo prosty sposób wrzucać do sieci aplikacje Next.js.
+Polecamy wykonywać deployment twojej aplikacji na platformę [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Pozwala ona w bardzo prosty sposób wrzucać do sieci aplikacje Next.js.
 
 ## Konfiguracja Projektu
 
@@ -22,7 +22,7 @@ Vercel prawdopodobnie automatycznie skonfiguruje za Ciebie komendy budowania i f
 
 ## Korzystanie z Dashboardu Vercela
 
-1. Po wrzuceniu kodu do repozytorium GitHuba, zarejestruj się na stronie [Vercela](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) z tym kontem GitHub i kliknij na **Dodaj Nowy Projekt**.
+1. Po wrzuceniu kodu do repozytorium GitHuba, zarejestruj się na stronie [Vercela](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) z tym kontem GitHub i kliknij na **Dodaj Nowy Projekt**.
 
 ![Nowy projekt na stronie Vercel](/images/vercel-new-project.webp)
 

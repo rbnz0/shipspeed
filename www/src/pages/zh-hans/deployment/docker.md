@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: zh-hans
 ---
 
-你可以将这个 stack 容器化，将它作为一个单独容器使用 Docker 来部署，或者作为一系列容器的部分，使用 docker-compose 来部署。参看基于本文档的示例仓库 [`ajcwebdev/ct3a-docker`](https://github.com/ajcwebdev/ct3a-docker)。
+你可以将这个 stack 容器化，将它作为一个单独容器使用 Docker 来部署，或者作为一系列容器的部分，使用 docker-compose 来部署。参看基于本文档的示例仓库 [`ajcwebdev/shipspeed-docker`](https://github.com/ajcwebdev/shipspeed-docker)。
 
 ## Docker 项目配置
 
@@ -16,7 +16,7 @@ lang: zh-hans
 
 ### 1. Next 的配置
 
-在你的 [`next.config.js`](https://github.com/t3-oss/create-t3-app/blob/main/cli/template/base/next.config.js) 文件里，添加构建输出选项 `standalone`，以[自动借助追踪输出文件来降低镜像文件的大小](https://nextjs.org/docs/advanced-features/output-file-tracing)：
+在你的 [`next.config.js`](https://github.com/rbnog/shipspeed/blob/main/cli/template/base/next.config.js) 文件里，添加构建输出选项 `standalone`，以[自动借助追踪输出文件来降低镜像文件的大小](https://nextjs.org/docs/advanced-features/output-file-tracing)：
 
 ```diff
 export default defineNextConfig({
@@ -140,8 +140,8 @@ CMD ["node", "server.js"]
 通过下方命令在本地构建和运行该镜像：
 
 ```bash
-docker build -t ct3a-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
-docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" ct3a-docker
+docker build -t shipspeed-docker --build-arg NEXT_PUBLIC_CLIENTVAR=clientvar .
+docker run -p 3000:3000 -e DATABASE_URL="database_url_goes_here" shipspeed-docker
 ```
 
 在浏览器中访问 [localhost:3000](http://localhost:3000/) 来查看运行的应用。
@@ -169,7 +169,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
-    image: t3-app
+    image: ShipSpeed
     environment:
       - DATABASE_URL=database_url_goes_here
 ```
@@ -197,7 +197,7 @@ railway up
 railway open
 ```
 
-前往 "Variables"，填入你的 `DATABASE_URL`。然后前往 "Settings" 里，选择 "Generate Domain"。访问 [ct3a-docker.up.railway.app](https://ct3a-docker.up.railway.app/) 来查看托管在 Railway 上的项目。
+前往 "Variables"，填入你的 `DATABASE_URL`。然后前往 "Settings" 里，选择 "Generate Domain"。访问 [shipspeed-docker.up.railway.app](https://shipspeed-docker.up.railway.app/) 来查看托管在 Railway 上的项目。
 
 ## 有用的资源
 

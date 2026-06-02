@@ -1,6 +1,6 @@
 ---
 title: Instalação
-description: Instruções de Instalação do Create T3 App
+description: Instruções de Instalação do ShipSpeed
 layout: ../../layouts/docs.astro
 lang: pt
 isMdx: true
@@ -8,30 +8,30 @@ isMdx: true
 
 import Callout from "../../components/docs/callout.tsx";
 
-Para estruturar uma aplicação usando `create-t3-app`, rode qualquer um dos comandos seguintes e responda as perguntas:
+Para estruturar uma aplicação usando `create-shipspeed`, rode qualquer um dos comandos seguintes e responda as perguntas:
 
 ### npm
 
 ```bash
-npm create t3-app@latest
+npm create ShipSpeed@latest
 ```
 
 ### yarn
 
 ```bash
-yarn create t3-app
+yarn create ShipSpeed
 ```
 
 ### pnpm
 
 ```bash
-pnpm create t3-app@latest
+pnpm create ShipSpeed@latest
 ```
 
 ### bun
 
 ```bash
-bun create t3-app@latest
+bun create ShipSpeed@latest
 ```
 
 Após sua aplicação ter sido estruturada, verifique os [Primeiros Passos](/pt/usage/first-steps) para começar a usar sua nova aplicação.
@@ -42,7 +42,7 @@ Após sua aplicação ter sido estruturada, verifique os [Primeiros Passos](/pt/
 | ----------------- | --------------------------------------------------------------------------------- |
 | `[dir]`           | Inclua um argumento de diretório com um nome para o projeto                       |
 | `--noGit`         | Diga explicitamente à CLI para não inicializar um novo repositório git no projeto |
-| `-y`, `--default` | Ignore a CLI e inicialize um novo aplicativo t3 com todas as opções selecionadas  |
+| `-y`, `--default` | Ignore a CLI e inicialize um novo aplicativo ShipSpeed com todas as opções selecionadas  |
 | `--noInstall`     | Gera um projeto sem instalar as dependências                                      |
 
 ## Uso experimental
@@ -65,8 +65,8 @@ Você não precisa explicitamente excluir os pacotes que não deseja. De qualque
 
 ### Exemplo
 
-O comando a seguir irá inicializar um T3 App com tRPC e Tailwind CSS.
+O comando a seguir irá inicializar um ShipSpeed com tRPC e Tailwind CSS.
 
 ```bash
-pnpm dlx create-t3-app@latest --CI --trpc --tailwind
+pnpm dlx create-shipspeed@latest --CI --trpc --tailwind
 ```

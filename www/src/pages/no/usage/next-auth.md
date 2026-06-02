@@ -36,7 +36,7 @@ const User = () => {
 
 ## Henting av session på serversiden
 
-Noen ganger vil du kanskje be om _session_ på serveren. For å gjøre dette, prefetch'er du session ved å bruke `getServerAuthSession`-hjelperfunksjonen som `create-t3-app` gir, sender den videre til klienten ved å bruke `getServerSideProps`:
+Noen ganger vil du kanskje be om _session_ på serveren. For å gjøre dette, prefetch'er du session ved å bruke `getServerAuthSession`-hjelperfunksjonen som `create-shipspeed` gir, sender den videre til klienten ved å bruke `getServerSideProps`:
 
 ```tsx:pages/users/[id].tsx
 import { getServerAuthSession } from "../server/auth";
@@ -56,7 +56,7 @@ const User = () => {
 
 ## Inkluder `user.id` i din Session
 
-`create-t3-app` er konfigurert til å bruke [session callback](https://next-auth.js.org/configuration/callbacks#session-callback) i NextAuth.js-konfigurasjonen for å inkludere bruker-ID i 'session'-objektet.
+`create-shipspeed` er konfigurert til å bruke [session callback](https://next-auth.js.org/configuration/callbacks#session-callback) i NextAuth.js-konfigurasjonen for å inkludere bruker-ID i 'session'-objektet.
 
 ```ts:server/auth.ts
 callbacks: {
@@ -87,11 +87,11 @@ Det samme mønsteret kan brukes til å legge til flere data til `session`-objekt
 
 ## Bruk med tRPC
 
-Hvis du bruker NextAuth.js med tRPC, kan du opprette gjenbrukbare beskyttede prosedyrer med [middlewares](https://trpc.io/docs/v10/middlewares). Dette lar deg lage prosedyrer som bare er tilgjengelige for autentiserte brukere. `create-t3-app` gir deg allerede dette, slik at du enkelt kan få tilgang til session-objektet i autentiserte prosedyrer.
+Hvis du bruker NextAuth.js med tRPC, kan du opprette gjenbrukbare beskyttede prosedyrer med [middlewares](https://trpc.io/docs/v10/middlewares). Dette lar deg lage prosedyrer som bare er tilgjengelige for autentiserte brukere. `create-shipspeed` gir deg allerede dette, slik at du enkelt kan få tilgang til session-objektet i autentiserte prosedyrer.
 
 Dette skjer i to trinn:
 
-1. Få tilgang til sesjonen fra _request-headerne_ ved å bruke funksjonen [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession). Fordelen med `getServerSession` sammenlignet med `getSession` er at det er en funksjon på serversiden og medfører ikke unødvendige kall. `create-t3-app` lager en hjelpefunksjon som abstraherer dette særegne API-et, slik at du ikke trenger å importere både NextAuth.js-alternativene dine så vel som `getServerSession`-funksjonen hver gang du trenger tilgang til sesssion.
+1. Få tilgang til sesjonen fra _request-headerne_ ved å bruke funksjonen [`getServerSession`](https://next-auth.js.org/configuration/nextjs#getServerSession). Fordelen med `getServerSession` sammenlignet med `getSession` er at det er en funksjon på serversiden og medfører ikke unødvendige kall. `create-shipspeed` lager en hjelpefunksjon som abstraherer dette særegne API-et, slik at du ikke trenger å importere både NextAuth.js-alternativene dine så vel som `getServerSession`-funksjonen hver gang du trenger tilgang til sesssion.
 
 ```ts:server/auth.ts
 export const getServerAuthSession = (ctx: {
@@ -149,7 +149,7 @@ const userRouter = router({
 
 ## Bruk med Prisma
 
-Mye [førstegangsoppsett](https://authjs.dev/reference/adapter/prisma/) kreves for å bruke NextAuth.js med Prisma. `create-t3-app` vil gjøre dette for deg, og hvis du velger både Prisma og NextAuth.js, får du et fullt funksjonelt autentiseringssystem med alle nødvendige modeller forhåndskonfigurert. Vi oppretter applikasjonen din med en forhåndskonfigurert Discord OAuth-leverandør, som vi valgte siden den er en av de enkleste leverandørene å komme i gang med – du trenger bare å legge inn tokens i `.env`-filen og du er i gang. Du kan imidlertid enkelt legge til flere leverandører ved å følge [NextAuth.js-dokumentasjonen](https://next-auth.js.org/providers/). Vær oppmerksom på at enkelte leverandører krever at du legger til flere felt i enkelte modeller. Vi anbefaler å lese dokumentasjonen for leverandøren du planlegger å bruke for å sikre at alle obligatoriske felt er til stede.
+Mye [førstegangsoppsett](https://authjs.dev/reference/adapter/prisma/) kreves for å bruke NextAuth.js med Prisma. `create-shipspeed` vil gjøre dette for deg, og hvis du velger både Prisma og NextAuth.js, får du et fullt funksjonelt autentiseringssystem med alle nødvendige modeller forhåndskonfigurert. Vi oppretter applikasjonen din med en forhåndskonfigurert Discord OAuth-leverandør, som vi valgte siden den er en av de enkleste leverandørene å komme i gang med – du trenger bare å legge inn tokens i `.env`-filen og du er i gang. Du kan imidlertid enkelt legge til flere leverandører ved å følge [NextAuth.js-dokumentasjonen](https://next-auth.js.org/providers/). Vær oppmerksom på at enkelte leverandører krever at du legger til flere felt i enkelte modeller. Vi anbefaler å lese dokumentasjonen for leverandøren du planlegger å bruke for å sikre at alle obligatoriske felt er til stede.
 
 ### Legge til nye felt i modellene dine
 
@@ -171,7 +171,7 @@ Hvis du for eksempel vil legge til et `role`-felt i `User`-modellen, må du angi
 
 ## Bruk med Next.js middleware
 
-Bruk av NextAuth.js med Next.js middleware [krever bruk av "JWT session strategy"](https://next-auth.js.org/configuration/nextjs#caveats) for autentisering. Dette er fordi middlewaren bare kan få tilgang til session-informasjonskapslene når den er en JWT. Som standard er `create-t3-app` konfigurert til å bruke **default**-databasestrategien, i kombinasjon med Prisma som databaseadapter.
+Bruk av NextAuth.js med Next.js middleware [krever bruk av "JWT session strategy"](https://next-auth.js.org/configuration/nextjs#caveats) for autentisering. Dette er fordi middlewaren bare kan få tilgang til session-informasjonskapslene når den er en JWT. Som standard er `create-shipspeed` konfigurert til å bruke **default**-databasestrategien, i kombinasjon med Prisma som databaseadapter.
 
 ## Oppsett av DiscordProvider (standard)
 

@@ -96,7 +96,7 @@ Du vil umiddelbart legge merke til hvor god autofullføringen og typesikkerheten
 
 ## Filer
 
-tRPC krever mye _boilerplate_, som `create-t3-app` setter opp for deg. La oss gå gjennom filene som vil bli opprettet:
+tRPC krever mye _boilerplate_, som `create-shipspeed` setter opp for deg. La oss gå gjennom filene som vil bli opprettet:
 
 ### 📄 `pages/api/trpc/[trpc].ts`
 
@@ -106,7 +106,7 @@ Dette er inngangspunktet for API-et ditt og eksponerer tRPC-ruteren. Normalt vil
 
 Denne filen er delt opp i to deler, kontekstoppretting og tRPC-initialisering:
 
-1. Vi definerer konteksten som videresendes til tRPC-prosedyrene dine. Kontekst er data som alle dine tRPC-prosedyrer vil ha tilgang til, og er et flott sted å plassere ting som databaseforbindelser, autentiseringsinformasjon, osv. I create-t3-app bruker vi to funksjoner, for å muliggjøre bruk av en undergruppe av konteksten når vi ikke har tilgang til forespørselsobjektet.
+1. Vi definerer konteksten som videresendes til tRPC-prosedyrene dine. Kontekst er data som alle dine tRPC-prosedyrer vil ha tilgang til, og er et flott sted å plassere ting som databaseforbindelser, autentiseringsinformasjon, osv. I create-shipspeed bruker vi to funksjoner, for å muliggjøre bruk av en undergruppe av konteksten når vi ikke har tilgang til forespørselsobjektet.
 
 - `createInnerTRPCContext`: Det er her du definerer konteksten som ikke avhenger av forespørselen, f.eks. databasetilkoblingen din. Du kan bruke denne funksjonen til [integrasjonstesting](#sample-integration-test) eller [ssg-hjelpere](https://trpc.io/docs/v10/ssg-helpers) der du ikke har et forespørselsobjekt.
 

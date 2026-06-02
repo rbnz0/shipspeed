@@ -5,7 +5,7 @@ layout: ../../../layouts/docs.astro
 lang: ru
 ---
 
-Мы рекомендуем развертывать ваше приложение на [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss). Он позволяет очень легко развертывать Next.js приложения.
+Мы рекомендуем развертывать ваше приложение на [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss). Он позволяет очень легко развертывать Next.js приложения.
 
 ## Конфигурация проекта
 
@@ -22,7 +22,7 @@ lang: ru
 
 ## Использование Vercel Dashboard
 
-1. После отправки вашего кода в репозиторий GitHub зарегистрируйтесь на [Vercel](https://vercel.com/?utm_source=t3-oss&utm_campaign=oss) с GitHub и нажмите **Add New Project**.
+1. После отправки вашего кода в репозиторий GitHub зарегистрируйтесь на [Vercel](https://vercel.com/?utm_source=rbnog&utm_campaign=oss) с GitHub и нажмите **Add New Project**.
 
 ![Новый проект на Vercel](/images/vercel-new-project.webp)
 

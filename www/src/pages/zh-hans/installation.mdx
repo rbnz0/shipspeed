@@ -1,6 +1,6 @@
 ---
 title: 安装
-description: 创建 T3 应用程序的安装说明
+description: 创建 ShipSpeed的安装说明
 layout: ../../layouts/docs.astro
 lang: zh-hans
 isMdx: true
@@ -8,30 +8,30 @@ isMdx: true
 
 import Callout from "../../components/docs/callout.tsx";
 
-要使用 `create-t3-app` 创建一个应用程序，请运行以下任意一个命令，并回答命令提示符的问题：
+要使用 `create-shipspeed` 创建一个应用程序，请运行以下任意一个命令，并回答命令提示符的问题：
 
 ### npm
 
 ```bash
-npm create t3-app@latest
+npm create ShipSpeed@latest
 ```
 
 ### yarn
 
 ```bash
-yarn create t3-app
+yarn create ShipSpeed
 ```
 
 ### pnpm
 
 ```bash
-pnpm create t3-app@latest
+pnpm create ShipSpeed@latest
 ```
 
 ### bun
 
 ```bash
-bun create t3-app@latest
+bun create ShipSpeed@latest
 ```
 
 在你的应用程序被创建后，请查看 [第一步](/zh-hans/usage/first-steps) 以开始你的新应用。
@@ -42,7 +42,7 @@ bun create t3-app@latest
 | ----------------- | ------------------------------------------ |
 | `[dir]`           | 添加一个带有项目名称的目录参数             |
 | `--noGit`         | 显式告诉 CLI 不在项目中初始化新的 git 仓库 |
-| `-y`, `--default` | 跳过 CLI 并选中所有选项来初始化新的 t3-app |
+| `-y`, `--default` | 跳过 CLI 并选中所有选项来初始化新的 ShipSpeed |
 | `--noInstall`     | 创建项目，但不自动安装依赖包               |
 
 ## 实验性用法
@@ -65,8 +65,8 @@ bun create t3-app@latest
 
 ### 示例
 
-下面的命令将使用 tRPC 和 Tailwind CSS 创建一个 T3 应用程序。
+下面的命令将使用 tRPC 和 Tailwind CSS 创建一个 ShipSpeed。
 
 ```bash
-pnpm dlx create-t3-app@latest --CI --trpc --tailwind
+pnpm dlx create-shipspeed@latest --CI --trpc --tailwind
 ```

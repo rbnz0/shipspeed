@@ -37,7 +37,7 @@ const User = () => {
 
 ## تضمين `user.id` في الـ Session
 
-يُستخدم `create-t3-app` الـ Session callback الموجودة في ملف تكوين NextAuth.js ليضيف الـ User ID الي Session Object.
+يُستخدم `create-shipspeed` الـ Session callback الموجودة في ملف تكوين NextAuth.js ليضيف الـ User ID الي Session Object.
 
 ```ts:pages/api/auth/[...nextauth].ts
 callbacks: {
@@ -71,7 +71,7 @@ declare module "next-auth" {
 يُمكن فَعل هذا في خطوتين:
 
 1. للحصول علي Object الـ Session يمكنك استخدام getServerSession،
-   نفضل getServerSession عن getSession لانها تعمل علي الخام فلا يحدث invoke غير مرغوب فيه ، قد تحملت `create-t3-app` عناء إنشاء هذه المادة عنك :
+   نفضل getServerSession عن getSession لانها تعمل علي الخام فلا يحدث invoke غير مرغوب فيه ، قد تحملت `create-shipspeed` عناء إنشاء هذه المادة عنك :
 
 ```ts:server/common/get-server-auth-session.ts
 export const getServerAuthSession = async (ctx: {
@@ -129,7 +129,7 @@ const userRouter = router({
 
 ## الاستخدام مع Prisma
 
-يتطلب إستخدام NextAuth.js للعمل مع Prisma الكثير من الإعداد الأولي. يتعامل تطبيق create-t3-app مع كل هذا من أجلك ، وإذا حددت كل من Prisma و NextAuth.js ، فستحصل على نظام مصادقة يعمل بكامل طاقته مع جميع النماذج المطلوبة التي تم تكوينها مسبقًا. نقوم بشحن تطبيقك الاولي مع مزود Discord OAuth المكون مسبقًا ، والذي اخترناه لأنه من أسهل البدء معة - ما عليك سوى توفير الرموز المميزة في .env وستكون جاهزًا للبدء. ومع ذلك ، يمكنك بسهولة إضافة المزيد من مقدمي الخدمة باتباع NextAuth.js Docs. لاحظ أن بعض مقدمي الخدمة يطلبون إضافة حقول إضافية إلى نماذج معينة. نوصيك بقراءة الـ Docs الخاصة بالموفر الذي ترغب في استخدامه للتأكد من أن لديك جميع الحقول المطلوبة.
+يتطلب إستخدام NextAuth.js للعمل مع Prisma الكثير من الإعداد الأولي. يتعامل تطبيق create-shipspeed مع كل هذا من أجلك ، وإذا حددت كل من Prisma و NextAuth.js ، فستحصل على نظام مصادقة يعمل بكامل طاقته مع جميع النماذج المطلوبة التي تم تكوينها مسبقًا. نقوم بشحن تطبيقك الاولي مع مزود Discord OAuth المكون مسبقًا ، والذي اخترناه لأنه من أسهل البدء معة - ما عليك سوى توفير الرموز المميزة في .env وستكون جاهزًا للبدء. ومع ذلك ، يمكنك بسهولة إضافة المزيد من مقدمي الخدمة باتباع NextAuth.js Docs. لاحظ أن بعض مقدمي الخدمة يطلبون إضافة حقول إضافية إلى نماذج معينة. نوصيك بقراءة الـ Docs الخاصة بالموفر الذي ترغب في استخدامه للتأكد من أن لديك جميع الحقول المطلوبة.
 
 ### إضافة المزيد من الحقول إلى الـ models
 
@@ -151,7 +151,7 @@ const userRouter = router({
 
 يتطلب استخدام NextAuth.js مع Middleware Next.js استخدام [JWT Session Strategy](https://next-auth.js.org/configuration/nextjs#caveats). هذا لأن الـ Middleware قادرة فقط على الوصول إلى ملف تعريف ارتباط JWT
 
-بشكل افتراضي ، يتم تكوين التطبيق create-t3-app لاستخدام استراتيجية قاعدة البيانات Database Strategy ، بالاشتراك مع Prisma كـ Adapter لـ قاعدة البيانات.
+بشكل افتراضي ، يتم تكوين التطبيق create-shipspeed لاستخدام استراتيجية قاعدة البيانات Database Strategy ، بالاشتراك مع Prisma كـ Adapter لـ قاعدة البيانات.
 
 ## إعداد DiscordProvider
 

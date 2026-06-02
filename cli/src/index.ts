@@ -16,14 +16,14 @@ import { parseNameAndPath } from "~/utils/parseNameAndPath.js";
 import { renderTitle } from "~/utils/renderTitle.js";
 import { formatProject } from "./helpers/format.js";
 import { installDependencies } from "./helpers/installDependencies.js";
-import { getVersion } from "./utils/getT3Version.js";
+import { getVersion } from "./utils/getShipSpeedVersion.js";
 import {
   getNpmVersion,
   renderVersionWarning,
 } from "./utils/renderVersionWarning.js";
 
-type CT3APackageJSON = PackageJson & {
-  ct3aMetadata?: {
+type ShipSpeedPackageJSON = PackageJson & {
+  shipspeedMetadata?: {
     initVersion: string;
   };
 };
@@ -61,9 +61,9 @@ const main = async () => {
   // Write name to package.json
   const pkgJson = fs.readJSONSync(
     path.join(projectDir, "package.json")
-  ) as CT3APackageJSON;
+  ) as ShipSpeedPackageJSON;
   pkgJson.name = scopedAppName;
-  pkgJson.ct3aMetadata = { initVersion: getVersion() };
+  pkgJson.shipspeedMetadata = { initVersion: getVersion() };
 
   // ? Bun doesn't support this field (yet)
   if (pkgManager !== "bun") {

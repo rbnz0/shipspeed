@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Installation instructions for Create T3 App
+description: Installation instructions for ShipSpeed
 layout: ../../layouts/docs.astro
 lang: en
 isMdx: true
@@ -8,30 +8,30 @@ isMdx: true
 
 import Callout from "../../components/docs/callout.tsx";
 
-To scaffold an app using `create-t3-app`, run any of the following commands and answer the command prompt questions:
+To scaffold an app using `create-shipspeed`, run any of the following commands and answer the command prompt questions:
 
 ### npm
 
 ```bash
-npm create t3-app@latest
+npm create shipspeed@latest
 ```
 
 ### yarn
 
 ```bash
-yarn create t3-app
+yarn create shipspeed
 ```
 
 ### pnpm
 
 ```bash
-pnpm create t3-app@latest
+pnpm create shipspeed@latest
 ```
 
 ### bun
 
 ```bash
-bun create t3-app@latest
+bun create shipspeed@latest
 ```
 
 After your app has been scaffolded, check out the [first steps](/en/usage/first-steps) to get started on your new application.
@@ -42,7 +42,7 @@ After your app has been scaffolded, check out the [first steps](/en/usage/first-
 | ----------------- | ----------------------------------------------------------------------- |
 | `[dir]`           | Include a directory argument with a name for the project                |
 | `--noGit`         | Explicitly tell the CLI to not initialize a new git repo in the project |
-| `-y`, `--default` | Bypass the CLI and bootstrap a new t3-app with all options selected     |
+| `-y`, `--default` | Bypass the CLI and bootstrap a new shipspeed app with all options selected     |
 | `--noInstall`     | Generate project without installing dependencies                        |
 
 ## Experimental usage
@@ -70,14 +70,14 @@ The --dbProvider command has 4 database values to choose from: mysql, postgres, 
 
 ### Example
 
-The following would scaffold a T3 App with tRPC and Tailwind CSS.
+The following would scaffold a ShipSpeed app with tRPC and Tailwind CSS.
 
 ```bash
-pnpm dlx create-t3-app@latest --CI --trpc --tailwind
+pnpm dlx create-shipspeed@latest --CI --trpc --tailwind
 ```
 
-The following would scaffold a T3 App with NextAuth.js, Tailwind CSS, Drizzle, and PostgreSQL.
+The following would scaffold a ShipSpeed app with NextAuth.js, Tailwind CSS, Drizzle, and PostgreSQL.
 
 ```bash
-pnpm dlx create-t3-app@latest --CI --nextAuth --tailwind --drizzle --dbProvider postgres
+pnpm dlx create-shipspeed@latest --CI --nextAuth --tailwind --drizzle --dbProvider postgres
 ```

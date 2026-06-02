@@ -52,7 +52,7 @@ export const ALGOLIA = {
   apiKey: "892c4647b96fe1b3d0b7d8de1c5b5e40",
 };
 
-export type OuterHeaders = "Create T3 App" | "ShipSpeed" | "Deployment" | "Usage";
+export type OuterHeaders = "ShipSpeed" | "Deployment" | "Usage";
 
 export interface SidebarItem<
   TCode extends KnownLanguageCode = KnownLanguageCode,
@@ -75,14 +75,14 @@ export const SIDEBAR: Sidebar = {
   // Omit any files you haven't translated, they'll fallback to English.
   // Example:
   // sv: {
-  //   "Create T3 App": [
+  //   "ShipSpeed": [
   //     { text: "Introduktion", link: "sv/introduction" },
   //     { text: "Installation", link: "sv/installation" },
   //   ],
   //   Usage: [{ text: "Miljövariabler", link: "sv/usage/env-variables" }],
   // },
   ar: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "مُقدمة", link: "ar/introduction" },
       { text: "لماذا CT3A؟", link: "ar/why" },
       { text: "التثبيت", link: "ar/installation" },
@@ -110,18 +110,11 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   en: {
-    "Create T3 App": [
+    ShipSpeed: [
       { text: "Introduction", link: "en/introduction" },
-      { text: "Why CT3A?", link: "en/why" },
       { text: "Installation", link: "en/installation" },
-      { text: "Folder Structure (Pages)", link: "en/folder-structure-pages" },
       { text: "Folder Structure (App)", link: "en/folder-structure-app" },
       { text: "FAQ", link: "en/faq" },
-      { text: "T3 Collection", link: "en/t3-collection" },
-      { text: "Examples", link: "en/examples" },
-      { text: "Other Recommendations", link: "en/other-recs" },
-    ],
-    ShipSpeed: [
       { text: "Better Auth", link: "en/shipspeed/better-auth" },
       { text: "shadcn/ui", link: "en/shipspeed/shadcn" },
       { text: "Polar Payments", link: "en/shipspeed/polar" },
@@ -149,7 +142,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   es: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Introducción", link: "es/introduction" },
       { text: "¿Por qué CT3A?", link: "es/why" },
       { text: "Instalación", link: "es/installation" },
@@ -178,7 +171,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   ja: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "イントロダクション", link: "ja/introduction" },
       { text: "CT3A を選ぶ理由", link: "ja/why" },
       { text: "インストール", link: "ja/installation" },
@@ -207,7 +200,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   pl: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Wstęp", link: "pl/introduction" },
       { text: "Dlaczego CT3A?", link: "pl/why" },
       { text: "Instalacja", link: "pl/installation" },
@@ -237,7 +230,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   uk: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Вступ", link: "uk/introduction" },
       { text: "Чому CT3A?", link: "uk/why" },
       { text: "Встановлення", link: "uk/installation" },
@@ -268,7 +261,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   fr: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Introduction", link: "fr/introduction" },
       { text: "Pourquoi CT3A?", link: "fr/why" },
       { text: "Installation", link: "fr/installation" },
@@ -301,7 +294,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   pt: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Introdução", link: "pt/introduction" },
       { text: "Por que o CT3A?", link: "pt/why" },
       { text: "Instalação", link: "pt/installation" },
@@ -333,7 +326,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   ru: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Введение", link: "ru/introduction" },
       { text: "Почему CT3A?", link: "ru/why" },
       { text: "Установка", link: "ru/installation" },
@@ -362,7 +355,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   no: {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "Introduksjon", link: "no/introduction" },
       { text: "Hvorfor CT3A?", link: "no/why" },
       { text: "Installasjon", link: "no/installation" },
@@ -391,7 +384,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   "zh-hans": {
-    "Create T3 App": [
+    "ShipSpeed": [
       { text: "简介", link: "zh-hans/introduction" },
       { text: "为什么选择 CT3A?", link: "zh-hans/why" },
       { text: "安装", link: "zh-hans/installation" },
@@ -427,64 +420,63 @@ export const SIDEBAR_HEADER_MAP: Record<
   Partial<Record<OuterHeaders, string>>
 > = {
   en: {
-    "Create T3 App": "Create T3 App",
     ShipSpeed: "ShipSpeed",
     Usage: "Usage",
     Deployment: "Deployment",
   },
   es: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Uso",
     Deployment: "Despliegue",
   },
   // Translate the sidebar's "outer headers" here
   // sv: {
-  //   "Create T3 App": "Create T3 App",
+  //   "ShipSpeed": "ShipSpeed",
   //   Usage: "Användarguide",
   //   Deployment: "Deployment",
   // },
   ja: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "使用法",
     Deployment: "デプロイ",
   },
   pl: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Korzystanie Z Narzędzia",
     Deployment: "Deployment",
   },
   uk: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Використання",
     Deployment: "Деплоймент",
   },
   ar: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "كيفية الإستخدام؟",
     Deployment: "نَشر تطبيقك",
   },
   fr: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Utilisation",
     Deployment: "Déploiement",
   },
   pt: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Uso",
     Deployment: "Deploy",
   },
   ru: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Использование",
     Deployment: "Развертывание",
   },
   no: {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "Bruk",
     Deployment: "Utrulling",
   },
   "zh-hans": {
-    "Create T3 App": "Create T3 App",
+    "ShipSpeed": "ShipSpeed",
     Usage: "用法",
     Deployment: "部署",
   },

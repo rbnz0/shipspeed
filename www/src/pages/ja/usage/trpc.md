@@ -97,7 +97,7 @@ const UserPage = () => {
 
 ## エラーを推論する
 
-デフォルトで、`create-t3-app`はバックエンドで検証エラーが発生した場合に、Zod エラーを推論できるようにする[エラーフォーマッタ](https://trpc.io/docs/error-formatting)を設定します。
+デフォルトで、`create-shipspeed`はバックエンドで検証エラーが発生した場合に、Zod エラーを推論できるようにする[エラーフォーマッタ](https://trpc.io/docs/error-formatting)を設定します。
 
 使用例：
 
@@ -127,7 +127,7 @@ function MyComponent() {
 
 ## ファイル
 
-tRPC は、`create-t3-app`が設定するかなり多くのボイラープレートを必要とします。生成されるファイルを見ていきましょう：
+tRPC は、`create-shipspeed`が設定するかなり多くのボイラープレートを必要とします。生成されるファイルを見ていきましょう：
 
 ### 📄 `pages/api/trpc/[trpc].ts`.
 
@@ -137,7 +137,7 @@ tRPC は、`create-t3-app`が設定するかなり多くのボイラープレー
 
 このファイルは、コンテキスト作成と tRPC 初期化の 2 つに分かれています：
 
-1. tRPC プロシージャに渡されるコンテキストを定義しています。コンテキストは、すべての tRPC プロシージャがアクセスできるデータであり、データベース接続、認証情報などが置かれるのに最適な場所です。create-t3-app では、リクエストオブジェクトにアクセスできない場合にコンテキストの一部を使用できるようにするために、2 つの関数を使用しています。
+1. tRPC プロシージャに渡されるコンテキストを定義しています。コンテキストは、すべての tRPC プロシージャがアクセスできるデータであり、データベース接続、認証情報などが置かれるのに最適な場所です。create-shipspeed では、リクエストオブジェクトにアクセスできない場合にコンテキストの一部を使用できるようにするために、2 つの関数を使用しています。
 
 - `createInnerTRPCContext`：これは、リクエストに依存しないコンテキストを定義している場所です。例えば、データベース接続などです。この関数は、リクエストオブジェクトがない [統合テスト](#統合テストの例) や [ssg-helpers](https://trpc.io/docs/v10/ssg-helpers) で使用できます。
 
@@ -167,7 +167,7 @@ tRPC は、`create-t3-app`が設定するかなり多くのボイラープレー
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x4mu-jOiA0Q" title="How tRPC really works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Create T3 App のコントリビューターである[Christopher Ehrlich](https://twitter.com/ccccjjjjeeee)が[tRPC のデータフローに関するビデオ](https://www.youtube.com/watch?v=x4mu-jOiA0Q)を作成しました。このビデオは、tRPC を使ったことがあるけれども、まだ仕組みがよくわからないと感じる方におすすめです。
+ShipSpeed のコントリビューターである[Christopher Ehrlich](https://twitter.com/ccccjjjjeeee)が[tRPC のデータフローに関するビデオ](https://www.youtube.com/watch?v=x4mu-jOiA0Q)を作成しました。このビデオは、tRPC を使ったことがあるけれども、まだ仕組みがよくわからないと感じる方におすすめです。
 
 ## API を外部から呼び出せるようにするには
 
