@@ -1,12 +1,8 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Activity, ShieldCheck, Users, UserX } from "lucide-react";
 import { headers } from "next/headers";
+
 import { auth } from "~/server/better-auth";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Users, Activity, ShieldCheck, UserX } from "lucide-react";
 
 async function getStats() {
   try {
@@ -43,10 +39,10 @@ export default async function AdminDashboardPage() {
   const recentUsers = await getRecentActivity();
 
   return (
-    <div className="space-y-6 max-w-6xl">
+    <div className="max-w-6xl space-y-6">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Overview of your application
         </p>
       </div>
@@ -55,35 +51,35 @@ export default async function AdminDashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Total Users</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="text-muted-foreground h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.totalUsers}</div>
-            <p className="text-xs text-muted-foreground">Registered accounts</p>
+            <p className="text-muted-foreground text-xs">Registered accounts</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Admins</CardTitle>
-            <ShieldCheck className="h-4 w-4 text-muted-foreground" />
+            <ShieldCheck className="text-muted-foreground h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.adminCount}</div>
-            <p className="text-xs text-muted-foreground">With admin access</p>
+            <p className="text-muted-foreground text-xs">With admin access</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Banned</CardTitle>
-            <UserX className="h-4 w-4 text-destructive" />
+            <UserX className="text-destructive h-4 w-4" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-destructive">
+            <div className="text-destructive text-2xl font-bold">
               {stats.bannedCount}
             </div>
-            <p className="text-xs text-muted-foreground">Suspended accounts</p>
+            <p className="text-muted-foreground text-xs">Suspended accounts</p>
           </CardContent>
         </Card>
 
@@ -96,7 +92,9 @@ export default async function AdminDashboardPage() {
             <div className="text-2xl font-bold text-amber-500">
               {stats.unverifiedCount}
             </div>
-            <p className="text-xs text-muted-foreground">Pending verification</p>
+            <p className="text-muted-foreground text-xs">
+              Pending verification
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -108,23 +106,25 @@ export default async function AdminDashboardPage() {
           </CardHeader>
           <CardContent>
             {recentUsers.length === 0 ? (
-              <p className="text-sm text-muted-foreground py-4">No recent users</p>
+              <p className="text-muted-foreground py-4 text-sm">
+                No recent users
+              </p>
             ) : (
               <div className="space-y-3">
                 {recentUsers.map((user: any) => (
                   <div key={user.id} className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-xs font-medium">
+                    <div className="bg-muted flex h-8 w-8 items-center justify-center rounded-full text-xs font-medium">
                       {(user.name ?? user.email)?.slice(0, 2).toUpperCase()}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium">
                         {user.name || user.email}
                       </p>
-                      <p className="text-xs text-muted-foreground truncate">
+                      <p className="text-muted-foreground truncate text-xs">
                         {user.email}
                       </p>
                     </div>
-                    <span className="text-xs text-muted-foreground shrink-0">
+                    <span className="text-muted-foreground shrink-0 text-xs">
                       {new Date(user.createdAt).toLocaleDateString()}
                     </span>
                   </div>
@@ -145,11 +145,16 @@ export default async function AdminDashboardPage() {
               { label: "Rate Limiting", status: "Active" },
               { label: "Middleware Protection", status: "Active" },
             ].map((item) => (
-              <div key={item.label} className="flex items-center justify-between">
+              <div
+                key={item.label}
+                className="flex items-center justify-between"
+              >
                 <span className="text-sm">{item.label}</span>
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                  <span className="text-xs text-muted-foreground">{item.status}</span>
+                  <span className="text-muted-foreground text-xs">
+                    {item.status}
+                  </span>
                 </div>
               </div>
             ))}

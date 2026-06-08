@@ -102,7 +102,9 @@ export const runCli = async (): Promise<CliResults> => {
 
   const program = new Command()
     .name(CREATE_SHIPSPEED)
-    .description("A CLI for creating production-ready Next.js apps with Better Auth, shadcn/ui, and more.")
+    .description(
+      "A CLI for creating production-ready Next.js apps with Better Auth, shadcn/ui, and more."
+    )
     .argument(
       "[dir]",
       "The name of the application, as well as the name of the directory to create"
@@ -252,7 +254,8 @@ export const runCli = async (): Promise<CliResults> => {
     if (cliResults.flags.shadcn) cliResults.packages.push("shadcn");
     if (cliResults.flags.resend) cliResults.packages.push("resend");
     if (cliResults.flags.polar) cliResults.packages.push("polar");
-    if (cliResults.flags.adminDashboard) cliResults.packages.push("adminDashboard");
+    if (cliResults.flags.adminDashboard)
+      cliResults.packages.push("adminDashboard");
     if (cliResults.flags.eslint) cliResults.packages.push("eslint");
     if (cliResults.flags.biome) cliResults.packages.push("biome");
     if (cliResults.flags.prisma && cliResults.flags.drizzle) {
@@ -395,7 +398,8 @@ export const runCli = async (): Promise<CliResults> => {
         },
         polar: () => {
           return p.confirm({
-            message: "Would you like to use Polar for payments and subscriptions?",
+            message:
+              "Would you like to use Polar for payments and subscriptions?",
             initialValue: true,
           });
         },
@@ -453,7 +457,8 @@ export const runCli = async (): Promise<CliResults> => {
     );
 
     const packages: AvailablePackages[] = [];
-    if (project.styling || project.shadcn || project.adminDashboard) packages.push("tailwind");
+    if (project.styling || project.shadcn || project.adminDashboard)
+      packages.push("tailwind");
     if (project.shadcn || project.adminDashboard) packages.push("shadcn");
     if (project.trpc) packages.push("trpc");
     if (project.authentication === "next-auth") packages.push("nextAuth");
@@ -496,7 +501,9 @@ export const runCli = async (): Promise<CliResults> => {
         process.exit(0);
       }
 
-      logger.info(`Bootstrapping a default ShipSpeed app in ./${cliResults.appName}`);
+      logger.info(
+        `Bootstrapping a default ShipSpeed app in ./${cliResults.appName}`
+      );
     } else {
       throw err;
     }

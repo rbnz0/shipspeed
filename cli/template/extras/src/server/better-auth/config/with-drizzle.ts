@@ -1,14 +1,11 @@
 import { betterAuth } from "better-auth";
-import { admin } from "better-auth/plugins";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
-import { organization } from "better-auth/plugins";
-import { passkey } from "better-auth/plugins";
-import { twoFactor } from "better-auth/plugins";
+import { admin, organization, passkey, twoFactor } from "better-auth/plugins";
 
 import { env } from "~/env";
-import { db } from "~/server/db";
 import { sendEmail } from "~/lib/email";
+import { db } from "~/server/db";
 
 export const auth = betterAuth({
   appName: "ShipSpeed",
@@ -39,7 +36,7 @@ export const auth = betterAuth({
     github: {
       clientId: env.BETTER_AUTH_GITHUB_CLIENT_ID,
       clientSecret: env.BETTER_AUTH_GITHUB_CLIENT_SECRET,
-      redirectURI: "http://localhost:3000/api/auth/callback/github",
+      redirectURI: `${process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/api/auth/callback/github`, // TODO: set NEXT_PUBLIC_APP_URL in production
     },
   },
   plugins: [

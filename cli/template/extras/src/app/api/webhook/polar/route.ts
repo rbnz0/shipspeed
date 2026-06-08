@@ -34,7 +34,11 @@ export const POST = Webhooks({
         break;
       }
       default: {
-        console.log("Unhandled Polar webhook event:", payload.type, payload.data);
+        console.log(
+          "Unhandled Polar webhook event:",
+          payload.type,
+          payload.data
+        );
       }
     }
   },

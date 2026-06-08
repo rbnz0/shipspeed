@@ -76,7 +76,7 @@ export const prismaInstaller: Installer = ({
       postinstall: "prisma generate",
       "db:push": "prisma db push",
       "db:studio": "prisma studio",
-      "db:generate": "prisma migrate dev",
+      "db:generate": "prisma generate",
       "db:migrate": "prisma migrate deploy",
     },
   });

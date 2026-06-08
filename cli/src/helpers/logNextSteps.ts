@@ -60,9 +60,7 @@ export const logNextSteps = async ({
   }
 
   if (packages?.resend.inUse || packages?.polar.inUse) {
-    logger.info(
-      `  Fill in your .env with Resend/Polar API keys and secrets.`
-    );
+    logger.info(`  Fill in your .env with Resend/Polar API keys and secrets.`);
   }
 
   if (["npm", "bun"].includes(pkgManager)) {

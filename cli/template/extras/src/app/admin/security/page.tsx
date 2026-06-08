@@ -1,18 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  Shield,
-  ShieldAlert,
-  ShieldCheck,
-  Users,
-  Lock,
-  AlertTriangle,
-  CheckCircle2,
-  XCircle,
-} from "lucide-react";
-
-import { authClient } from "@/server/better-auth/client";
 import {
   Card,
   CardContent,
@@ -21,6 +8,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { authClient } from "@/server/better-auth/client";
+import {
+  AlertTriangle,
+  CheckCircle2,
+  Lock,
+  Shield,
+  ShieldAlert,
+  ShieldCheck,
+  Users,
+  XCircle,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 
 type User = {
   id: string;
@@ -40,7 +39,9 @@ export default function AdminSecurityPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await authClient.admin.listUsers({ query: { limit: 1000 } });
+        const res = await authClient.admin.listUsers({
+          query: { limit: 1000 },
+        });
         if (res.data) {
           setUsers((res.data.users ?? []) as User[]);
         }
@@ -87,14 +88,19 @@ export default function AdminSecurityPage() {
 
   const recentSignups = users
     .slice()
-    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    )
     .slice(0, 5);
 
   return (
-    <div className="space-y-4 max-w-6xl">
+    <div className="max-w-6xl space-y-4">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Security</h1>
-        <p className="text-sm text-muted-foreground">Security overview and recommendations</p>
+        <p className="text-muted-foreground text-sm">
+          Security overview and recommendations
+        </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -110,12 +116,12 @@ export default function AdminSecurityPage() {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10">
-                    <Users className="h-4 w-4 text-primary" />
+                  <div className="bg-primary/10 flex h-9 w-9 items-center justify-center rounded-md">
+                    <Users className="text-primary h-4 w-4" />
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{totalUsers}</p>
-                    <p className="text-xs text-muted-foreground">Total Users</p>
+                    <p className="text-muted-foreground text-xs">Total Users</p>
                   </div>
                 </div>
               </CardContent>
@@ -123,12 +129,12 @@ export default function AdminSecurityPage() {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-md bg-destructive/10">
-                    <Lock className="h-4 w-4 text-destructive" />
+                  <div className="bg-destructive/10 flex h-9 w-9 items-center justify-center rounded-md">
+                    <Lock className="text-destructive h-4 w-4" />
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{bannedUsers}</p>
-                    <p className="text-xs text-muted-foreground">Banned</p>
+                    <p className="text-muted-foreground text-xs">Banned</p>
                   </div>
                 </div>
               </CardContent>
@@ -141,7 +147,7 @@ export default function AdminSecurityPage() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold">{unverifiedUsers}</p>
-                    <p className="text-xs text-muted-foreground">Unverified</p>
+                    <p className="text-muted-foreground text-xs">Unverified</p>
                   </div>
                 </div>
               </CardContent>
@@ -153,8 +159,10 @@ export default function AdminSecurityPage() {
                     <ShieldCheck className="h-4 w-4 text-emerald-500" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold">{totalUsers - bannedUsers}</p>
-                    <p className="text-xs text-muted-foreground">Active</p>
+                    <p className="text-2xl font-bold">
+                      {totalUsers - bannedUsers}
+                    </p>
+                    <p className="text-muted-foreground text-xs">Active</p>
                   </div>
                 </div>
               </CardContent>
@@ -170,7 +178,9 @@ export default function AdminSecurityPage() {
               <Shield className="h-4 w-4" />
               Recommendations
             </CardTitle>
-            <CardDescription>Security status and suggested actions</CardDescription>
+            <CardDescription>
+              Security status and suggested actions
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             {loading ? (
@@ -186,13 +196,15 @@ export default function AdminSecurityPage() {
                   className="flex items-start gap-3 rounded-lg border p-3"
                 >
                   {rec.status === "success" ? (
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
                   ) : (
-                    <ShieldAlert className="h-4 w-4 text-amber-500 mt-0.5 shrink-0" />
+                    <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                   )}
                   <div>
                     <p className="text-sm font-medium">{rec.title}</p>
-                    <p className="text-xs text-muted-foreground">{rec.description}</p>
+                    <p className="text-muted-foreground text-xs">
+                      {rec.description}
+                    </p>
                   </div>
                 </div>
               ))
@@ -216,7 +228,9 @@ export default function AdminSecurityPage() {
                 <Skeleton className="h-12 w-full" />
               </div>
             ) : recentSignups.length === 0 ? (
-              <p className="text-sm text-muted-foreground text-center py-6">No recent signups</p>
+              <p className="text-muted-foreground py-6 text-center text-sm">
+                No recent signups
+              </p>
             ) : (
               recentSignups.map((user) => (
                 <div
@@ -224,10 +238,14 @@ export default function AdminSecurityPage() {
                   className="flex items-center justify-between rounded-lg border p-3"
                 >
                   <div className="min-w-0">
-                    <p className="text-sm font-medium truncate">{user.name || user.email || "Unknown"}</p>
-                    <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                    <p className="truncate text-sm font-medium">
+                      {user.name || user.email || "Unknown"}
+                    </p>
+                    <p className="text-muted-foreground truncate text-xs">
+                      {user.email}
+                    </p>
                   </div>
-                  <span className="text-xs text-muted-foreground shrink-0">
+                  <span className="text-muted-foreground shrink-0 text-xs">
                     {new Date(user.createdAt).toLocaleDateString()}
                   </span>
                 </div>

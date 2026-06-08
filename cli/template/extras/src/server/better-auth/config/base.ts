@@ -1,9 +1,6 @@
 import { betterAuth } from "better-auth";
-import { admin } from "better-auth/plugins";
 import { nextCookies } from "better-auth/next-js";
-import { organization } from "better-auth/plugins";
-import { passkey } from "better-auth/plugins";
-import { twoFactor } from "better-auth/plugins";
+import { admin, organization, passkey, twoFactor } from "better-auth/plugins";
 
 import { sendEmail } from "~/lib/email";
 

@@ -43,14 +43,14 @@ Each piece is optional, and the template is generated based on your specific nee
 
 <h2 id="features">Features</h2>
 
-| Feature | Description |
-|---------|-------------|
-| **Better Auth** | Type-safe auth with email/password, OAuth, organizations, 2FA, passkeys |
-| **shadcn/ui** | Pre-configured with Tailwind CSS variables, dark mode, and common components |
-| **Payments (Polar)** | Ready-to-go subscription and checkout integration |
-| **Email (Resend)** | Transactional email setup with templates |
-| **Admin Dashboard** | Optional standalone admin app for user management |
-| **Database** | Choose between Prisma or Drizzle with SQLite, PostgreSQL, MySQL, or PlanetScale |
+| Feature              | Description                                                                     |
+| -------------------- | ------------------------------------------------------------------------------- |
+| **Better Auth**      | Type-safe auth with email/password, OAuth, organizations, 2FA, passkeys         |
+| **shadcn/ui**        | Pre-configured with Tailwind CSS variables, dark mode, and common components    |
+| **Payments (Polar)** | Ready-to-go subscription and checkout integration                               |
+| **Email (Resend)**   | Transactional email setup with templates                                        |
+| **Admin Dashboard**  | Optional standalone admin app for user management                               |
+| **Database**         | Choose between Prisma or Drizzle with SQLite, PostgreSQL, MySQL, or PlanetScale |
 
 <h2 id="getting-started">Getting Started</h2>
 

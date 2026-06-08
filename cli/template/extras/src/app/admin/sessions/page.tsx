@@ -1,9 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { Monitor, X, Search, Users } from "lucide-react";
-
-import { authClient } from "@/server/better-auth/client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -30,6 +26,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { authClient } from "@/server/better-auth/client";
+import { Monitor, Search, Users, X } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 type Session = {
@@ -148,10 +147,10 @@ export default function AdminSessionsPage() {
   };
 
   return (
-    <div className="space-y-4 max-w-6xl">
+    <div className="max-w-6xl space-y-4">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Sessions</h1>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Search for a user to view and manage their sessions
         </p>
       </div>
@@ -163,8 +162,8 @@ export default function AdminSessionsPage() {
         </CardHeader>
         <CardContent>
           <div className="flex gap-2">
-            <div className="relative flex-1 max-w-sm">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <div className="relative max-w-sm flex-1">
+              <Search className="text-muted-foreground absolute top-2.5 left-2.5 h-4 w-4" />
               <Input
                 placeholder="Search users..."
                 className="pl-8"
@@ -192,13 +191,21 @@ export default function AdminSessionsPage() {
                     <TableRow key={user.id}>
                       <TableCell>
                         <div className="flex items-center gap-2">
-                          <Users className="h-3.5 w-3.5 text-muted-foreground" />
-                          <span className="text-sm font-medium">{user.name || "Unnamed"}</span>
-                          <span className="text-xs text-muted-foreground">{user.email}</span>
+                          <Users className="text-muted-foreground h-3.5 w-3.5" />
+                          <span className="text-sm font-medium">
+                            {user.name || "Unnamed"}
+                          </span>
+                          <span className="text-muted-foreground text-xs">
+                            {user.email}
+                          </span>
                         </div>
                       </TableCell>
                       <TableCell>
-                        <Button size="sm" variant="outline" onClick={() => selectUser(user)}>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => selectUser(user)}
+                        >
                           View Sessions
                         </Button>
                       </TableCell>
@@ -215,8 +222,12 @@ export default function AdminSessionsPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
-              <CardTitle>Sessions for {selectedUser.name || selectedUser.email}</CardTitle>
-              <CardDescription>{sessions.length} active sessions</CardDescription>
+              <CardTitle>
+                Sessions for {selectedUser.name || selectedUser.email}
+              </CardTitle>
+              <CardDescription>
+                {sessions.length} active sessions
+              </CardDescription>
             </div>
             {sessions.length > 0 && (
               <Button variant="destructive" size="sm" onClick={handleRevokeAll}>
@@ -237,8 +248,12 @@ export default function AdminSessionsPage() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Device</TableHead>
-                      <TableHead className="hidden sm:table-cell">IP Address</TableHead>
-                      <TableHead className="hidden md:table-cell">Created</TableHead>
+                      <TableHead className="hidden sm:table-cell">
+                        IP Address
+                      </TableHead>
+                      <TableHead className="hidden md:table-cell">
+                        Created
+                      </TableHead>
                       <TableHead>Expires</TableHead>
                       <TableHead className="w-[50px]"></TableHead>
                     </TableRow>
@@ -246,7 +261,10 @@ export default function AdminSessionsPage() {
                   <TableBody>
                     {sessions.length === 0 ? (
                       <TableRow>
-                        <TableCell colSpan={5} className="h-24 text-center text-muted-foreground">
+                        <TableCell
+                          colSpan={5}
+                          className="text-muted-foreground h-24 text-center"
+                        >
                           No active sessions
                         </TableCell>
                       </TableRow>
@@ -256,10 +274,10 @@ export default function AdminSessionsPage() {
                           <TableCell className="text-sm">
                             {formatUA(session.userAgent)}
                           </TableCell>
-                          <TableCell className="hidden sm:table-cell text-sm text-muted-foreground">
+                          <TableCell className="text-muted-foreground hidden text-sm sm:table-cell">
                             {session.ipAddress || "Unknown"}
                           </TableCell>
-                          <TableCell className="hidden md:table-cell text-sm text-muted-foreground">
+                          <TableCell className="text-muted-foreground hidden text-sm md:table-cell">
                             {new Date(session.createdAt).toLocaleDateString()}
                           </TableCell>
                           <TableCell className="text-sm">
@@ -297,10 +315,18 @@ export default function AdminSessionsPage() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogOpen(false)} disabled={actionLoading}>
+            <Button
+              variant="outline"
+              onClick={() => setDialogOpen(false)}
+              disabled={actionLoading}
+            >
               Cancel
             </Button>
-            <Button variant="destructive" onClick={handleRevoke} disabled={actionLoading}>
+            <Button
+              variant="destructive"
+              onClick={handleRevoke}
+              disabled={actionLoading}
+            >
               {actionLoading ? "Revoking..." : "Revoke"}
             </Button>
           </DialogFooter>

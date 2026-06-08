@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ChevronRight, Home } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const routeNames: Record<string, string> = {
   "/admin": "Dashboard",
@@ -18,13 +18,16 @@ export function AdminTopBar() {
   const currentName = routeNames[pathname] ?? "Admin";
 
   return (
-    <header className="hidden lg:flex h-14 items-center border-b bg-background px-6">
-      <nav className="flex items-center gap-1 text-sm text-muted-foreground">
-        <Link href="/admin" className="flex items-center hover:text-foreground transition-colors">
+    <header className="bg-background hidden h-14 items-center border-b px-6 lg:flex">
+      <nav className="text-muted-foreground flex items-center gap-1 text-sm">
+        <Link
+          href="/admin"
+          className="hover:text-foreground flex items-center transition-colors"
+        >
           <Home className="h-3.5 w-3.5" />
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <span className="font-medium text-foreground">{currentName}</span>
+        <span className="text-foreground font-medium">{currentName}</span>
       </nav>
     </header>
   );

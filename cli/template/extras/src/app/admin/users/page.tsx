@@ -1,36 +1,9 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import {
-  Search,
-  MoreHorizontal,
-  Shield,
-  Ban,
-  UserCheck,
-  Trash2,
-  UserCog,
-  Eye,
-  KeyRound,
-  Plus,
-  Users,
-  X,
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  UserRound,
-} from "lucide-react";
-
-import { authClient } from "@/server/better-auth/client";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -56,13 +29,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Toaster } from "@/components/ui/sonner";
 import {
   Table,
   TableBody,
@@ -72,7 +46,27 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Toaster } from "@/components/ui/sonner";
+import { authClient } from "@/server/better-auth/client";
+import {
+  Ban,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  KeyRound,
+  MoreHorizontal,
+  Plus,
+  Search,
+  Shield,
+  Trash2,
+  UserCheck,
+  UserCog,
+  UserRound,
+  Users,
+  X,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 
 type User = {
@@ -134,7 +128,13 @@ export default function AdminUsersPage() {
           offset: page * ITEMS_PER_PAGE,
           sortBy: "createdAt",
           sortDirection: "desc",
-          ...(roleFilter !== "all" ? { filterField: "role", filterValue: roleFilter, filterOperator: "eq" } : {}),
+          ...(roleFilter !== "all"
+            ? {
+                filterField: "role",
+                filterValue: roleFilter,
+                filterOperator: "eq",
+              }
+            : {}),
         },
       });
       if (res.data) {
@@ -330,15 +330,13 @@ export default function AdminUsersPage() {
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   return (
-    <div className="space-y-4 max-w-6xl">
+    <div className="max-w-6xl space-y-4">
       <Toaster />
-      
+
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Users</h1>
-          <p className="text-sm text-muted-foreground">
-            {total} total users
-          </p>
+          <p className="text-muted-foreground text-sm">{total} total users</p>
         </div>
         <Button onClick={() => setCreateOpen(true)}>
           <Plus className="mr-2 h-4 w-4" />
@@ -350,12 +348,15 @@ export default function AdminUsersPage() {
         <CardHeader className="pb-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="relative w-full sm:w-72">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Search className="text-muted-foreground absolute top-2.5 left-2.5 h-4 w-4" />
               <Input
                 placeholder="Search users..."
                 className="pl-8"
                 value={search}
-                onChange={(e) => { setSearch(e.target.value); setPage(0); }}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setPage(0);
+                }}
               />
             </div>
             <div className="flex gap-2">
@@ -397,37 +398,56 @@ export default function AdminUsersPage() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>User</TableHead>
-                      <TableHead className="hidden sm:table-cell">Role</TableHead>
+                      <TableHead className="hidden sm:table-cell">
+                        Role
+                      </TableHead>
                       <TableHead>Status</TableHead>
-                      <TableHead className="hidden md:table-cell">Joined</TableHead>
+                      <TableHead className="hidden md:table-cell">
+                        Joined
+                      </TableHead>
                       <TableHead className="w-[50px]"></TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {filteredUsers.length === 0 ? (
                       <TableRow>
-                        <TableCell colSpan={5} className="h-24 text-center text-muted-foreground">
+                        <TableCell
+                          colSpan={5}
+                          className="text-muted-foreground h-24 text-center"
+                        >
                           No users found
                         </TableCell>
                       </TableRow>
                     ) : (
                       filteredUsers.map((user) => (
-                        <TableRow key={user.id} className="cursor-pointer" onClick={() => openDetail(user)}>
+                        <TableRow
+                          key={user.id}
+                          className="cursor-pointer"
+                          onClick={() => openDetail(user)}
+                        >
                           <TableCell>
                             <div className="flex items-center gap-3">
                               <Avatar className="h-8 w-8">
-                                <AvatarFallback className="text-xs bg-muted">
+                                <AvatarFallback className="bg-muted text-xs">
                                   {getInitials(user.name, user.email)}
                                 </AvatarFallback>
                               </Avatar>
                               <div className="min-w-0">
-                                <p className="font-medium truncate">{user.name || "Unnamed"}</p>
-                                <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                                <p className="truncate font-medium">
+                                  {user.name || "Unnamed"}
+                                </p>
+                                <p className="text-muted-foreground truncate text-xs">
+                                  {user.email}
+                                </p>
                               </div>
                             </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            <Badge variant={user.role === "admin" ? "default" : "secondary"}>
+                            <Badge
+                              variant={
+                                user.role === "admin" ? "default" : "secondary"
+                              }
+                            >
                               {user.role ?? "user"}
                             </Badge>
                           </TableCell>
@@ -435,12 +455,22 @@ export default function AdminUsersPage() {
                             {user.banned ? (
                               <Badge variant="destructive">Banned</Badge>
                             ) : !user.emailVerified ? (
-                              <Badge variant="outline" className="text-amber-600">Unverified</Badge>
+                              <Badge
+                                variant="outline"
+                                className="text-amber-600"
+                              >
+                                Unverified
+                              </Badge>
                             ) : (
-                              <Badge variant="outline" className="text-emerald-600">Active</Badge>
+                              <Badge
+                                variant="outline"
+                                className="text-emerald-600"
+                              >
+                                Active
+                              </Badge>
                             )}
                           </TableCell>
-                          <TableCell className="hidden md:table-cell text-muted-foreground text-sm">
+                          <TableCell className="text-muted-foreground hidden text-sm md:table-cell">
                             {new Date(user.createdAt).toLocaleDateString()}
                           </TableCell>
                           <TableCell onClick={(e) => e.stopPropagation()}>
@@ -453,35 +483,51 @@ export default function AdminUsersPage() {
                               <DropdownMenuContent align="end">
                                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
-                                <DropdownMenuItem onClick={() => openDetail(user)}>
+                                <DropdownMenuItem
+                                  onClick={() => openDetail(user)}
+                                >
                                   <Eye className="mr-2 h-4 w-4" />
                                   View Details
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => handleImpersonate(user.id)}>
+                                <DropdownMenuItem
+                                  onClick={() => handleImpersonate(user.id)}
+                                >
                                   <UserRound className="mr-2 h-4 w-4" />
                                   Impersonate
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => openDialog(user, "role")}>
+                                <DropdownMenuItem
+                                  onClick={() => openDialog(user, "role")}
+                                >
                                   <UserCog className="mr-2 h-4 w-4" />
                                   Change Role
                                 </DropdownMenuItem>
-                                <DropdownMenuItem onClick={() => openDialog(user, "password")}>
+                                <DropdownMenuItem
+                                  onClick={() => openDialog(user, "password")}
+                                >
                                   <KeyRound className="mr-2 h-4 w-4" />
                                   Set Password
                                 </DropdownMenuItem>
                                 {user.banned ? (
-                                  <DropdownMenuItem onClick={() => openDialog(user, "unban")}>
+                                  <DropdownMenuItem
+                                    onClick={() => openDialog(user, "unban")}
+                                  >
                                     <UserCheck className="mr-2 h-4 w-4" />
                                     Unban
                                   </DropdownMenuItem>
                                 ) : (
-                                  <DropdownMenuItem onClick={() => openDialog(user, "ban")} className="text-destructive">
+                                  <DropdownMenuItem
+                                    onClick={() => openDialog(user, "ban")}
+                                    className="text-destructive"
+                                  >
                                     <Ban className="mr-2 h-4 w-4" />
                                     Ban
                                   </DropdownMenuItem>
                                 )}
                                 <DropdownMenuSeparator />
-                                <DropdownMenuItem onClick={() => openDialog(user, "delete")} className="text-destructive">
+                                <DropdownMenuItem
+                                  onClick={() => openDialog(user, "delete")}
+                                  className="text-destructive"
+                                >
                                   <Trash2 className="mr-2 h-4 w-4" />
                                   Delete
                                 </DropdownMenuItem>
@@ -497,9 +543,10 @@ export default function AdminUsersPage() {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="flex items-center justify-between mt-4">
-                  <p className="text-sm text-muted-foreground">
-                    Showing {page * ITEMS_PER_PAGE + 1}-{Math.min((page + 1) * ITEMS_PER_PAGE, total)} of {total}
+                <div className="mt-4 flex items-center justify-between">
+                  <p className="text-muted-foreground text-sm">
+                    Showing {page * ITEMS_PER_PAGE + 1}-
+                    {Math.min((page + 1) * ITEMS_PER_PAGE, total)} of {total}
                   </p>
                   <div className="flex gap-2">
                     <Button
@@ -513,7 +560,9 @@ export default function AdminUsersPage() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+                      onClick={() =>
+                        setPage((p) => Math.min(totalPages - 1, p + 1))
+                      }
                       disabled={page >= totalPages - 1}
                     >
                       <ChevronRight className="h-4 w-4" />
@@ -528,7 +577,7 @@ export default function AdminUsersPage() {
 
       {/* User Detail Sheet */}
       <Sheet open={detailOpen} onOpenChange={setDetailOpen}>
-        <SheetContent className="w-full sm:max-w-lg overflow-y-auto">
+        <SheetContent className="w-full overflow-y-auto sm:max-w-lg">
           {selectedUser && (
             <>
               <SheetHeader className="pb-4">
@@ -536,27 +585,41 @@ export default function AdminUsersPage() {
               </SheetHeader>
               <Tabs defaultValue="overview">
                 <TabsList className="w-full">
-                  <TabsTrigger value="overview" className="flex-1">Overview</TabsTrigger>
-                  <TabsTrigger value="sessions" className="flex-1">Sessions</TabsTrigger>
+                  <TabsTrigger value="overview" className="flex-1">
+                    Overview
+                  </TabsTrigger>
+                  <TabsTrigger value="sessions" className="flex-1">
+                    Sessions
+                  </TabsTrigger>
                 </TabsList>
-                
-                <TabsContent value="overview" className="space-y-4 mt-4">
+
+                <TabsContent value="overview" className="mt-4 space-y-4">
                   <div className="flex items-center gap-4">
                     <Avatar className="h-16 w-16">
-                      <AvatarFallback className="text-lg bg-muted">
+                      <AvatarFallback className="bg-muted text-lg">
                         {getInitials(selectedUser.name, selectedUser.email)}
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-lg font-semibold">{selectedUser.name || "Unnamed User"}</p>
-                      <p className="text-sm text-muted-foreground">{selectedUser.email}</p>
+                      <p className="text-lg font-semibold">
+                        {selectedUser.name || "Unnamed User"}
+                      </p>
+                      <p className="text-muted-foreground text-sm">
+                        {selectedUser.email}
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="text-muted-foreground">Role</p>
-                      <Badge variant={selectedUser.role === "admin" ? "default" : "secondary"}>
+                      <Badge
+                        variant={
+                          selectedUser.role === "admin"
+                            ? "default"
+                            : "secondary"
+                        }
+                      >
                         {selectedUser.role ?? "user"}
                       </Badge>
                     </div>
@@ -565,7 +628,9 @@ export default function AdminUsersPage() {
                       {selectedUser.banned ? (
                         <Badge variant="destructive">Banned</Badge>
                       ) : (
-                        <Badge variant="outline" className="text-emerald-600">Active</Badge>
+                        <Badge variant="outline" className="text-emerald-600">
+                          Active
+                        </Badge>
                       )}
                     </div>
                     <div>
@@ -574,11 +639,15 @@ export default function AdminUsersPage() {
                     </div>
                     <div>
                       <p className="text-muted-foreground">Created</p>
-                      <p>{new Date(selectedUser.createdAt).toLocaleDateString()}</p>
+                      <p>
+                        {new Date(selectedUser.createdAt).toLocaleDateString()}
+                      </p>
                     </div>
                     <div>
                       <p className="text-muted-foreground">Last Updated</p>
-                      <p>{new Date(selectedUser.updatedAt).toLocaleDateString()}</p>
+                      <p>
+                        {new Date(selectedUser.updatedAt).toLocaleDateString()}
+                      </p>
                     </div>
                     {selectedUser.banReason && (
                       <div className="col-span-2">
@@ -589,30 +658,53 @@ export default function AdminUsersPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 pt-4">
-                    <Button size="sm" variant="secondary" onClick={() => handleImpersonate(selectedUser.id)}>
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      onClick={() => handleImpersonate(selectedUser.id)}
+                    >
                       <UserRound className="mr-2 h-4 w-4" />
                       Impersonate
                     </Button>
-                    <Button size="sm" onClick={() => openDialog(selectedUser, "role")}>
+                    <Button
+                      size="sm"
+                      onClick={() => openDialog(selectedUser, "role")}
+                    >
                       <UserCog className="mr-2 h-4 w-4" />
                       Change Role
                     </Button>
-                    <Button size="sm" variant="outline" onClick={() => openDialog(selectedUser, "password")}>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => openDialog(selectedUser, "password")}
+                    >
                       <KeyRound className="mr-2 h-4 w-4" />
                       Set Password
                     </Button>
                     {selectedUser.banned ? (
-                      <Button size="sm" variant="outline" onClick={() => openDialog(selectedUser, "unban")}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => openDialog(selectedUser, "unban")}
+                      >
                         <UserCheck className="mr-2 h-4 w-4" />
                         Unban
                       </Button>
                     ) : (
-                      <Button size="sm" variant="outline" onClick={() => openDialog(selectedUser, "ban")}>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => openDialog(selectedUser, "ban")}
+                      >
                         <Ban className="mr-2 h-4 w-4" />
                         Ban
                       </Button>
                     )}
-                    <Button size="sm" variant="destructive" onClick={() => openDialog(selectedUser, "delete")}>
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => openDialog(selectedUser, "delete")}
+                    >
                       <Trash2 className="mr-2 h-4 w-4" />
                       Delete
                     </Button>
@@ -627,16 +719,26 @@ export default function AdminUsersPage() {
                       ))}
                     </div>
                   ) : userSessions.length === 0 ? (
-                    <p className="text-sm text-muted-foreground py-4">No active sessions</p>
+                    <p className="text-muted-foreground py-4 text-sm">
+                      No active sessions
+                    </p>
                   ) : (
                     <div className="space-y-2">
                       {userSessions.map((session) => (
-                        <div key={session.id} className="flex items-center justify-between rounded-md border p-3">
+                        <div
+                          key={session.id}
+                          className="flex items-center justify-between rounded-md border p-3"
+                        >
                           <div className="min-w-0">
-                            <p className="text-sm font-medium truncate">{session.userAgent || "Unknown device"}</p>
-                            <p className="text-xs text-muted-foreground">{session.ipAddress || "Unknown IP"}</p>
-                            <p className="text-xs text-muted-foreground">
-                              Expires {new Date(session.expiresAt).toLocaleDateString()}
+                            <p className="truncate text-sm font-medium">
+                              {session.userAgent || "Unknown device"}
+                            </p>
+                            <p className="text-muted-foreground text-xs">
+                              {session.ipAddress || "Unknown IP"}
+                            </p>
+                            <p className="text-muted-foreground text-xs">
+                              Expires{" "}
+                              {new Date(session.expiresAt).toLocaleDateString()}
                             </p>
                           </div>
                           <Button
@@ -662,9 +764,7 @@ export default function AdminUsersPage() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Create User</DialogTitle>
-            <DialogDescription>
-              Add a new user to the system
-            </DialogDescription>
+            <DialogDescription>Add a new user to the system</DialogDescription>
           </DialogHeader>
           <form onSubmit={handleCreateUser} className="space-y-4">
             <div className="space-y-2">
@@ -673,11 +773,23 @@ export default function AdminUsersPage() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" placeholder="john@example.com" required />
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="john@example.com"
+                required
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" name="password" type="password" placeholder="••••••••" required />
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="••••••••"
+                required
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="role">Role</Label>
@@ -692,7 +804,11 @@ export default function AdminUsersPage() {
               </Select>
             </div>
             <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => setCreateOpen(false)}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setCreateOpen(false)}
+              >
                 Cancel
               </Button>
               <Button type="submit" disabled={actionLoading}>
@@ -704,7 +820,10 @@ export default function AdminUsersPage() {
       </Dialog>
 
       {/* Ban Dialog */}
-      <Dialog open={dialogAction === "ban"} onOpenChange={() => setDialogAction(null)}>
+      <Dialog
+        open={dialogAction === "ban"}
+        onOpenChange={() => setDialogAction(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Ban User</DialogTitle>
@@ -713,8 +832,18 @@ export default function AdminUsersPage() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogAction(null)} disabled={actionLoading}>Cancel</Button>
-            <Button variant="destructive" onClick={handleBan} disabled={actionLoading}>
+            <Button
+              variant="outline"
+              onClick={() => setDialogAction(null)}
+              disabled={actionLoading}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={handleBan}
+              disabled={actionLoading}
+            >
               {actionLoading ? "Banning..." : "Ban User"}
             </Button>
           </DialogFooter>
@@ -722,14 +851,25 @@ export default function AdminUsersPage() {
       </Dialog>
 
       {/* Unban Dialog */}
-      <Dialog open={dialogAction === "unban"} onOpenChange={() => setDialogAction(null)}>
+      <Dialog
+        open={dialogAction === "unban"}
+        onOpenChange={() => setDialogAction(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Unban User</DialogTitle>
-            <DialogDescription>Restore access for {selectedUser?.email}?</DialogDescription>
+            <DialogDescription>
+              Restore access for {selectedUser?.email}?
+            </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogAction(null)} disabled={actionLoading}>Cancel</Button>
+            <Button
+              variant="outline"
+              onClick={() => setDialogAction(null)}
+              disabled={actionLoading}
+            >
+              Cancel
+            </Button>
             <Button onClick={handleUnban} disabled={actionLoading}>
               {actionLoading ? "Unbanning..." : "Unban User"}
             </Button>
@@ -738,17 +878,31 @@ export default function AdminUsersPage() {
       </Dialog>
 
       {/* Delete Dialog */}
-      <Dialog open={dialogAction === "delete"} onOpenChange={() => setDialogAction(null)}>
+      <Dialog
+        open={dialogAction === "delete"}
+        onOpenChange={() => setDialogAction(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Delete User</DialogTitle>
             <DialogDescription>
-              This will permanently delete {selectedUser?.email}. This action cannot be undone.
+              This will permanently delete {selectedUser?.email}. This action
+              cannot be undone.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogAction(null)} disabled={actionLoading}>Cancel</Button>
-            <Button variant="destructive" onClick={handleDelete} disabled={actionLoading}>
+            <Button
+              variant="outline"
+              onClick={() => setDialogAction(null)}
+              disabled={actionLoading}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={handleDelete}
+              disabled={actionLoading}
+            >
               {actionLoading ? "Deleting..." : "Delete User"}
             </Button>
           </DialogFooter>
@@ -756,11 +910,16 @@ export default function AdminUsersPage() {
       </Dialog>
 
       {/* Role Dialog */}
-      <Dialog open={dialogAction === "role"} onOpenChange={() => setDialogAction(null)}>
+      <Dialog
+        open={dialogAction === "role"}
+        onOpenChange={() => setDialogAction(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Change Role</DialogTitle>
-            <DialogDescription>Update role for {selectedUser?.email}</DialogDescription>
+            <DialogDescription>
+              Update role for {selectedUser?.email}
+            </DialogDescription>
           </DialogHeader>
           <div className="py-4">
             <Select value={newRole} onValueChange={setNewRole}>
@@ -774,7 +933,13 @@ export default function AdminUsersPage() {
             </Select>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogAction(null)} disabled={actionLoading}>Cancel</Button>
+            <Button
+              variant="outline"
+              onClick={() => setDialogAction(null)}
+              disabled={actionLoading}
+            >
+              Cancel
+            </Button>
             <Button onClick={handleRoleChange} disabled={actionLoading}>
               {actionLoading ? "Saving..." : "Save"}
             </Button>
@@ -783,11 +948,16 @@ export default function AdminUsersPage() {
       </Dialog>
 
       {/* Password Dialog */}
-      <Dialog open={dialogAction === "password"} onOpenChange={() => setDialogAction(null)}>
+      <Dialog
+        open={dialogAction === "password"}
+        onOpenChange={() => setDialogAction(null)}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Set Password</DialogTitle>
-            <DialogDescription>Set a new password for {selectedUser?.email}</DialogDescription>
+            <DialogDescription>
+              Set a new password for {selectedUser?.email}
+            </DialogDescription>
           </DialogHeader>
           <div className="py-4">
             <Input
@@ -798,7 +968,13 @@ export default function AdminUsersPage() {
             />
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogAction(null)} disabled={actionLoading}>Cancel</Button>
+            <Button
+              variant="outline"
+              onClick={() => setDialogAction(null)}
+              disabled={actionLoading}
+            >
+              Cancel
+            </Button>
             <Button onClick={handleSetPassword} disabled={actionLoading}>
               {actionLoading ? "Saving..." : "Set Password"}
             </Button>

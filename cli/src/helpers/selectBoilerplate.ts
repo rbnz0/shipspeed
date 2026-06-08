@@ -32,11 +32,11 @@ export const selectAppFile = ({
     appFile = "with-trpc-tw.tsx";
   } else if (usingTRPC && !usingTw) {
     appFile = "with-trpc.tsx";
-  } else if (!usingTRPC && usingTw) {
+  } else if (!usingTRPC && usingTw && !usingAuth) {
     appFile = "with-tw.tsx";
-  } else if (usingAuth && usingTw) {
+  } else if (!usingTRPC && usingTw && usingAuth) {
     appFile = "with-auth-tw.tsx";
-  } else if (usingAuth && !usingTw) {
+  } else if (!usingTRPC && !usingTw && usingAuth) {
     appFile = "with-auth.tsx";
   }
 
@@ -94,11 +94,11 @@ export const selectIndexFile = ({
     indexFile = "with-auth-trpc-tw.tsx";
   } else if (usingTRPC && !usingTw && usingAuth) {
     indexFile = "with-auth-trpc.tsx";
-  } else if (usingTRPC && usingTw) {
+  } else if (usingTRPC && usingTw && !usingAuth) {
     indexFile = "with-trpc-tw.tsx";
-  } else if (usingTRPC && !usingTw) {
+  } else if (usingTRPC && !usingTw && !usingAuth) {
     indexFile = "with-trpc.tsx";
-  } else if (!usingTRPC && usingTw) {
+  } else if (!usingTRPC && usingTw && !usingAuth) {
     indexFile = "with-tw.tsx";
   }
 
@@ -132,11 +132,11 @@ export const selectPageFile = ({
     indexFile = "with-auth-trpc-tw.tsx";
   } else if (usingTRPC && !usingTw && usingAuth) {
     indexFile = "with-auth-trpc.tsx";
-  } else if (usingTRPC && usingTw) {
+  } else if (usingTRPC && usingTw && !usingAuth) {
     indexFile = "with-trpc-tw.tsx";
-  } else if (usingTRPC && !usingTw) {
+  } else if (usingTRPC && !usingTw && !usingAuth) {
     indexFile = "with-trpc.tsx";
-  } else if (!usingTRPC && usingTw) {
+  } else if (!usingTRPC && usingTw && !usingAuth) {
     indexFile = "with-tw.tsx";
   }
 

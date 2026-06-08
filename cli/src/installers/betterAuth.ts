@@ -5,6 +5,7 @@ import { PKG_ROOT } from "~/consts.js";
 import { type AvailableDependencies } from "~/installers/dependencyVersionMap.js";
 import { type Installer } from "~/installers/index.js";
 import { addPackageDependency } from "~/utils/addPackageDependency.js";
+import { logger } from "~/utils/logger.js";
 
 export const betterAuthInstaller: Installer = ({
   projectDir,
@@ -126,7 +127,10 @@ export const betterAuthInstaller: Installer = ({
         fs.writeFileSync(authConfigDest, updated, "utf8");
       }
     }
-  } catch {
-    // Non-fatal: leave default provider from template
+  } catch (err) {
+    logger.warn(
+      "Could not update Better Auth adapter provider; leaving default from template."
+    );
+    logger.warn(String(err));
   }
 };

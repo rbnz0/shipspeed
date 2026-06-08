@@ -23,23 +23,14 @@ export const polarInstaller: Installer = ({ projectDir, appRouter }) => {
   fs.copySync(polarLibSrc, polarLibDest);
 
   if (appRouter ?? true) {
-    const checkoutRouteSrc = path.join(
-      extrasDir,
-      "src/app/checkout/route.ts"
-    );
+    const checkoutRouteSrc = path.join(extrasDir, "src/app/checkout/route.ts");
     const checkoutRouteDest = path.join(
       projectDir,
       "src/app/checkout/route.ts"
     );
 
-    const portalRouteSrc = path.join(
-      extrasDir,
-      "src/app/portal/route.ts"
-    );
-    const portalRouteDest = path.join(
-      projectDir,
-      "src/app/portal/route.ts"
-    );
+    const portalRouteSrc = path.join(extrasDir, "src/app/portal/route.ts");
+    const portalRouteDest = path.join(projectDir, "src/app/portal/route.ts");
 
     const webhookRouteSrc = path.join(
       extrasDir,

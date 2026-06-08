@@ -89,7 +89,7 @@ export const shadcnInstaller: Installer = ({ projectDir, appRouter }) => {
       // Add suppressHydrationWarning to html tag if not present
       if (!layoutContent.includes("suppressHydrationWarning")) {
         layoutContent = layoutContent.replace(
-          /<html lang="en"/, 
+          /<html lang="en"/,
           `<html lang="en" suppressHydrationWarning`
         );
       }

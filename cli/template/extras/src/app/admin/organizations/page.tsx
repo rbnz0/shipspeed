@@ -1,18 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  Building2,
-  Users,
-  MoreHorizontal,
-  Plus,
-  X,
-  UserPlus,
-  Mail,
-  Trash2,
-} from "lucide-react";
-
-import { authClient } from "@/server/better-auth/client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -46,6 +33,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { authClient } from "@/server/better-auth/client";
+import {
+  Building2,
+  Mail,
+  MoreHorizontal,
+  Plus,
+  Trash2,
+  UserPlus,
+  Users,
+  X,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 type Organization = {
@@ -157,11 +156,11 @@ export default function AdminOrganizationsPage() {
   };
 
   return (
-    <div className="space-y-4 max-w-6xl">
+    <div className="max-w-6xl space-y-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Organizations</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             {organizations.length} organizations
           </p>
         </div>
@@ -190,15 +189,22 @@ export default function AdminOrganizationsPage() {
                     <TableHeader>
                       <TableRow>
                         <TableHead>Name</TableHead>
-                        <TableHead className="hidden sm:table-cell">Slug</TableHead>
-                        <TableHead className="hidden md:table-cell">Created</TableHead>
+                        <TableHead className="hidden sm:table-cell">
+                          Slug
+                        </TableHead>
+                        <TableHead className="hidden md:table-cell">
+                          Created
+                        </TableHead>
                         <TableHead className="w-[50px]"></TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {organizations.length === 0 ? (
                         <TableRow>
-                          <TableCell colSpan={4} className="h-24 text-center text-muted-foreground">
+                          <TableCell
+                            colSpan={4}
+                            className="text-muted-foreground h-24 text-center"
+                          >
                             No organizations found
                           </TableCell>
                         </TableRow>
@@ -211,21 +217,23 @@ export default function AdminOrganizationsPage() {
                           >
                             <TableCell>
                               <div className="flex items-center gap-3">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary/10">
-                                  <Building2 className="h-4 w-4 text-primary" />
+                                <div className="bg-primary/10 flex h-8 w-8 items-center justify-center rounded-md">
+                                  <Building2 className="text-primary h-4 w-4" />
                                 </div>
                                 <div>
                                   <p className="font-medium">{org.name}</p>
                                   {org.metadata?.plan && (
-                                    <p className="text-xs text-muted-foreground">{org.metadata.plan}</p>
+                                    <p className="text-muted-foreground text-xs">
+                                      {org.metadata.plan}
+                                    </p>
                                   )}
                                 </div>
                               </div>
                             </TableCell>
-                            <TableCell className="hidden sm:table-cell text-sm text-muted-foreground">
+                            <TableCell className="text-muted-foreground hidden text-sm sm:table-cell">
                               {org.slug}
                             </TableCell>
-                            <TableCell className="hidden md:table-cell text-sm text-muted-foreground">
+                            <TableCell className="text-muted-foreground hidden text-sm md:table-cell">
                               {new Date(org.createdAt).toLocaleDateString()}
                             </TableCell>
                             <TableCell>
@@ -251,7 +259,11 @@ export default function AdminOrganizationsPage() {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <CardTitle>{detailOrg.name}</CardTitle>
-                  <Button variant="ghost" size="icon" onClick={() => setDetailOrg(null)}>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setDetailOrg(null)}
+                  >
                     <X className="h-4 w-4" />
                   </Button>
                 </div>
@@ -259,17 +271,24 @@ export default function AdminOrganizationsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="text-sm font-medium mb-2">Members</h4>
+                  <h4 className="mb-2 text-sm font-medium">Members</h4>
                   {detailLoading ? (
                     <Skeleton className="h-20 w-full" />
                   ) : members.length === 0 ? (
-                    <p className="text-sm text-muted-foreground">No members</p>
+                    <p className="text-muted-foreground text-sm">No members</p>
                   ) : (
                     <div className="space-y-2">
                       {members.map((member) => (
-                        <div key={member.id} className="flex items-center justify-between text-sm">
-                          <span className="font-mono text-xs">{member.userId.slice(0, 8)}...</span>
-                          <span className="text-xs capitalize">{member.role}</span>
+                        <div
+                          key={member.id}
+                          className="flex items-center justify-between text-sm"
+                        >
+                          <span className="font-mono text-xs">
+                            {member.userId.slice(0, 8)}...
+                          </span>
+                          <span className="text-xs capitalize">
+                            {member.role}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -277,17 +296,24 @@ export default function AdminOrganizationsPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-medium mb-2">Invitations</h4>
+                  <h4 className="mb-2 text-sm font-medium">Invitations</h4>
                   {detailLoading ? (
                     <Skeleton className="h-20 w-full" />
                   ) : invitations.length === 0 ? (
-                    <p className="text-sm text-muted-foreground">No pending invitations</p>
+                    <p className="text-muted-foreground text-sm">
+                      No pending invitations
+                    </p>
                   ) : (
                     <div className="space-y-2">
                       {invitations.map((invite) => (
-                        <div key={invite.id} className="flex items-center justify-between text-sm">
+                        <div
+                          key={invite.id}
+                          className="flex items-center justify-between text-sm"
+                        >
                           <span className="truncate">{invite.email}</span>
-                          <span className="text-xs text-muted-foreground">{invite.status}</span>
+                          <span className="text-muted-foreground text-xs">
+                            {invite.status}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -306,10 +332,12 @@ export default function AdminOrganizationsPage() {
               </CardContent>
             </Card>
           ) : (
-            <Card className="h-full flex items-center justify-center p-8">
-              <div className="text-center text-muted-foreground">
-                <Building2 className="h-8 w-8 mx-auto mb-3 opacity-50" />
-                <p className="text-sm">Select an organization to view details</p>
+            <Card className="flex h-full items-center justify-center p-8">
+              <div className="text-muted-foreground text-center">
+                <Building2 className="mx-auto mb-3 h-8 w-8 opacity-50" />
+                <p className="text-sm">
+                  Select an organization to view details
+                </p>
               </div>
             </Card>
           )}
@@ -332,7 +360,11 @@ export default function AdminOrganizationsPage() {
               <Input id="slug" name="slug" placeholder="acme-inc" required />
             </div>
             <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => setCreateOpen(false)}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setCreateOpen(false)}
+              >
                 Cancel
               </Button>
               <Button type="submit" disabled={actionLoading}>
@@ -353,10 +385,18 @@ export default function AdminOrganizationsPage() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setDeleteDialog(false)} disabled={actionLoading}>
+            <Button
+              variant="outline"
+              onClick={() => setDeleteDialog(false)}
+              disabled={actionLoading}
+            >
               Cancel
             </Button>
-            <Button variant="destructive" onClick={handleDelete} disabled={actionLoading}>
+            <Button
+              variant="destructive"
+              onClick={handleDelete}
+              disabled={actionLoading}
+            >
               {actionLoading ? "Deleting..." : "Delete"}
             </Button>
           </DialogFooter>

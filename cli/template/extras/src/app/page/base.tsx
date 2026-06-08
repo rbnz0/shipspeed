@@ -7,7 +7,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.container}>
         <h1 className={styles.title}>
-          Create <span className={styles.pinkSpan}>T3</span> App
+          Create <span className={styles.pinkSpan}>ShipSpeed</span> App
         </h1>
         <div className={styles.cardRow}>
           <Link

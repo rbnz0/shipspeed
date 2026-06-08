@@ -174,7 +174,14 @@ POLAR_ENV="sandbox"
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
 `;
 
-  if (!usingNextAuth && !usingBetterAuth && !usingPrisma && !usingDrizzle && !usingResend && !usingPolar)
+  if (
+    !usingNextAuth &&
+    !usingBetterAuth &&
+    !usingPrisma &&
+    !usingDrizzle &&
+    !usingResend &&
+    !usingPolar
+  )
     content += `
 # Example:
 # SERVERVAR="foo"

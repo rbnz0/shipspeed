@@ -7,11 +7,17 @@ import { type Installer } from "~/installers/index.js";
 import { addPackageDependency } from "~/utils/addPackageDependency.js";
 import { logger } from "~/utils/logger.js";
 
-export const adminDashboardInstaller: Installer = ({ projectDir, appRouter, packages }) => {
+export const adminDashboardInstaller: Installer = ({
+  projectDir,
+  appRouter,
+  packages,
+}) => {
   const isAppRouter = appRouter ?? true;
 
   if (!isAppRouter) {
-    logger.warn("Admin dashboard is only supported with Next.js App Router. Skipping admin dashboard files.");
+    logger.warn(
+      "Admin dashboard is only supported with Next.js App Router. Skipping admin dashboard files."
+    );
     return;
   }
 
@@ -24,14 +30,8 @@ export const adminDashboardInstaller: Installer = ({ projectDir, appRouter, pack
     fs.copySync(adminDir, destAdminDir);
   }
 
-  const adminComponentsDir = path.join(
-    extrasDir,
-    "src/components/admin"
-  );
-  const destAdminComponentsDir = path.join(
-    projectDir,
-    "src/components/admin"
-  );
+  const adminComponentsDir = path.join(extrasDir, "src/components/admin");
+  const destAdminComponentsDir = path.join(projectDir, "src/components/admin");
 
   if (fs.existsSync(adminComponentsDir)) {
     fs.copySync(adminComponentsDir, destAdminComponentsDir);
@@ -41,6 +41,11 @@ export const adminDashboardInstaller: Installer = ({ projectDir, appRouter, pack
   const middlewareSrc = path.join(extrasDir, "src/middleware.ts");
   const middlewareDest = path.join(projectDir, "src/middleware.ts");
   if (fs.existsSync(middlewareSrc)) {
+    if (fs.existsSync(middlewareDest)) {
+      logger.warn(
+        "Existing middleware.ts found; overwriting with admin route protection."
+      );
+    }
     fs.copySync(middlewareSrc, middlewareDest);
   }
 

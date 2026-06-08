@@ -1,5 +1,5 @@
-import { CustomerPortal } from "@polar-sh/nextjs";
 import { auth } from "@/server/better-auth/config";
+import { CustomerPortal } from "@polar-sh/nextjs";
 
 export const GET = CustomerPortal({
   accessToken: process.env.POLAR_ACCESS_TOKEN!,

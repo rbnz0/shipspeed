@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+
 import { auth } from "~/server/better-auth";
 
-// Rate limit store (in-memory, replace with Redis in production)
+// Rate limit store (in-memory)
+// WARNING: This will not work correctly on serverless platforms (Vercel, etc.)
+// because each request may run in a new isolate. Replace with Redis/Upstash
+// in production.
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX = 100; // requests per window
@@ -93,10 +97,13 @@ export async function middleware(request: NextRequest) {
     "Content-Security-Policy",
     "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';"
   );
-  response.headers.set(
-    "Strict-Transport-Security",
-    "max-age=63072000; includeSubDomains; preload"
-  );
+  // Only set HSTS in production to avoid browser warnings on localhost
+  if (process.env.NODE_ENV === "production") {
+    response.headers.set(
+      "Strict-Transport-Security",
+      "max-age=63072000; includeSubDomains; preload"
+    );
+  }
 
   return response;
 }

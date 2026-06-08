@@ -18,7 +18,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <h1 className={styles.title}>
-            Create <span className={styles.pinkSpan}>T3</span> App
+            Create <span className={styles.pinkSpan}>ShipSpeed</span> App
           </h1>
           <div className={styles.cardRow}>
             <Link
@@ -39,8 +39,8 @@ export default function Home() {
             >
               <h3 className={styles.cardTitle}>Documentation →</h3>
               <div className={styles.cardText}>
-                Learn more about ShipSpeed, the libraries it uses, and how
-                to deploy it.
+                Learn more about ShipSpeed, the libraries it uses, and how to
+                deploy it.
               </div>
             </Link>
           </div>
