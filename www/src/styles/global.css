@@ -103,7 +103,7 @@
   td,
   th {
     padding: 6px;
-    text-align: inline-start;
+    text-align: start;
   }
 
   .ss-scrollbar {

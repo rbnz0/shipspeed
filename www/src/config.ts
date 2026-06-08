@@ -1,6 +1,7 @@
 export const SITE = {
   title: "ShipSpeed",
-  description: "The fastest way to start a production-ready Next.js app with Better Auth, shadcn/ui, payments, and more.",
+  description:
+    "The fastest way to start a production-ready Next.js app with Better Auth, shadcn/ui, payments, and more.",
   defaultLanguage: "en_US",
 };
 
@@ -82,7 +83,7 @@ export const SIDEBAR: Sidebar = {
   //   Usage: [{ text: "Miljövariabler", link: "sv/usage/env-variables" }],
   // },
   ar: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "مُقدمة", link: "ar/introduction" },
       { text: "لماذا CT3A؟", link: "ar/why" },
       { text: "التثبيت", link: "ar/installation" },
@@ -142,7 +143,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   es: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Introducción", link: "es/introduction" },
       { text: "Instalación", link: "es/installation" },
       { text: "Preguntas Frecuentes", link: "es/faq" },
@@ -164,7 +165,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   ja: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "イントロダクション", link: "ja/introduction" },
       { text: "インストール", link: "ja/installation" },
       { text: "FAQ", link: "ja/faq" },
@@ -189,7 +190,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   pl: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Wstęp", link: "pl/introduction" },
       { text: "Instalacja", link: "pl/installation" },
       { text: "FAQ", link: "pl/faq" },
@@ -214,7 +215,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   uk: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Вступ", link: "uk/introduction" },
       { text: "Встановлення", link: "uk/installation" },
       { text: "FAQ", link: "uk/faq" },
@@ -240,7 +241,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   fr: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Introduction", link: "fr/introduction" },
       { text: "Installation", link: "fr/installation" },
       { text: "FAQ", link: "fr/faq" },
@@ -265,7 +266,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   pt: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Introdução", link: "pt/introduction" },
       { text: "Instalação", link: "pt/installation" },
       { text: "Perguntas Frequentes", link: "pt/faq" },
@@ -290,7 +291,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   ru: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Введение", link: "ru/introduction" },
       { text: "Установка", link: "ru/installation" },
       { text: "FAQ", link: "ru/faq" },
@@ -315,7 +316,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   no: {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "Introduksjon", link: "no/introduction" },
       { text: "Installasjon", link: "no/installation" },
       { text: "FAQ", link: "no/faq" },
@@ -340,7 +341,7 @@ export const SIDEBAR: Sidebar = {
     ],
   },
   "zh-hans": {
-    "ShipSpeed": [
+    ShipSpeed: [
       { text: "简介", link: "zh-hans/introduction" },
       { text: "安装", link: "zh-hans/installation" },
       { text: "常见疑问", link: "zh-hans/faq" },
@@ -377,7 +378,7 @@ export const SIDEBAR_HEADER_MAP: Record<
     Deployment: "Deployment",
   },
   es: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Uso",
     Deployment: "Despliegue",
   },
@@ -388,47 +389,47 @@ export const SIDEBAR_HEADER_MAP: Record<
   //   Deployment: "Deployment",
   // },
   ja: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "使用法",
     Deployment: "デプロイ",
   },
   pl: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Korzystanie Z Narzędzia",
     Deployment: "Deployment",
   },
   uk: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Використання",
     Deployment: "Деплоймент",
   },
   ar: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "كيفية الإستخدام؟",
     Deployment: "نَشر تطبيقك",
   },
   fr: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Utilisation",
     Deployment: "Déploiement",
   },
   pt: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Uso",
     Deployment: "Deploy",
   },
   ru: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Использование",
     Deployment: "Развертывание",
   },
   no: {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "Bruk",
     Deployment: "Utrulling",
   },
   "zh-hans": {
-    "ShipSpeed": "ShipSpeed",
+    ShipSpeed: "ShipSpeed",
     Usage: "用法",
     Deployment: "部署",
   },

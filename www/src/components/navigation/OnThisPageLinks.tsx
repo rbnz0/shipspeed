@@ -80,7 +80,7 @@ export default function OnThisPageLinks({
         {({ open }) => (
           <div className="relative w-full">
             <div className="">
-              <Menu.Button className="text-md inline-flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-md border-2 bg-t3-purple-200/50 px-3 py-2 font-medium hover:bg-t3-purple-200/75 dark:border-t3-purple-200/20 dark:bg-t3-purple-200/10 dark:hover:border-t3-purple-200/50">
+              <Menu.Button className="text-md inline-flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-md border-2 bg-ss-purple-200/50 px-3 py-2 font-medium hover:bg-ss-purple-200/75 dark:border-ss-purple-200/20 dark:bg-ss-purple-200/10 dark:hover:border-ss-purple-200/50">
                 On this page
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export default function OnThisPageLinks({
             </div>
             <Menu.Items
               dir="ltr"
-              className="t3-scrollbar absolute top-full z-10 mt-3 max-h-[45vh] w-full overflow-y-auto rounded-md border-2 border-primary bg-default py-1.5 shadow-md dark:border-t3-purple-200/20 dark:bg-default"
+              className="t3-scrollbar absolute top-full z-10 mt-3 max-h-[45vh] w-full overflow-y-auto rounded-md border-2 border-primary bg-default py-1.5 shadow-md dark:border-ss-purple-200/20 dark:bg-default"
             >
               <ul dir={isLtr ? "ltr" : "rtl"}>
                 {headingWithIsVisible.map((heading) => (
@@ -116,13 +116,13 @@ export default function OnThisPageLinks({
                       {({ active }) => (
                         <a
                           className={clsx(
-                            "text-md line-clamp-1 block w-full py-2 text-t3-purple-800 transition-colors hover:bg-t3-purple-300/20 hover:text-t3-purple-400 dark:text-t3-purple-200 dark:hover:bg-t3-purple-300/10 dark:hover:text-t3-purple-50",
+                            "text-md line-clamp-1 block w-full py-2 text-ss-purple-800 transition-colors hover:bg-ss-purple-300/20 hover:text-ss-purple-400 dark:text-ss-purple-200 dark:hover:bg-ss-purple-300/10 dark:hover:text-ss-purple-50",
                             isLtr && (heading.depth === 2 ? "pl-3" : "pl-8"),
                             isRtl && (heading.depth === 2 ? "pr-3" : "pr-8"),
                             {
-                              "bg-t3-purple-300/20 text-t3-purple-400 underline dark:bg-t3-purple-300/10 dark:text-t3-purple-100":
+                              "bg-ss-purple-300/20 text-ss-purple-400 underline dark:bg-ss-purple-300/10 dark:text-ss-purple-100":
                                 active,
-                              "bg-t3-purple-300/30 font-medium text-t3-purple-700 underline dark:bg-t3-purple-300/20 dark:text-t3-purple-100":
+                              "bg-ss-purple-300/30 font-medium text-ss-purple-700 underline dark:bg-ss-purple-300/20 dark:text-ss-purple-100":
                                 heading.isVisible,
                             },
                           )}

@@ -28,6 +28,18 @@ export default {
         "ss-gray-800": "#27272a",
         "ss-gray-900": "#18181b",
         "ss-gray-1000": "#09090b",
+
+        /* Muted purple accent aligned with B&W monotone palette */
+        "ss-purple-50": "#fafafa",
+        "ss-purple-100": "#f4f4f5",
+        "ss-purple-200": "#e4e4e7",
+        "ss-purple-300": "#d4d4d8",
+        "ss-purple-400": "#a1a1aa",
+        "ss-purple-500": "#71717a",
+        "ss-purple-600": "#52525b",
+        "ss-purple-700": "#3f3f46",
+        "ss-purple-800": "#27272a",
+        "ss-purple-900": "#18181b",
       },
       animation: {
         draw: "draw 2s linear normal",

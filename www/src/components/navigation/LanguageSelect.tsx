@@ -21,10 +21,10 @@ export default function LanguageSelect({ language }: LanguageSelectProps) {
     <div className="flex items-center gap-2">
       <Listbox value={language} onChange={handleSelect}>
         <div className="relative">
-          <Listbox.Button className="relative flex cursor-pointer items-center justify-center rounded-lg border bg-t3-purple-200/50 p-2 text-left focus:outline-none hover:bg-t3-purple-200/75 sm:text-sm dark:border-t3-purple-200/20 dark:bg-t3-purple-200/10 dark:hover:border-t3-purple-200/50">
+          <Listbox.Button className="relative flex cursor-pointer items-center justify-center rounded-lg border bg-ss-purple-200/50 p-2 text-left focus:outline-none hover:bg-ss-purple-200/75 sm:text-sm dark:border-ss-purple-200/20 dark:bg-ss-purple-200/10 dark:hover:border-ss-purple-200/50">
             <svg
               viewBox="0 0 88.6 77.3"
-              className="h-6 w-6 text-slate-900 dark:text-t3-purple-100"
+              className="h-6 w-6 text-slate-900 dark:text-ss-purple-100"
               role="img"
             >
               <path
@@ -46,7 +46,7 @@ export default function LanguageSelect({ language }: LanguageSelectProps) {
             <Listbox.Options
               dir="ltr"
               className={clsx(
-                "focus-none shadow-l t3-scrollbar absolute right-0 mt-1 max-h-60 w-fit overflow-auto rounded-lg border bg-default text-base focus:outline-none focus-visible:outline-none sm:text-sm dark:border-t3-purple-200/20",
+                "focus-none shadow-l t3-scrollbar absolute right-0 mt-1 max-h-60 w-fit overflow-auto rounded-lg border bg-default text-base focus:outline-none focus-visible:outline-none sm:text-sm dark:border-ss-purple-200/20",
                 isRTL && "text-right",
               )}
             >
@@ -54,9 +54,9 @@ export default function LanguageSelect({ language }: LanguageSelectProps) {
                 <Listbox.Option
                   key={code}
                   className={({ selected, active }) =>
-                    `focus-none relative cursor-pointer bg-t3-purple-200/50 px-4 py-2 text-slate-900 outline-none hover:bg-t3-purple-300/75 dark:bg-t3-purple-200/10 dark:text-t3-purple-100 dark:hover:bg-t3-purple-200/20 ${
-                      selected && "bg-t3-purple-400/75 dark:bg-t3-purple-400/20"
-                    } ${active && "bg-t3-purple-300/75 dark:bg-t3-purple-200/20"}`
+                    `focus-none relative cursor-pointer bg-ss-purple-200/50 px-4 py-2 text-slate-900 outline-none hover:bg-ss-purple-300/75 dark:bg-ss-purple-200/10 dark:text-ss-purple-100 dark:hover:bg-ss-purple-200/20 ${
+                      selected && "bg-ss-purple-400/75 dark:bg-ss-purple-400/20"
+                    } ${active && "bg-ss-purple-300/75 dark:bg-ss-purple-200/20"}`
                   }
                   value={code}
                 >

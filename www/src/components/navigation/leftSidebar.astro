@@ -63,7 +63,7 @@ if (langCode !== "en") {
 >
   <ul
     dir={isRtl ? "rtl" : "ltr"}
-    class="px-4 pb-28 text-slate-900 md:pb-0 dark:text-t3-purple-50"
+    class="px-4 pb-28 text-slate-900 md:pb-0 dark:text-ss-purple-50"
   >
     {
       Object.entries(sidebar).map(([header, children]) => (
@@ -90,16 +90,16 @@ if (langCode !== "en") {
                       href={url}
                       aria-current={isActive ? "page" : false}
                       class:list={[
-                        "text-md block py-2 text-t3-purple-800 transition-colors [padding-inline-start:16px] hover:border-t3-purple-300/50 hover:bg-t3-purple-300/20 hover:text-t3-purple-400 dark:text-t3-purple-200 dark:hover:bg-t3-purple-300/10 dark:hover:text-t3-purple-100",
+                        "text-md block py-2 text-ss-purple-800 transition-colors [padding-inline-start:16px] hover:border-ss-purple-300/50 hover:bg-ss-purple-300/20 hover:text-ss-purple-400 dark:text-ss-purple-200 dark:hover:bg-ss-purple-300/10 dark:hover:text-ss-purple-100",
                         isActive
-                          ? "border-t3-purple-300 bg-t3-purple-300/30 font-medium dark:bg-t3-purple-300/20"
-                          : "border-t3-purple-300/20",
+                          ? "border-ss-purple-300 bg-ss-purple-300/30 font-medium dark:bg-ss-purple-300/20"
+                          : "border-ss-purple-300/20",
                         isRtl ? "border-r-2" : "border-l-2",
                       ]}
                     >
                       <span>{child.text}</span>
                       {!child.isTranslated && langCode !== "en" && (
-                        <span class="text-xs text-t3-purple-400 [margin-inline-start:4px] dark:text-t3-purple-300">
+                        <span class="text-xs text-ss-purple-400 [margin-inline-start:4px] dark:text-ss-purple-300">
                           EN
                         </span>
                       )}

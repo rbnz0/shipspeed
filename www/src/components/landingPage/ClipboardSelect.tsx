@@ -4,19 +4,19 @@ import { Fragment, useState } from "react";
 
 const commands = [
   {
-    command: "create t3-app@latest",
+    command: "create shipspeed@latest",
     manager: "npm",
   },
   {
-    command: "create t3-app",
+    command: "create shipspeed",
     manager: "yarn",
   },
   {
-    command: "create t3-app@latest",
+    command: "create shipspeed@latest",
     manager: "pnpm",
   },
   {
-    command: "create t3-app@latest",
+    command: "create shipspeed@latest",
     manager: "bun",
   },
 ];
@@ -42,7 +42,7 @@ export default function ClipboardSelect() {
     <div className="flex items-center gap-2">
       <Menu as="div">
         <div className="relative">
-          <Menu.Button className="relative flex cursor-pointer items-center justify-center rounded-lg border bg-t3-purple-200/50 p-2 text-left focus:outline-none hover:bg-t3-purple-200/75 sm:text-sm dark:border-t3-purple-200/20 dark:bg-t3-purple-200/10 dark:hover:border-t3-purple-200/50">
+          <Menu.Button className="relative flex cursor-pointer items-center justify-center rounded-lg border bg-ss-purple-200/50 p-2 text-left focus:outline-none hover:bg-ss-purple-200/75 sm:text-sm dark:border-ss-purple-200/20 dark:bg-ss-purple-200/10 dark:hover:border-ss-purple-200/50">
             <svg
               className={`h-[1em] w-[1em] ${coolDown && "hidden"}`}
               xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export default function ClipboardSelect() {
           >
             <Menu.Items
               className={clsx(
-                "focus-none shadow-l t3-scrollbar absolute right-0 mt-1 max-h-60 w-fit min-w-[6em] overflow-auto rounded-lg border bg-default text-base focus:outline-none focus-visible:outline-none sm:text-sm dark:border-t3-purple-200/20",
+                "focus-none shadow-l t3-scrollbar absolute right-0 mt-1 max-h-60 w-fit min-w-[6em] overflow-auto rounded-lg border bg-default text-base focus:outline-none focus-visible:outline-none sm:text-sm dark:border-ss-purple-200/20",
               )}
             >
               {commands.map(({ manager, command }) => (
@@ -93,8 +93,8 @@ export default function ClipboardSelect() {
                     return (
                       <button
                         className={`${
-                          active && "bg-t3-purple-200/20"
-                        } group flex w-full items-center bg-t3-purple-200/10 px-4 py-2 text-sm font-medium hover:bg-t3-purple-200/20`}
+                          active && "bg-ss-purple-200/20"
+                        } group flex w-full items-center bg-ss-purple-200/10 px-4 py-2 text-sm font-medium hover:bg-ss-purple-200/20`}
                         onClick={() => {
                           handleCopyToClipboard(manager, command)
                             .then(() => {
